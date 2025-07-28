@@ -1,7 +1,10 @@
-### Profile Summary: Joshua Lora
+
+## Hey there, I'm Josh! Let's build the future together
+
+<img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/838939b6-7458-47eb-99d7-38dd634758ca" />
 
 **NYC | Cornell**  
-Technologist, Founder, Champion of The People
+Ethical Technologist, Builder, Champion of The People
 
 New York native and aspiring AI Engineer passionate about creating intelligence-driven solutions across robotics, transportation, infrastructure, personal health, and mobility technology.
 
