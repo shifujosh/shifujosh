@@ -1,5 +1,5 @@
 
-## Hey there, I'm Josh! Let's build the future together
+## Hey there, I'm Josh! Let's build the future together.
 
 <img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/838939b6-7458-47eb-99d7-38dd634758ca" />
 
