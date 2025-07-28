@@ -1,7 +1,5 @@
 # Hey there, I'm Josh! I'm building intelligent tools for a better future.
 
-<img width="256" height="256" alt="A profile image of Josh" src="https://github.com/user-attachments/assets/838939b6-7458-47eb-99d7-38dd634758ca" />
-
 **NYC | Cornell**  
 
 **AI Architect for Human Flourishing**
