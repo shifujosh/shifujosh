@@ -4,7 +4,7 @@
 
 **AI Architect for Human Flourishing**
 
-New York native and AI Architect building intelligent solutions in robotics, mobility, and health tech.
+New York native building intelligent solutions in robotics, mobility, and health tech.
 
 ---
 
