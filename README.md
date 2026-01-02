@@ -72,17 +72,17 @@ In 35 days, I shipped three production-ready platforms. The same workload would 
 
 ### 🏛️ What I Am Building
 
-**JACQ** — *A personal AI operating system.*
-An engine that gives AI persistent memory and self-correcting capabilities. It remembers past conversations, learns your preferences, and fixes its own mistakes.
-*(Built with: TypeScript, DuckDB, Playwright)*
+**JACQ** — *Cognitive Operating System.*
+A web-based platform where a central AI agent (The Orchestrator) manages specialized apps (Editor, MediaStudio, Vault). Features Graph-RAG memory with DuckDB, an Action Engine that proactively suggests next steps, and a security layer with rate limiting and audit logging.
+*(Built with: Next.js 16, Gemini 2.5, DuckDB, Tiptap, Playwright)*
 
 **Specter Bot** — *Autonomous sports intelligence agent.*
-An agentic system that ingests real-time odds, news, and stats from multiple sources, runs ensemble ML models (Bayesian, Elo, Rules Engine), fact-checks its own outputs, generates visual content, and broadcasts to Twitter/Discord—fully autonomously.
-*(Built with: TypeScript, Gemini, Puppeteer, Firebase)*
+Ingests real-time odds, news, stats, and social sentiment from 7+ sources. Runs ensemble ML models (Bayesian win probability, Elo ratings, Rules Engine). A "Council" of 3 AI personas debates each pick. Fact-checks outputs, generates visual cards, and broadcasts to Twitter/Discord—fully autonomously.
+*(Built with: TypeScript, Gemini, Puppeteer, Firebase, Python MCP)*
 
-**BetSpecs** — *Real-time analytics that never hallucinates.*
-A system for high-frequency data analysis that cross-checks AI outputs against verified data sources. If the data does not match, the output is rejected.
-*(Built with: TypeScript, Firebase, Zod)*
+**BetSpecs** — *Financial-terminal style analytics dashboard.*
+Real-time odds feed, AI-driven insights, bet tracking with P&L analytics. Hybrid LLM support (Ollama local / Gemini cloud). Includes the Specter Bot for automated content generation.
+*(Built with: React 18, Vite, Redux Toolkit, TanStack Query, Tailwind, Firebase)*
 
 ---
 
