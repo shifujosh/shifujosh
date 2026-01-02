@@ -4,29 +4,23 @@
 
 ---
 
-### 🔭 Why I Build: Overcoming "The Singularity of Me"
+### 🔭 Why I Build
 
-I have endless curiosity and an interdisciplinary skillset, but I am one person. AI changed that. It allows me to find, validate, and pursue **purpose** that was once out of reach.
+I have endless curiosity and skills across many domains, but I am one person. AI changed that.
+
+It lets me pursue ideas that used to require a team. I can research, prototype, and ship—faster than I ever thought possible. This is not about replacing human effort. It is about *expanding* what one person can do.
 
 **The Problem:**
-Current AI tools are powerful but **siloed**. Chat interfaces are too limited. IDEs are too complex. The magic of integrated intelligence is locked away from everyone who doesn't live in a terminal.
+Today's AI tools are powerful but fragmented. Chat interfaces are too limited for real work. Developer tools are too complex for most people. The result: the magic of AI is locked behind a wall of technical skill.
 
-**The Vision: The Magic Canvas**
-I am building **JACQ**—a single, fluid canvas where research, writing, code, and visuals morph seamlessly into one another. No context-switching. No tool-hopping. Just thought, rendered.
+**The Vision:**
+I am building **JACQ**—a single workspace where research, writing, code, and visuals flow into one another. No switching apps. No learning new tools. Just ideas, made real.
 
 ---
 
-### 🗺️ The Architecture: Human-First AI
+### 🗺️ How It Works
 
-I am the orchestrator. AI models are my coprocessors. I route intent to the right model for the job—speed tasks to Gemini, precision tasks to Claude. Nothing ships without my sign-off.
-
-**The Flow:**
-1.  **Context:** I provide intent, informed by memory and specs.
-2.  **Execution:** The coprocessor delegates to specialized models in parallel.
-3.  **Quality:** Outputs are merged and verified automatically.
-4.  **Review:** I approve. It ships.
-
-> **[See the JACQ Architecture Diagram](https://github.com/shifujosh/JACQ-Architecture)**
+I direct the work. AI does the heavy lifting. Think of it like conducting an orchestra: I set the direction, and specialized AI models execute in parallel.
 
 ```mermaid
 graph TD
@@ -42,7 +36,7 @@ graph TD
         You(["👤 You"]):::human
     end
 
-    You ==>|Intent| AI{{"Coprocessor"}}:::ai
+    You ==>|Intent| AI{{"AI Engine"}}:::ai
 
     subgraph Execution ["⚙️ Execution"]
         AI -->|Speed| Gemini["Gemini"]:::work
@@ -56,61 +50,66 @@ graph TD
 
     Check ==> Review(["👀 Review"]):::human
     Review ==>|Approved| Ship["🚀 Ship"]:::ship
-````
+```
+
+> **[See the full JACQ Architecture](https://github.com/shifujosh/JACQ-Architecture)**
 
 ---
 
-### 🚀 Case Study: The "Antigravity" Sprint
+### 🚀 Proof: The "Antigravity" Sprint
 
-> **[Read the Full Whitepaper](https://github.com/shifujosh/Antigravity-Sprint-Retrospective)**
+In 35 days, I shipped three production-ready platforms. The same workload would cost $792k at an agency. My compute bill was under $1,000.
 
-In 35 days, I shipped three production platforms. The equivalent workload would have cost $792k at an agency. My compute bill was under $1,000.
+| Metric | Agency Estimate | My Output | Impact |
+| :--- | :--- | :--- | :--- |
+| **Speed** | 75 lines/day | 1,250 lines/day | **16x Faster** |
+| **Cost** | ~$792,000 | <$1,000 | **99% Savings** |
+| **Quality** | 5-10 bugs per 1k lines | <1 bug per 1k lines | **Higher Reliability** |
 
-| Metric | Industry Standard | Antigravity Agent Swarm | Impact |
-| --- | --- | --- | --- |
-| **Velocity** | ~75 LOC / day | **1,250 LOC / day** | **16.6x Speed** |
-| **Cost** | ~$792,000 (Agency Eq.) | **<$1,000 (Compute)** | **99% Savings** |
-| **Quality** | 5-10 Defects / 1k LOC | **<1 Defect / 1k LOC** | **High Reliability** |
-| **Lead Time** | 4-6 Months | **3-5 Weeks** | **Rapid Delivery** |
+> **[Read the full case study](https://github.com/shifujosh/Antigravity-Sprint-Retrospective)**
 
 ---
 
-### 🏛️ Current Research
+### 🏛️ What I Am Building
 
-Solving for context amnesia and reliability in AI-native systems.
+**JACQ** — *A personal AI operating system.*
+An engine that gives AI persistent memory and self-correcting capabilities. It remembers past conversations, learns your preferences, and fixes its own mistakes.
+*(Built with: TypeScript, DuckDB, Playwright)*
 
-#### JACQ
-A local-first agent orchestration engine. Central "Brain" manages sub-agents. Refactored 31k LOC in one sprint. Full Zod validation + Playwright E2E. Migrated to DuckDB/Dexie, cutting cloud costs 40%.
-
-#### BetSpecs
-Real-time analytics engine. High-frequency data scraping + odds modeling. 100% type safety across I/O. Eliminated hallucinations via a verification layer that cross-references LLM outputs against ground-truth data.
+**BetSpecs** — *Real-time analytics that never hallucinates.*
+A system for high-frequency data analysis that cross-checks AI outputs against verified data sources. If the data does not match, the output is rejected.
+*(Built with: TypeScript, Firebase, Zod)*
 
 ---
 
 ### ⚡ The Foundation: Bloomberg
 
-Managed data acquisition for global market makers and hedge funds. ETL, Kafka, S3, SQL. This taught me **"Data Physics"**—reliability, schemas, the cost of errors. I apply that discipline to AI agents.
+Before AI, I managed data for global financial institutions. I learned what I call **"Data Physics"**: the principle that data must be treated like a physical asset. If the structure is wrong, everything downstream breaks.
+
+That discipline—schema design, validation, error handling—is now the foundation of how I build AI systems. They are fast *and* reliable.
 
 ---
 
-### 🧠 Philosophy: Architect > Bricklayer
+### 🧠 Philosophy
 
-I design the schema, the logic flow, the orchestration. AI agents write the commodity code. I call this **"Software as a Result" (SaaR)**.
+I design the system. AI writes the code.
+
+I call this **"Software as a Result"**: I define the outcome I want, and the system produces the implementation. My job is architecture and logic. The commodity code is generated.
 
 ---
 
-### 🛠️ Technical Stack
+### 🛠️ Tools I Use
 
-| Role | Model | Purpose |
+| Role | Tool | Why |
 | :--- | :--- | :--- |
-| **Orchestrator** | Ollama (Local) | Low-latency routing, private context |
-| **Precision** | Claude | Refactors, audits, logic verification |
-| **Velocity** | Gemini | Prototyping, image gen, red teaming |
+| **Director** | Ollama (runs locally) | Fast routing, private data |
+| **Precision** | Claude | Deep logic, code audits |
+| **Speed** | Gemini | Rapid prototyping, image generation |
 
-**DevOps:** Agentic Git (atomic commits, auto-PRs). CI/CD Gauntlet (Snyk, Playwright). Automated dependency hardening.
+Automation: Code is automatically reviewed, scanned for vulnerabilities, and tested before it ships.
 
 ---
 
-### 📬 Connection
+### 📬 Connect
 
 * **LinkedIn:** [linkedin.com/in/joshualora](https://www.linkedin.com/in/joshualora)
