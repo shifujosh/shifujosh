@@ -26,30 +26,30 @@ I direct the work. AI does the heavy lifting. Think of it like conducting an orc
 graph TD
     classDef conductor fill:#0f172a,stroke:#f59e0b,stroke-width:3px,color:#f59e0b;
     classDef ai fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#d8b4fe;
-    classDef section fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
+    classDef work fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
     classDef check fill:#1e293b,stroke:#ef4444,stroke-width:2px,color:#fca5a5;
-    classDef finale fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
+    classDef ship fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
 
-    subgraph Score ["🎼 The Score"]
-        Memory[(Memory)]:::section -.-> Conductor
-        Specs[(Specs)]:::section -.-> Conductor
-        Conductor(["🎻 Conductor"]):::conductor
+    subgraph Context ["🧠 Context"]
+        Memory[(Memory)]:::work -.-> You
+        Specs[(Specs)]:::work -.-> You
+        You(["🎻 Conductor"]):::conductor
     end
 
-    Conductor ==>|Direction| Orchestrator{{"Orchestrator"}}:::ai
+    You ==>|Intent| AI{{"AI Engine"}}:::ai
 
-    subgraph Orchestra ["🎺 The Orchestra"]
-        Orchestrator -->|Velocity| Gemini["Gemini Section"]:::section
-        Orchestrator -->|Precision| Claude["Claude Section"]:::section
+    subgraph Execution ["⚙️ Execution"]
+        AI -->|Speed| Gemini["Gemini"]:::work
+        AI -->|Precision| Claude["Claude"]:::work
     end
 
-    subgraph Rehearsal ["🎵 Rehearsal"]
-        Gemini & Claude --> Blend["Blend"]:::ai
-        Blend --> SoundCheck{"Sound Check"}:::check
+    subgraph Quality ["🛡️ Merge + Verify"]
+        Gemini & Claude --> Merge["Merge"]:::ai
+        Merge --> Check{"Verify"}:::check
     end
 
-    SoundCheck ==> FinalReview(["👀 Final Review"]):::conductor
-    FinalReview ==>|Approved| Performance["🎭 Performance"]:::finale
+    Check ==> Review(["👀 Review"]):::conductor
+    Review ==>|Approved| Ship["🚀 Ship"]:::ship
 ```
 
 > **[See the full JACQ Architecture](https://github.com/shifujosh/JACQ-Architecture)**
