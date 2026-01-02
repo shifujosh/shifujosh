@@ -10,6 +10,8 @@ I don't just write code; I architect the **"Cognitive Operating Systems"** that 
 ### 🗺️ The Architecture: Federated Tiered Intelligence
 I utilize a "Model Meritocracy" approach, routing tasks to the specific model best suited for the cognitive load—from local orchestration to high-level architectural auditing.
 
+> **[See the JACQ Architecture Diagram](https://github.com/shifujosh/JACQ-Architecture)**
+
 ```mermaid
 graph TD
     %% --- Styling ---
