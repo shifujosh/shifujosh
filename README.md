@@ -18,7 +18,7 @@ I am building **JACQ** to solve "Context Amnesia." Most AI tools are just chatbo
 
 ---
 
-## 🗺️ How It Works
+## How It Works
 
 I direct the work. AI does the heavy lifting. I treat models like specialized employees, not text generators.
 
@@ -28,7 +28,7 @@ I direct the work. AI does the heavy lifting. I treat models like specialized em
 
 ---
 
-## 🚀 Proof: The Antigravity Sprint
+## Validation: The Antigravity Sprint
 
 35 days. Three production platforms. $792k agency estimate. My compute bill: under $1,000.
 
@@ -42,7 +42,7 @@ I direct the work. AI does the heavy lifting. I treat models like specialized em
 
 ---
 
-## 🏛️ What I Am Building
+## What I'm Building
 
 **JACQ** — *Cognitive Operating System.*
 A unified workspace where AI helps research, write, code, and create. It remembers past work, learns preferences, and suggests next steps.
@@ -55,7 +55,7 @@ Financial-terminal style interface. Live data, AI insights, performance tracking
 
 ---
 
-## ⚡ The Foundation: Bloomberg
+## Data Foundation: Bloomberg
 
 Before AI, I managed data for global financial institutions. I learned what I call **Data Physics**: the principle that data must be treated like a physical asset. If the structure is wrong, everything downstream breaks.
 
@@ -63,7 +63,7 @@ That discipline—schema design, validation, error handling—is now the foundat
 
 ---
 
-## 🧠 Philosophy
+## Philosophy
 
 I design the system. AI writes the code.
 
