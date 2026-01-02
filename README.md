@@ -61,11 +61,13 @@ graph TD
 In 35 days, I shipped three production-ready platforms. The same workload would cost $792k at an agency. My compute bill was under $1,000.
 
 ```
- 💰 COST         $792,000  ████████████████████████████████████████████████████  Agency
-                   $1,000  ▌  Antigravity (99% savings)
- 
- ⚡ SPEED       75 LOC/day  ██████  Agency
-             1,250 LOC/day  ████████████████████████████████████████████████████████████████████████████████████████████████████  Antigravity (16x)
+💰 COST
+    $792,000  ████████████████████████████████████████████████████  Agency
+      $1,000  ▌  Antigravity (99% savings)
+
+⚡ SPEED
+  75 LOC/day  ██████  Agency
+1250 LOC/day  ████████████████████████████████████████████████████████████████████████████████████████████████████  Antigravity (16x)
 ```
 
 | Metric | Agency Estimate | My Output | Impact |
