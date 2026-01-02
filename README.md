@@ -24,32 +24,32 @@ I direct the work. AI does the heavy lifting. Think of it like conducting an orc
 
 ```mermaid
 graph TD
-    classDef human fill:#0f172a,stroke:#f59e0b,stroke-width:3px,color:#f59e0b;
+    classDef conductor fill:#0f172a,stroke:#f59e0b,stroke-width:3px,color:#f59e0b;
     classDef ai fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#d8b4fe;
-    classDef work fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
+    classDef section fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
     classDef check fill:#1e293b,stroke:#ef4444,stroke-width:2px,color:#fca5a5;
-    classDef ship fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
+    classDef finale fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
 
-    subgraph Context ["🧠 Context"]
-        Memory[(Memory)]:::work -.-> You
-        Specs[(Specs)]:::work -.-> You
-        You(["👤 You"]):::human
+    subgraph Score ["🎼 The Score"]
+        Memory[(Memory)]:::section -.-> Conductor
+        Specs[(Specs)]:::section -.-> Conductor
+        Conductor(["🎻 Conductor"]):::conductor
     end
 
-    You ==>|Intent| AI{{"AI Engine"}}:::ai
+    Conductor ==>|Direction| Orchestrator{{"Orchestrator"}}:::ai
 
-    subgraph Execution ["⚙️ Execution"]
-        AI -->|Speed| Gemini["Gemini"]:::work
-        AI -->|Precision| Claude["Claude"]:::work
+    subgraph Orchestra ["🎺 The Orchestra"]
+        Orchestrator -->|Velocity| Gemini["Gemini Section"]:::section
+        Orchestrator -->|Precision| Claude["Claude Section"]:::section
     end
 
-    subgraph Quality ["🛡️ Merge + Verify"]
-        Gemini & Claude --> Merge["Merge"]:::ai
-        Merge --> Check{"Verify"}:::check
+    subgraph Rehearsal ["🎵 Rehearsal"]
+        Gemini & Claude --> Blend["Blend"]:::ai
+        Blend --> SoundCheck{"Sound Check"}:::check
     end
 
-    Check ==> Review(["👀 Review"]):::human
-    Review ==>|Approved| Ship["🚀 Ship"]:::ship
+    SoundCheck ==> FinalReview(["👀 Final Review"]):::conductor
+    FinalReview ==>|Approved| Performance["🎭 Performance"]:::finale
 ```
 
 > **[See the full JACQ Architecture](https://github.com/shifujosh/JACQ-Architecture)**
