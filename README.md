@@ -32,7 +32,7 @@ graph TD
         LTM[(Vector Memory)]:::data -.->|Inject History| Human
         Docs[(Tech Specs)]:::data -.->|Inject Constraints| Human
         
-        Human([👤 The Orchestrator (YOU)]):::human
+        Human(["👤 The Orchestrator (YOU)"]):::human
     end
 
     Human ==>|Strategic Intent| Copilot{{"AI Coprocessor"}}:::brain
