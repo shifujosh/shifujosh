@@ -5,9 +5,15 @@
 ---
 
 ## I bridge the gap between Enterprise Data Reliability and Agentic AI Systems
-My experience ranges from managing global data pipelines at **Bloomberg** to orchestrating AI agent swarms that build full-stack software at **16x industry velocity**.
 
-I don't just write code; I architect the **"Cognitive Operating Systems"** that generate it.
+### 🔭 Why I Build: Overcoming "The Singularity of Me"
+I explore AI not just to automate tasks, but to **augment the human mind**. I possess an endless curiosity and an interdisciplinary skillset, but I am limited by the bandwidth of a single individual. AI has fundamentally shifted how I see the world—allowing me to find, validate, and pursue opportunities that were previously out of reach.
+
+**The Problem:**
+Current AI tools are powerful but **siloed**. They force users into limited "Chat Interfaces" or require complex IDE skills, making the promised magic inaccessible to the majority.
+
+**The Vision: "Fluid Morphology"**
+I am building **JACQ** to be a "Magic Canvas"—a workspace that "weaves" intelligence. It replaces disparate tools with a single fluid interface where research, code, image generation, and asset creation morph seamlessly into one another.
 
 ---
 
