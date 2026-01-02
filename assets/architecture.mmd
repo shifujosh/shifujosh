@@ -6,37 +6,21 @@ graph TD
     classDef memory fill:#1e293b,stroke:#0ea5e9,stroke-width:2px,color:#7dd3fc;
     classDef ship fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
 
-    subgraph Human ["🎯 Human Layer"]
-        Me(["👤 Me"]):::human
-        Review(["👀 Review"]):::human
-    end
-
-    subgraph Intelligence ["🧠 Intelligence Layer"]
-        Engine{{"Orchestrator"}}:::ai
-        Fast["Fast"]:::work
-        Deep["Deep"]:::work
-        Synthesize["Synthesize"]:::ai
-    end
-
-    subgraph Trust ["🛡️ Trust Layer"]
-        Verify{"Verify"}:::verify
-    end
-
-    subgraph Memory ["💾 Memory Layer"]
-        Context[(Context)]:::memory
-        Learn["Learn"]:::memory
-    end
-
-    Me ==>|Intent| Engine
-    Context -.->|Enriches| Engine
+    Me(["👤 Me"]):::human
     
-    Engine --> Fast & Deep
-    Fast & Deep --> Synthesize
-    Synthesize --> Verify
+    Me ==>|Intent| Engine{{"Orchestrator"}}:::ai
+    Context[(Context)]:::memory -.->|Enriches| Engine
+    
+    Engine --> Fast["Fast"]:::work
+    Engine --> Deep["Deep"]:::work
+    
+    Fast & Deep --> Synthesize["Synthesize"]:::ai
+    Synthesize --> Verify{"Verify"}:::verify
     
     Verify -->|Fail| Engine
-    Verify -->|Pass| Review
+    Verify -->|Pass| Review(["👀 Review"]):::human
+    
     Review ==>|Approved| Ship["🚀 Ship"]:::ship
     
-    Ship --> Learn
+    Ship --> Learn["Learn"]:::memory
     Learn --> Context
