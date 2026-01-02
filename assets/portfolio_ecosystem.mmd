@@ -2,28 +2,27 @@ graph TD
     %% Styling - Minimalist Dark Mode with Frontier Accents
     %% Hub: Central OS
     classDef hub fill:#0f172a,stroke:#2dd4bf,stroke-width:3px,color:#fff;
-    %% App: End user applications
-    classDef app fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#e2e8f0;
     %% Infra: Orchestration layer
     classDef infra fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#e2e8f0;
-    %% Shared: Libraries
-    classDef shared fill:#1e293b,stroke:#94a3b8,stroke-width:1px,stroke-dasharray: 5 5,color:#94a3b8;
+    %% Shared: Wisdom/Memory
+    classDef wisdom fill:#0f172a,stroke:#fbbf24,stroke-width:2px,color:#fbbf24,stroke-dasharray: 2 2;
     %% Actor: User
     classDef actor fill:#000000,stroke:#fff,stroke-width:2px,color:#fff;
     %% Input: Context
     classDef input fill:#0f172a,stroke:#64748b,stroke-width:1px,color:#94a3b8,stroke-dasharray: 2 2;
     %% Frontier: Multimodal outputs
     classDef frontier fill:#312e81,stroke:#f472b6,stroke-width:2px,color:#fce7f3;
+    %% Learning Loop
+    classDef loop fill:#1e293b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
 
     %% 1. Inputs - Top Level
     User((Human Operator)):::actor
     World(World Context):::input
 
-    %% 2. The Core - Expanded Definition
-    %% Using a single rich node to avoid subgraph boxes while showing depth
+    %% 2. The Core
     JACQ(<b>JACQ</b><br/><i>Cognitive Operating System</i><hr/>The Agent <b>Chatbot</b><br/>The Loom <b>Engine</b><br/>Magic Canvas <b>GUI</b>):::hub
 
-    %% 3. Infrastructure Layer (Orchestration) - With Outline Box
+    %% 3. Infrastructure Layer (Orchestration)
     subgraph Orchestration [Orchestration Layer]
         direction LR
         style Orchestration fill:none,stroke:#64748b,stroke-width:1px,stroke-dasharray: 5 5,color:#94a3b8
@@ -32,7 +31,7 @@ graph TD
         Tools(Tool Execution<br/><i>CLI / Browser / API</i>):::infra
     end
 
-    %% 4. Multimodal Output Engine - With Outline Box
+    %% 4. Multimodal Output Engine
     subgraph Outputs [Multimodal Creation Engine]
         direction LR
         style Outputs fill:none,stroke:#f472b6,stroke-width:1px,stroke-dasharray: 5 5,color:#f472b6
@@ -42,13 +41,10 @@ graph TD
         Info(Infographics<br/><i>Data Viz</i>):::frontier
         Slides(Decks<br/><i>Strategy & Presos</i>):::frontier
     end
-
-    %% 5. The App Federation (Deployment)
-    Specter(Specter<br/><i>Autonomous Analyst</i>):::app
-    BetSpecs(BetSpecs<br/><i>Real-Time Terminal</i>):::app
     
-    %% 6. DNA
-    Patterns[Shared Core Library<br/><i>Event Loops, Trust Validators</i>]:::shared
+    %% 5. The Virtuous Cycle
+    Learning{Adaptive Learning<br/><i>Quality Loop</i>}:::loop
+    Wisdom[Shared Wisdom<br/><i>Artifacts, Memories, Patterns</i>]:::wisdom
 
     %% Connection Logic - Vertical Flow
     User ==>|Intent| JACQ
@@ -72,14 +68,13 @@ graph TD
     %% Force Output Alignment
     Text ~~~ Visuals ~~~ Video ~~~ Info ~~~ Slides
     
-    %% Outputs feeding Apps
-    Text -.-> Specter
-    Visuals -.-> Specter
-    Info -.-> BetSpecs
+    %% The Adaptive Loop
+    Text --> Learning
+    Visuals --> Learning
+    Info --> Learning
     
-    %% Patterns
-    Specter -.->|Inherits| Patterns
-    BetSpecs -.->|Inherits| Patterns
+    Learning ==>|Refines| Wisdom
+    Wisdom -.->|Augments| JACQ
 
     %% Layout - Explicit Link Styling
     linkStyle default stroke-width:2px,fill:none,stroke:#64748b
