@@ -24,54 +24,38 @@ I am the orchestrator. AI models are my coprocessors. I route intent to the righ
 
 ```mermaid
 graph TD
-    %% --- Styling (Anthropocentric) ---
-    classDef human fill:#0f172a,stroke:#f59e0b,stroke-width:4px,color:#f59e0b,font-size:18px,font-weight:bold;
-    classDef brain fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#d8b4fe;
-    classDef swarm fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
-    classDef senior fill:#1e293b,stroke:#64748b,stroke-width:2px,color:#cbd5e1;
-    classDef check fill:#2a1a1a,stroke:#ef4444,stroke-width:2px,color:#fca5a5;
-    classDef success fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
-    classDef data fill:#172554,stroke:#60a5fa,stroke-width:2px,color:#93c5fd;
+    classDef human fill:#0f172a,stroke:#f59e0b,stroke-width:3px,color:#f59e0b;
+    classDef ai fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#d8b4fe;
+    classDef work fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
+    classDef check fill:#1e293b,stroke:#ef4444,stroke-width:2px,color:#fca5a5;
+    classDef ship fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
 
-    %% --- Layer 1: Context Injection ---
-    subgraph Input_Layer ["🧠 Layer 1: Context Hydration"]
-        LTM[(Vector Memory)]:::data -.->|Inject History| Human
-        Docs[(Tech Specs)]:::data -.->|Inject Constraints| Human
-        
-        Human(["👤 The Orchestrator (YOU)"]):::human
+    subgraph Context ["🧠 Context"]
+        Memory[(Memory)]:::work -.-> You
+        Specs[(Specs)]:::work -.-> You
+        You(["👤 You"]):::human
     end
 
-    Human ==>|Strategic Intent| Copilot{{"AI Coprocessor"}}:::brain
+    You ==>|Intent| AI{{"Coprocessor"}}:::ai
 
-    %% --- Layer 2: Parallel Execution ---
-    subgraph Execution_Layer ["⚙️ Layer 2: Parallel Execution"]
-        Copilot -->|Velocity| Swarm_A["Gemini Swarm: UI/Feat"]:::swarm
-        Copilot -->|Precision| Swarm_B["Claude Swarm: Core Logic"]:::senior
-        
-        Swarm_A -->|Branch| Diff_A["Draft Artifacts"]:::data
-        Swarm_B -->|Branch| Diff_B["Logic Artifacts"]:::data
+    subgraph Execution ["⚙️ Execution"]
+        AI -->|Speed| Gemini["Gemini"]:::work
+        AI -->|Precision| Claude["Claude"]:::work
+        Gemini --> Drafts["Drafts"]:::work
+        Claude --> Logic["Logic"]:::work
     end
 
-    %% --- Layer 3: Agentic Synthesis ---
-    subgraph Synthesis_Layer ["⚗️ Layer 3: Synthesis"]
-        Diff_A & Diff_B --> Synthesis["Semantic Merge Agent"]:::brain
-        Synthesis -->|Resolve| Unified_PR["Unified Pull Request"]:::data
+    subgraph Synthesis ["⚗️ Synthesis"]
+        Drafts & Logic --> Merge["Merge"]:::ai
+        Merge --> PR["Pull Request"]:::work
     end
 
-    %% --- Layer 4: The Gauntlet ---
-    subgraph Verification_Layer ["🛡️ Layer 4: Verification"]
-        Unified_PR --> AST_Check{"AST Compliance"}:::check
-        AST_Check -->|Pass| Type_Check{"Strict Typing"}:::check
-        Type_Check -->|Pass| E2E_Check{"Playwright Sim"}:::check
-        
-        %% Feedbacks
-        AST_Check -.->|Fix| Swarm_A
-        Type_Check -.->|Fix| Swarm_B
+    subgraph Gauntlet ["🛡️ Verification"]
+        PR --> Check{"AST + Types + E2E"}:::check
     end
 
-    %% --- Output ---
-    E2E_Check ==>|Ready for Signoff| Review[👀 Human Review]:::human
-    Review ==>|Approved| Production["🚀 Production Ready (SaaR)"]:::success
+    Check ==> Review(["👀 Review"]):::human
+    Review ==>|Approved| Ship["🚀 Ship"]:::ship
 ````
 
 ---
