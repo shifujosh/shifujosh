@@ -1,13 +1,14 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'darkMode': true, 'background': 'transparent', 'primaryColor': '#1e293b', 'edgeLabelBackground':'#0f172a', 'fontSize': '20px', 'fontFamily': 'ui-sans-serif, system-ui, sans-serif' }, 'flowchart': { 'rankSpacing': 60, 'nodeSpacing': 40, 'curve': 'basis' } }}%%
 graph TD
     %% Styling - Minimalist Dark Mode with Frontier Accents
     %% Hub: Central OS
-    classDef hub fill:#0f172a,stroke:#2dd4bf,stroke-width:3px,color:#fff;
+    classDef hub fill:#0f172a,stroke:#2dd4bf,stroke-width:2px,color:#fff,font-weight:bold;
     %% Infra: Orchestration layer
     classDef infra fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#e2e8f0;
     %% Shared: Wisdom/Memory
     classDef wisdom fill:#0f172a,stroke:#fbbf24,stroke-width:2px,color:#fbbf24,stroke-dasharray: 2 2;
     %% Actor: User
-    classDef actor fill:#000000,stroke:#fff,stroke-width:2px,color:#fff;
+    classDef actor fill:#000000,stroke:#fff,stroke-width:2px,color:#fff,font-weight:bold;
     %% Input: Context
     classDef input fill:#0f172a,stroke:#64748b,stroke-width:1px,color:#94a3b8,stroke-dasharray: 2 2;
     %% Frontier: Multimodal outputs
@@ -26,29 +27,29 @@ graph TD
     subgraph Orchestration [Orchestration Layer]
         direction LR
         style Orchestration fill:none,stroke:#64748b,stroke-width:1px,stroke-dasharray: 5 5,color:#94a3b8
-        Local(Local Compute<br/><i>Ollama / DuckDB</i>):::infra
+        Local(Local Compute<br/><i>DuckDB / Ollama</i>):::infra
         Cloud(Cloud Resources<br/><i>Vertex / Firebase</i>):::infra
-        Tools(Tool Execution<br/><i>CLI / Browser / API</i>):::infra
+        Tools(Tool Execution<br/><i>CLI / Browser</i>):::infra
     end
 
     %% 4. Multimodal Output Engine
     subgraph Outputs [Multimodal Creation Engine]
         direction LR
         style Outputs fill:none,stroke:#6366f1,stroke-width:1px,stroke-dasharray: 5 5,color:#818cf8
-        Text(Text<br/><i>Context & Code</i>):::frontier
-        Visuals(Visuals<br/><i>Art & Editing</i>):::frontier
-        Video(Video<br/><i>Motion & Animation</i>):::frontier
-        Info(Infographics<br/><i>Data Viz</i>):::frontier
-        Slides(Decks<br/><i>Strategy & Presos</i>):::frontier
+        Text(Text<br/><i>Context/Code</i>):::frontier
+        Visuals(Visuals<br/><i>Art/Editing</i>):::frontier
+        Video(Video<br/><i>Motion</i>):::frontier
+        Info(Data Viz<br/><i>Infographics</i>):::frontier
+        Slides(Decks<br/><i>Strategy</i>):::frontier
     end
     
     %% 5. The Virtuous Cycle
     Learning{Adaptive Learning<br/><i>Quality Loop</i>}:::loop
-    Wisdom[Shared Wisdom<br/><i>Artifacts, Memories, Patterns</i>]:::wisdom
+    Wisdom[Shared Wisdom<br/><i>Artifacts / Memories</i>]:::wisdom
 
     %% Connection Logic - Vertical Flow
     User ==>|Intent| JACQ
-    World -.->|Data & Events| JACQ
+    World -.->|Context| JACQ
     
     %% JACQ to Infra
     JACQ ==>|Orchestrates| Local
