@@ -20,6 +20,12 @@ I am building **JACQ**—a single, fluid canvas where research, writing, code, a
 
 I am the orchestrator. AI models are my coprocessors. I route intent to the right model for the job—speed tasks to Gemini, precision tasks to Claude. Nothing ships without my sign-off.
 
+**The Flow:**
+1.  **Context:** I provide intent, informed by memory and specs.
+2.  **Execution:** The coprocessor delegates to specialized models in parallel.
+3.  **Quality:** Outputs are merged and verified automatically.
+4.  **Review:** I approve. It ships.
+
 > **[See the JACQ Architecture Diagram](https://github.com/shifujosh/JACQ-Architecture)**
 
 ```mermaid
