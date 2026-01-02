@@ -1,24 +1,24 @@
 # Joshua Lora | AI-Native Product Architect
 
-> *Augmenting human potential, not automating it away.*
-
+> *Architecting tools to augment human potential, not automate it away.*
 ---
 
 ### 🔭 Why I Build
 
-I have endless curiosity and skills across many domains—but I am one person. AI changed that.
+**The Era of the Force Multiplier**
 
-Now I can pursue ideas that used to require a team. I research, prototype, and ship faster than I ever thought possible. This is not about replacing human effort. It is about *expanding* what one person can do.
+The definition of a "product team" is collapsing. We are entering an era where a single engineer, armed with the right "Cognitive Operating System," can execute the workload of a 15-person agency.
 
-**The Problem:** Today's AI tools are powerful but fragmented. Chat is too limited for real work. Developer tools are too complex for most people. The magic of AI is locked behind a wall of technical skill.
+**The Shift:**
+My bottleneck used to be bandwidth—I had more ideas than hours. AI changed the physics of execution. It allows me to research, prototype, and ship at enterprise scale, without the enterprise overhead.
 
-**The Vision:** A single workspace where research, writing, code, and visuals flow into one another. No switching apps. No learning new tools. Just ideas, made real.
-
+**The Vision:**
+I am building **JACQ** to solve "Context Amnesia." Most AI tools are just chatbots that forget everything when you close the tab. I am building a persistent digital workforce that lives in my coding environment, turning my intent into production-ready software.
 ---
 
 ### 🗺️ How It Works
 
-I direct the work. AI does the heavy lifting.
+I direct the work. AI does the heavy lifting. I treat models like specialized employees, not text generators.
 
 ![Architecture](./assets/architecture.svg)
 
