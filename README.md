@@ -1,6 +1,6 @@
 # Joshua Lora | AI-Native Product Architect
 
-> *Architecting tools to augment human potential, not automate it away.*
+> *Developing technology for human flourishing.*
 
 ---
 
