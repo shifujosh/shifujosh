@@ -1,33 +1,47 @@
 graph TD
     %% Styling - Minimalist Dark Mode with Frontier Accents
+    %% Hub: Central OS
     classDef hub fill:#0f172a,stroke:#2dd4bf,stroke-width:3px,color:#fff;
+    %% App: End user applications
     classDef app fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#e2e8f0;
+    %% Infra: Orchestration layer
     classDef infra fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#e2e8f0;
+    %% Shared: Libraries
     classDef shared fill:#1e293b,stroke:#94a3b8,stroke-width:1px,stroke-dasharray: 5 5,color:#94a3b8;
+    %% Actor: User
     classDef actor fill:#000000,stroke:#fff,stroke-width:2px,color:#fff;
+    %% Input: Context
     classDef input fill:#0f172a,stroke:#64748b,stroke-width:1px,color:#94a3b8,stroke-dasharray: 2 2;
-    
-    %% Frontier Capabilities Styling (Gradient-like emphasis)
+    %% Frontier: Multimodal outputs
     classDef frontier fill:#312e81,stroke:#f472b6,stroke-width:2px,color:#fce7f3;
 
     %% 1. Inputs - Top Level
     User((Human Operator)):::actor
     World(World Context):::input
 
-    %% 2. The Core
-    JACQ(JACQ <br/><i>Cognitive OS</i>):::hub
+    %% 2. The Core - Expanded Definition
+    %% Using a single rich node to avoid subgraph boxes while showing depth
+    JACQ(<b>JACQ</b><br/><i>Cognitive Operating System</i><hr/>The Agent <b>Chatbot</b><br/>The Loom <b>Engine</b><br/>Magic Canvas <b>GUI</b>):::hub
 
-    %% 3. Infrastructure Layer (Orchestration) - No Subgraph
-    Local(Local Compute<br/><i>Ollama / DuckDB</i>):::infra
-    Cloud(Cloud Resources<br/><i>Vertex / Firebase</i>):::infra
-    Tools(Tool Execution<br/><i>CLI / Browser / API</i>):::infra
+    %% 3. Infrastructure Layer (Orchestration) - Aligned via invisible rank
+    subgraph Orchestration [ ]
+        direction LR
+        style Orchestration fill:none,stroke:none
+        Local(Local Compute<br/><i>Ollama / DuckDB</i>):::infra
+        Cloud(Cloud Resources<br/><i>Vertex / Firebase</i>):::infra
+        Tools(Tool Execution<br/><i>CLI / Browser / API</i>):::infra
+    end
 
-    %% 4. Multimodal Output Engine (Frontier Capabilities) - No Subgraph
-    Text(Text<br/><i>Context & Code</i>):::frontier
-    Visuals(Visuals<br/><i>Art & Editing</i>):::frontier
-    Video(Video<br/><i>Motion & Animation</i>):::frontier
-    Info(Infographics<br/><i>Data Viz</i>):::frontier
-    Slides(Decks<br/><i>Strategy & Presos</i>):::frontier
+    %% 4. Multimodal Output Engine - Aligned via invisible rank
+    subgraph Outputs [ ]
+        direction LR
+        style Outputs fill:none,stroke:none
+        Text(Text<br/><i>Context & Code</i>):::frontier
+        Visuals(Visuals<br/><i>Art & Editing</i>):::frontier
+        Video(Video<br/><i>Motion & Animation</i>):::frontier
+        Info(Infographics<br/><i>Data Viz</i>):::frontier
+        Slides(Decks<br/><i>Strategy & Presos</i>):::frontier
+    end
 
     %% 5. The App Federation (Deployment)
     Specter(Specter<br/><i>Autonomous Analyst</i>):::app
@@ -40,11 +54,12 @@ graph TD
     User ==>|Intent| JACQ
     World -.->|Data & Events| JACQ
     
+    %% JACQ to Infra
     JACQ ==>|Orchestrates| Local
     JACQ ==>|Orchestrates| Cloud
     JACQ ==>|Orchestrates| Tools
     
-    %% Visual Grouping via invisible links or order
+    %% Force Infra Alignment
     Local ~~~ Cloud ~~~ Tools
     
     %% Frontier Power
@@ -53,6 +68,9 @@ graph TD
     Cloud ==>|Powers| Video
     Cloud ==>|Powers| Info
     Cloud ==>|Powers| Slides
+    
+    %% Force Output Alignment
+    Text ~~~ Visuals ~~~ Video ~~~ Info ~~~ Slides
     
     %% Outputs feeding Apps
     Text -.-> Specter
