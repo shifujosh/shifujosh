@@ -76,6 +76,10 @@ In 35 days, I shipped three production-ready platforms. The same workload would 
 An engine that gives AI persistent memory and self-correcting capabilities. It remembers past conversations, learns your preferences, and fixes its own mistakes.
 *(Built with: TypeScript, DuckDB, Playwright)*
 
+**Specter Bot** — *Autonomous sports intelligence agent.*
+An agentic system that ingests real-time odds, news, and stats from multiple sources, runs ensemble ML models (Bayesian, Elo, Rules Engine), fact-checks its own outputs, generates visual content, and broadcasts to Twitter/Discord—fully autonomously.
+*(Built with: TypeScript, Gemini, Puppeteer, Firebase)*
+
 **BetSpecs** — *Real-time analytics that never hallucinates.*
 A system for high-frequency data analysis that cross-checks AI outputs against verified data sources. If the data does not match, the output is rejected.
 *(Built with: TypeScript, Firebase, Zod)*
