@@ -26,22 +26,43 @@ graph TD
     classDef ai fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#d8b4fe;
     classDef work fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
     classDef verify fill:#1e293b,stroke:#ef4444,stroke-width:2px,color:#fca5a5;
+    classDef memory fill:#1e293b,stroke:#0ea5e9,stroke-width:2px,color:#7dd3fc;
     classDef ship fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
 
-    You(["👤 Me"]):::human
-    Memory[(Memory)]:::work -.-> You
-    Specs[(Specs)]:::work -.-> You
+    subgraph Human ["🎯 Human Layer"]
+        Me(["👤 Me"]):::human
+        Review(["👀 Review"]):::human
+    end
 
-    You ==>|Intent| Engine{{"AI Engine"}}:::ai
+    subgraph Intelligence ["🧠 Intelligence Layer"]
+        Engine{{"Orchestrator"}}:::ai
+        Fast["Fast"]:::work
+        Deep["Deep"]:::work
+        Synthesize["Synthesize"]:::ai
+    end
 
-    Engine -->|Speed| Fast["Fast Model"]:::work
-    Engine -->|Precision| Deep["Deep Model"]:::work
+    subgraph Trust ["🛡️ Trust Layer"]
+        Verify{"Verify"}:::verify
+    end
 
-    Fast & Deep --> Merge["Synthesize"]:::ai
-    Merge --> Verify{"Verify"}:::verify
+    subgraph Memory ["💾 Memory Layer"]
+        Context[(Context)]:::memory
+        Learn["Learn"]:::memory
+    end
 
-    Verify ==> Review(["👀 Review"]):::human
+    Me ==>|Intent| Engine
+    Context -.->|Enriches| Engine
+    
+    Engine --> Fast & Deep
+    Fast & Deep --> Synthesize
+    Synthesize --> Verify
+    
+    Verify -->|Fail| Engine
+    Verify -->|Pass| Review
     Review ==>|Approved| Ship["🚀 Ship"]:::ship
+    
+    Ship --> Learn
+    Learn --> Context
 ```
 
 > **[Full Architecture](https://github.com/shifujosh/JACQ-Architecture)**
