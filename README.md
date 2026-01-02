@@ -20,50 +20,7 @@ Now I can pursue ideas that used to require a team. I research, prototype, and s
 
 I direct the work. AI does the heavy lifting.
 
-```mermaid
-graph TD
-    classDef human fill:#0f172a,stroke:#f59e0b,stroke-width:3px,color:#f59e0b;
-    classDef ai fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#d8b4fe;
-    classDef work fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
-    classDef verify fill:#1e293b,stroke:#ef4444,stroke-width:2px,color:#fca5a5;
-    classDef memory fill:#1e293b,stroke:#0ea5e9,stroke-width:2px,color:#7dd3fc;
-    classDef ship fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
-
-    subgraph Human ["🎯 Human Layer"]
-        Me(["👤 Me"]):::human
-        Review(["👀 Review"]):::human
-    end
-
-    subgraph Intelligence ["🧠 Intelligence Layer"]
-        Engine{{"Orchestrator"}}:::ai
-        Fast["Fast"]:::work
-        Deep["Deep"]:::work
-        Synthesize["Synthesize"]:::ai
-    end
-
-    subgraph Trust ["🛡️ Trust Layer"]
-        Verify{"Verify"}:::verify
-    end
-
-    subgraph Memory ["💾 Memory Layer"]
-        Context[(Context)]:::memory
-        Learn["Learn"]:::memory
-    end
-
-    Me ==>|Intent| Engine
-    Context -.->|Enriches| Engine
-    
-    Engine --> Fast & Deep
-    Fast & Deep --> Synthesize
-    Synthesize --> Verify
-    
-    Verify -->|Fail| Engine
-    Verify -->|Pass| Review
-    Review ==>|Approved| Ship["🚀 Ship"]:::ship
-    
-    Ship --> Learn
-    Learn --> Context
-```
+![Architecture](./assets/architecture.svg)
 
 > **[Full Architecture](https://github.com/shifujosh/JACQ-Architecture)**
 
