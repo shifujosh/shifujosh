@@ -1,19 +1,18 @@
-# Hi, I'm Joshua 👋 **AI-Native Product Architect**
+# Joshua Lora | AI-Native Product Architect
 
-> *Building the Cognitive Operating System for the future of self-actualization.*
+> *Architecting tools to augment human potential, not automate it away.*
 
 ---
 
-## I bridge the gap between Enterprise Data Reliability and Agentic AI Systems
+### 🔭 Why I Build: Overcoming "The Singularity of Me"
 
-### 🔭 Why I Build: The Future of Self-Actualization
-I explore AI not to automate labor, but to **augment the human mind**. I possess an endless curiosity and an interdisciplinary skillset, but I am limited by the bandwidth of a single individual—"The Singularity of Me." AI has fundamentally shifted how I see the world, allowing me to find, validate, and pursue **purpose** that was previously out of reach.
+I have endless curiosity and an interdisciplinary skillset, but I am one person. AI changed that. It allows me to find, validate, and pursue **purpose** that was once out of reach.
 
 **The Problem:**
-Current AI tools are powerful but **siloed**. They force users into limited "Chat Interfaces" or require complex IDE skills, making the promised magic of **integrated intelligence** inaccessible to the majority.
+Current AI tools are powerful but **siloed**. Chat interfaces are too limited. IDEs are too complex. The magic of integrated intelligence is locked away from everyone who doesn't live in a terminal.
 
-**The Vision: "Fluid Morphology"**
-I am building **JACQ** to be a "Magic Canvas"—a workspace for self-actualization. It replaces disparate tools with a single fluid interface where research, code, image generation, and asset creation morph seamlessly into one another.
+**The Vision: The Magic Canvas**
+I am building **JACQ**—a single, fluid canvas where research, writing, code, and visuals morph seamlessly into one another. No context-switching. No tool-hopping. Just thought, rendered.
 
 ---
 
