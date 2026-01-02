@@ -23,19 +23,19 @@ graph TD
     %% Using a single rich node to avoid subgraph boxes while showing depth
     JACQ(<b>JACQ</b><br/><i>Cognitive Operating System</i><hr/>The Agent <b>Chatbot</b><br/>The Loom <b>Engine</b><br/>Magic Canvas <b>GUI</b>):::hub
 
-    %% 3. Infrastructure Layer (Orchestration) - Aligned via invisible rank
-    subgraph Orchestration [ ]
+    %% 3. Infrastructure Layer (Orchestration) - With Outline Box
+    subgraph Orchestration [Orchestration Layer]
         direction LR
-        style Orchestration fill:none,stroke:none
+        style Orchestration fill:none,stroke:#64748b,stroke-width:1px,stroke-dasharray: 5 5,color:#94a3b8
         Local(Local Compute<br/><i>Ollama / DuckDB</i>):::infra
         Cloud(Cloud Resources<br/><i>Vertex / Firebase</i>):::infra
         Tools(Tool Execution<br/><i>CLI / Browser / API</i>):::infra
     end
 
-    %% 4. Multimodal Output Engine - Aligned via invisible rank
-    subgraph Outputs [ ]
+    %% 4. Multimodal Output Engine - With Outline Box
+    subgraph Outputs [Multimodal Creation Engine]
         direction LR
-        style Outputs fill:none,stroke:none
+        style Outputs fill:none,stroke:#f472b6,stroke-width:1px,stroke-dasharray: 5 5,color:#f472b6
         Text(Text<br/><i>Context & Code</i>):::frontier
         Visuals(Visuals<br/><i>Art & Editing</i>):::frontier
         Video(Video<br/><i>Motion & Animation</i>):::frontier
