@@ -4,7 +4,7 @@
 
 **Status:** Active Development (Beta)  
 **Role:** Product Architect  
-**Stack:** Next.js 16 (App Router), Tailwind 4, DuckDB (WASM), Gemini 2.5 Pro
+**Stack:** Next.js 16 (App Router), Tailwind 4, DuckDB (WASM), Gemini 3 Pro
 
 ---
 
