@@ -16,9 +16,10 @@ I am building **JACQ**—a single, fluid canvas where research, writing, code, a
 
 ---
 
-### 🗺️ The Architecture: Anthropocentric Orchestration
-I believe in **Human-Directed** AI Systems. I utilize a "Tiered Intelligence" approach, where I act as the **Central Orchestrator**, routing tasks to specific models (Coprocessors) based on the cognitive load required.
- 
+### 🗺️ The Architecture: Human-First AI
+
+I am the orchestrator. AI models are my coprocessors. I route intent to the right model for the job—speed tasks to Gemini, precision tasks to Claude. Nothing ships without my sign-off.
+
 > **[See the JACQ Architecture Diagram](https://github.com/shifujosh/JACQ-Architecture)**
 
 ```mermaid
@@ -75,13 +76,11 @@ graph TD
 
 ---
 
-### 🚀 Case Study: The "Antigravity" Sprint (2025/2026)
+### 🚀 Case Study: The "Antigravity" Sprint
 
-*Proof of Concept for "Software as a Result" (SaaR)*
+> **[Read the Full Whitepaper](https://github.com/shifujosh/Antigravity-Sprint-Retrospective)**
 
-> **[📄 Read the Full Whitepaper & Metrics Analysis](https://github.com/shifujosh/Antigravity-Sprint-Retrospective)**
-
-In late 2025, I executed an engineering workload equivalent to a 15-person specialized agency, delivering three production-ready platforms in **35 days**.
+In 35 days, I shipped three production platforms. The equivalent workload would have cost $792k at an agency. My compute bill was under $1,000.
 
 | Metric | Industry Standard | Antigravity Agent Swarm | Impact |
 | --- | --- | --- | --- |
@@ -92,54 +91,39 @@ In late 2025, I executed an engineering workload equivalent to a 15-person speci
 
 ---
 
-### 🏛️ Applied AI Research Lab (Current Research)
+### 🏛️ Current Research
 
-*Focus: Full-stack orchestration of AI-native systems to solve for context amnesia and reliability.*
+Solving for context amnesia and reliability in AI-native systems.
 
-#### 1. JACQ (Cognitive Operating System)
+#### JACQ
+A local-first agent orchestration engine. Central "Brain" manages sub-agents. Refactored 31k LOC in one sprint. Full Zod validation + Playwright E2E. Migrated to DuckDB/Dexie, cutting cloud costs 40%.
 
-
-* **The Architecture:** A local-first agent orchestration engine featuring a central "Brain" that manages specialized sub-agents.
-* **The Engineering:** Refactored **31,080 LOC** in a single sprint. Implemented full **Zod schema validation** and **Playwright E2E testing** to ensure deterministic outputs.
-* **The Win:** Transitioned to a local **DuckDB/Dexie** architecture, reducing cloud database latency and costs by 40%.
-
-#### 2. BetSpecs (Real-Time Analytics Engine)
-
-* **The Architecture:** An enterprise monorepo combining high-frequency data scraping with real-time odds modeling.
-* **The Engineering:** Shared library architecture ensuring **100% type safety** between data ingestion and UI display.
-* **The Win:** Eliminated numerical hallucinations by implementing a verification layer that cross-references LLM outputs against raw "Ground Truth" data tables.
+#### BetSpecs
+Real-time analytics engine. High-frequency data scraping + odds modeling. 100% type safety across I/O. Eliminated hallucinations via a verification layer that cross-references LLM outputs against ground-truth data.
 
 ---
 
-### ⚡ Enterprise Background (The Foundation)
+### ⚡ The Foundation: Bloomberg
 
-#### Bloomberg | Enterprise Data Operations
-
-* **The Scale:** Managed data acquisition and delivery for global market makers and hedge funds.
-* **The Stack:** ETL Pipelines, Cloud Delivery (S3), Apache Kafka / Event Streaming, SQL Optimization.
-* **The Bridge:** This experience taught me **"Data Physics"**—reliability, schemas, and the cost of errors. I now apply this rigorous data discipline to the probabilistic world of AI agents.
+Managed data acquisition for global market makers and hedge funds. ETL, Kafka, S3, SQL. This taught me **"Data Physics"**—reliability, schemas, the cost of errors. I apply that discipline to AI agents.
 
 ---
 
-### 🧠 The Philosophy: Architect > Bricklayer
+### 🧠 Philosophy: Architect > Bricklayer
 
-I operate on a **"Software as a Result" (SaaR)** model. I prioritize **System Architecture** and **Data Logic** over boilerplate syntax. My expertise lies in designing the schema, logic flow, and orchestration layers that allow AI agents to produce commodity code reliably.
+I design the schema, the logic flow, the orchestration. AI agents write the commodity code. I call this **"Software as a Result" (SaaR)**.
 
 ---
 
-### 🛠️ Technical Arsenal & Operations
+### 🛠️ Technical Stack
 
-I utilize a **"Tiered Intelligence"** architecture, routing tasks to models based on cognitive requirements:
+| Role | Model | Purpose |
+| :--- | :--- | :--- |
+| **Orchestrator** | Ollama (Local) | Low-latency routing, private context |
+| **Precision** | Claude | Refactors, audits, logic verification |
+| **Velocity** | Gemini | Prototyping, image gen, red teaming |
 
-* **The Orchestrator (Local):** **Ollama (Llama 3.2 / Gemma)** running locally for low-latency routing and private context management.
-* **The Senior Engineer (Deep Thought):** **Claude Code** handles massive refactors, strict code auditing, and data-intensive logic verification.
-* **The Workforce (High Velocity):** **Gemini 1.5 Pro/Flash** swarms for rapid prototyping, image generation, and security "Red Teaming."
-
-#### ⚙️ Automated DevOps & Security
-
-* **Agentic Git Operations:** Automated atomic commits with semantic messaging, PR generation, and self-resolving merge conflicts.
-* **The CI/CD Gauntlet:** GitHub Actions pipelines that trigger agentic vulnerability scanning (Snyk/npm audit) and Playwright E2E regression tests before merge.
-* **Dependency Hardening:** Automated dependency updates and security patching to maintain supply chain integrity.
+**DevOps:** Agentic Git (atomic commits, auto-PRs). CI/CD Gauntlet (Snyk, Playwright). Automated dependency hardening.
 
 ---
 
