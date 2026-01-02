@@ -42,16 +42,19 @@ I direct the work. AI does the heavy lifting. I treat models like specialized em
 
 ---
 
-## What I'm Building
+## 🚀 Featured Projects
 
-**JACQ** — *Cognitive Operating System.*
-A unified workspace where AI helps research, write, code, and create. It remembers past work, learns preferences, and suggests next steps.
+**[Specter: The Autonomous Analyst](./projects/specter.md)**  
+*Autonomous Intelligence Agent.*  
+Ingests data, runs analysis, fact-checks itself, generates content, and broadcasts—fully autonomously. **[Read Case Study →](./projects/specter.md)**
 
-**Specter** — *Autonomous Intelligence Agent.*
-Ingests data, runs analysis, fact-checks itself, generates content, and broadcasts—fully autonomously.
+**[JACQ: Cognitive Operating System](./projects/jacq.md)**  
+*Local-First AI Workspace.*  
+A unified OS that remembers past work, learns preferences, and suggests next steps. **[Read Case Study →](./projects/jacq.md)**
 
-**BetSpecs** — *Real-Time Analytics Dashboard.*
-Financial-terminal style interface. Live data, AI insights, performance tracking.
+**[BetSpecs: Real-Time Analytics](./projects/betspecs.md)**  
+*Financial-Grade Sports Terminal.*  
+Live data, AI insights, and performance tracking in a single pane of glass. **[Read Case Study →](./projects/betspecs.md)**
 
 ---
 
@@ -70,6 +73,17 @@ I design the system. AI writes the code.
 I call this **Software as a Result**: I define the outcome, and the system produces the implementation. My job is architecture and logic. The commodity code is generated.
 
 > *"The universe is made of stories, not of atoms."* — Muriel Rukeyser
+
+---
+
+## 🧠 Architecture Patterns (Open Source)
+
+I believe in **working in public**. I've extracted key patterns from my private engineering work (Specter, JACQ) and open-sourced them as reference implementations:
+
+- **[The Specter Event Loop](./architecture-patterns/specter_event_loop.ts)**: A consensus-based autonomous decision cycle for high-variance domains.
+- **[Memory Sync Engine](./architecture-patterns/memory_sync_engine.ts)**: Hybrid "Hot/Cold" memory architecture bridging Firestore and DuckDB.
+- **[Self-Healing LLM Parser](./architecture-patterns/structured_llm_parser.ts)**: Robust structured data extraction with Zod and exponential backoff.
+- **[Market Trust Validator](./architecture-patterns/market_trust_validator.ts)**: Deterministic "Trust Layer" comparing AI signals against Vig-free market physics.
 
 ---
 
