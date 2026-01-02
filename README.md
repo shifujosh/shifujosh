@@ -25,7 +25,7 @@ graph TD
         Human([👤 Architect]):::human
         
         subgraph Local_Brain ["🖥️ Local Orchestration (Ollama)"]
-            Router{{Llama 3.2 / Gemma}}:::local
+            Router{{"Llama 3.2 / Gemma"}}:::local
             Note1[("Local Routing & Context")]:::local
         end
 
