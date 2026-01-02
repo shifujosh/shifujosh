@@ -1,0 +1,34 @@
+graph TD
+    %% Styling - Dark Mode & Neon Accents
+    classDef hub fill:#0f172a,stroke:#2dd4bf,stroke-width:3px,color:#fff,shadow:0 0 10px #2dd4bf;
+    classDef app fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#e2e8f0;
+    classDef shared fill:#1e293b,stroke:#94a3b8,stroke-width:1px,stroke-dasharray: 5 5,color:#94a3b8;
+    classDef actor fill:#000000,stroke:#fff,stroke-width:2px,color:#fff;
+
+    %% Nodes
+    User((Joshua<br/><i>Architect</i>)):::actor
+    
+    JACQ(JACQ<br/><i>Cognitive Operating System</i>):::hub
+    
+    subgraph "The Federation (Specialized Apps)"
+        Specter(Specter<br/><i>Autonomous Analyst</i>):::app
+        BetSpecs(BetSpecs<br/><i>Real-Time Terminal</i>):::app
+    end
+
+    subgraph "Shared DNA (Architecture Patterns)"
+        Patterns[Shared Core Library<br/><i>Event Loops, Trust Validators, Self-Healing</i>]:::shared
+    end
+
+    %% Connections
+    User ==>|1. Intent & Context| JACQ
+    
+    JACQ ==>|2. Orchestrates| Specter
+    JACQ ==>|2. Deploys| BetSpecs
+    
+    Specter -.->|Inherits| Patterns
+    BetSpecs -.->|Inherits| Patterns
+    JACQ -.->|Manages| Patterns
+    
+    %% Feedback Loops
+    Specter -- 3. Market Insights --> JACQ
+    BetSpecs -- 3. Live Data Streams --> JACQ
