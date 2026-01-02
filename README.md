@@ -76,6 +76,8 @@ graph TD
 
 *Proof of Concept for "Software as a Result" (SaaR)*
 
+> **[📄 Read the Full Whitepaper & Metrics Analysis](https://github.com/shifujosh/Antigravity-Sprint-Retrospective)**
+
 In late 2025, I executed an engineering workload equivalent to a 15-person specialized agency, delivering three production-ready platforms in **35 days**.
 
 | Metric | Industry Standard | Antigravity Agent Swarm | Impact |
