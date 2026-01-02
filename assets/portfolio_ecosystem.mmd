@@ -14,9 +14,13 @@ graph TD
     %% Learning Loop
     classDef loop fill:#1e293b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
 
-    %% 1. Inputs - Top Level
-    User((Human Operator)):::actor
-    World(World Context):::input
+    %% 1. Inputs - Top Level (Co-Creation)
+    subgraph Origin [Origin & Inspiration]
+        direction LR
+        style Origin fill:none,stroke:#fff,stroke-width:1px,stroke-dasharray: 5 5,color:#fff
+        User((Human Operator)):::actor
+        World(World Context):::input
+    end
 
     %% 2. The Core
     JACQ(<b>JACQ</b><br/><i>Cognitive Operating System</i><hr/>The Agent <b>Chatbot</b><br/>The Loom <b>Engine</b><br/>Magic Canvas <b>GUI</b>):::hub
