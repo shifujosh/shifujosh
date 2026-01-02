@@ -62,7 +62,7 @@ Live data, AI insights, and performance tracking in a single pane of glass. **[R
 
 Before AI, I managed data for global financial institutions. I learned what I call **Data Physics**: the principle that data must be treated like a physical asset. If the structure is wrong, everything downstream breaks.
 
-That discipline—schema design, validation, error handling—is now the foundation of how I build AI systems. Fast *and* reliable.
+That discipline—schema design, validation, error handling—is now the foundation of how I build AI systems. Fast, reliable, at global scale.
 
 ---
 
