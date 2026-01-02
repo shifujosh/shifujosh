@@ -8,15 +8,15 @@ I don't just write code; I architect the **"Cognitive Operating Systems"** that 
 
 ---
 
-### 🗺️ The Architecture: Federated Tiered Intelligence
-I utilize a "Model Meritocracy" approach, routing tasks to the specific model best suited for the cognitive load—from local orchestration to high-level architectural auditing.
-
+### 🗺️ The Architecture: Anthropocentric Orchestration
+I believe in **Human-Directed** AI Systems. I utilize a "Tiered Intelligence" approach, where I act as the **Central Orchestrator**, routing tasks to specific models (Coprocessors) based on the cognitive load required.
+ 
 > **[See the JACQ Architecture Diagram](https://github.com/shifujosh/JACQ-Architecture)**
 
 ```mermaid
 graph TD
-    %% --- Styling (Dark Mode Native) ---
-    classDef human fill:#1e293b,stroke:#f59e0b,stroke-width:2px,color:#f59e0b;
+    %% --- Styling (Anthropocentric) ---
+    classDef human fill:#0f172a,stroke:#f59e0b,stroke-width:4px,color:#f59e0b,font-size:18px,font-weight:bold;
     classDef brain fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#d8b4fe;
     classDef swarm fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
     classDef senior fill:#1e293b,stroke:#64748b,stroke-width:2px,color:#cbd5e1;
@@ -26,17 +26,18 @@ graph TD
 
     %% --- Layer 1: Context Injection ---
     subgraph Input_Layer ["🧠 Layer 1: Context Hydration"]
-        Human([👤 Architect]):::human
         LTM[(Vector Memory)]:::data -.->|Inject History| Human
         Docs[(Tech Specs)]:::data -.->|Inject Constraints| Human
+        
+        Human([👤 The Orchestrator (YOU)]):::human
     end
 
-    Human ==>|Augmented Intent| Router{{"Orchestrator"}}:::brain
+    Human ==>|Strategic Intent| Copilot{{"AI Coprocessor"}}:::brain
 
     %% --- Layer 2: Parallel Execution ---
     subgraph Execution_Layer ["⚙️ Layer 2: Parallel Execution"]
-        Router -->|Velocity| Swarm_A["Gemini Swarm: UI/Feat"]:::swarm
-        Router -->|Precision| Swarm_B["Claude Swarm: Core Logic"]:::senior
+        Copilot -->|Velocity| Swarm_A["Gemini Swarm: UI/Feat"]:::swarm
+        Copilot -->|Precision| Swarm_B["Claude Swarm: Core Logic"]:::senior
         
         Swarm_A -->|Branch| Diff_A["Draft Artifacts"]:::data
         Swarm_B -->|Branch| Diff_B["Logic Artifacts"]:::data
@@ -60,7 +61,8 @@ graph TD
     end
 
     %% --- Output ---
-    E2E_Check ==>|Verified| Production["🚀 Production Ready (SaaR)"]:::success
+    E2E_Check ==>|Ready for Signoff| Review[👀 Human Review]:::human
+    Review ==>|Approved| Production["🚀 Production Ready (SaaR)"]:::success
 ````
 
 ---
