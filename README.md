@@ -55,7 +55,7 @@ Financial-terminal style interface. Live data, AI insights, performance tracking
 
 ---
 
-## Data Foundation: Bloomberg
+## Mission-Critical Data Operations: Bloomberg
 
 Before AI, I managed data for global financial institutions. I learned what I call **Data Physics**: the principle that data must be treated like a physical asset. If the structure is wrong, everything downstream breaks.
 
