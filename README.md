@@ -28,8 +28,7 @@ I direct the work. AI does the heavy lifting. I treat models like specialized em
 
 ---
 
-## Validation:
-The Antigravity Sprint
+## Validation: Antigravity Sprint
 
 35 days. Three production platforms. $792k agency estimate. My compute bill: under $1,000.
 
