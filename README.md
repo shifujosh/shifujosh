@@ -41,17 +41,11 @@ graph TD
     subgraph Execution ["⚙️ Execution"]
         AI -->|Speed| Gemini["Gemini"]:::work
         AI -->|Precision| Claude["Claude"]:::work
-        Gemini --> Drafts["Drafts"]:::work
-        Claude --> Logic["Logic"]:::work
     end
 
-    subgraph Synthesis ["⚗️ Synthesis"]
-        Drafts & Logic --> Merge["Merge"]:::ai
-        Merge --> PR["Pull Request"]:::work
-    end
-
-    subgraph Gauntlet ["🛡️ Verification"]
-        PR --> Check{"AST + Types + E2E"}:::check
+    subgraph Quality ["🛡️ Merge + Verify"]
+        Gemini & Claude --> Merge["Merge"]:::ai
+        Merge --> Check{"Verify"}:::check
     end
 
     Check ==> Review(["👀 Review"]):::human
