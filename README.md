@@ -1,5 +1,8 @@
 # Hi, I'm Joshua 👋 **AI-Native Product Architect**
-<br/>
+
+> *Building the Cognitive Operating System for the future of work.*
+
+---
 
 ## I bridge the gap between Enterprise Data Reliability and Agentic AI Systems
 My experience ranges from managing global data pipelines at **Bloomberg** to orchestrating AI agent swarms that build full-stack software at **16x industry velocity**.
