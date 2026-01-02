@@ -60,11 +60,11 @@ graph TD
 
 In 35 days, I shipped three production-ready platforms. The same workload would cost $792k at an agency. My compute bill was under $1,000.
 
-| Metric | Agency | Antigravity | Impact | |
-| :--- | :--- | :--- | :--- | :--- |
-| **Speed** | 75 lines/day | 1,250 lines/day | **16x Faster** | `████████████████` |
-| **Cost** | $792,000 | $1,000 | **99% Savings** | `████████████████` |
-| **Quality** | 5-10 bugs/1k | <1 bug/1k | **10x Better** | `████████████████` |
+| Metric | Agency Estimate | My Output | Impact |
+| :--- | :--- | :--- | :--- |
+| **Speed** | 75 lines/day | 1,250 lines/day | **16x Faster** |
+| **Cost** | ~$792,000 | <$1,000 | **99% Savings** |
+| **Quality** | 5-10 bugs per 1k lines | <1 bug per 1k lines | **10x Better** |
 
 > **[Read the full case study](https://github.com/shifujosh/Antigravity-Sprint-Retrospective)**
 
