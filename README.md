@@ -60,6 +60,22 @@ graph TD
 
 In 35 days, I shipped three production-ready platforms. The same workload would cost $792k at an agency. My compute bill was under $1,000.
 
+```mermaid
+xychart-beta horizontal
+    title "Cost Comparison"
+    x-axis ["Agency Estimate", "My Compute"]
+    y-axis "USD" 0 --> 800000
+    bar [792000, 1000]
+```
+
+```mermaid
+xychart-beta horizontal
+    title "Speed: Lines of Code per Day"
+    x-axis ["Agency Standard", "Antigravity"]
+    y-axis "Lines/Day" 0 --> 1400
+    bar [75, 1250]
+```
+
 | Metric | Agency Estimate | My Output | Impact |
 | :--- | :--- | :--- | :--- |
 | **Speed** | 75 lines/day | 1,250 lines/day | **16x Faster** |
