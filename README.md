@@ -4,7 +4,7 @@
 
 ---
 
-### Why I Build
+### 🔭 Why I Build
 
 I have endless curiosity and skills across many domains—but I am one person. AI changed that.
 
@@ -16,37 +16,31 @@ Now I can pursue ideas that used to require a team. I research, prototype, and s
 
 ---
 
-### How It Works
+### 🗺️ How It Works
 
 I direct the work. AI does the heavy lifting.
 
 ```mermaid
 graph TD
-    classDef conductor fill:#0f172a,stroke:#f59e0b,stroke-width:3px,color:#f59e0b;
+    classDef human fill:#0f172a,stroke:#f59e0b,stroke-width:3px,color:#f59e0b;
     classDef ai fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#d8b4fe;
     classDef work fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
-    classDef check fill:#1e293b,stroke:#ef4444,stroke-width:2px,color:#fca5a5;
+    classDef verify fill:#1e293b,stroke:#ef4444,stroke-width:2px,color:#fca5a5;
     classDef ship fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
 
-    subgraph Context ["🧠 Context"]
-        Memory[(Memory)]:::work -.-> You
-        Specs[(Specs)]:::work -.-> You
-        You(["🎻 Conductor"]):::conductor
-    end
+    You(["👤 Me"]):::human
+    Memory[(Memory)]:::work -.-> You
+    Specs[(Specs)]:::work -.-> You
 
-    You ==>|Intent| AI{{"AI Engine"}}:::ai
+    You ==>|Intent| Engine{{"AI Engine"}}:::ai
 
-    subgraph Execution ["⚙️ Execution"]
-        AI -->|Speed| Gemini["Gemini"]:::work
-        AI -->|Precision| Claude["Claude"]:::work
-    end
+    Engine -->|Speed| Fast["Fast Model"]:::work
+    Engine -->|Precision| Deep["Deep Model"]:::work
 
-    subgraph Quality ["🛡️ Verify"]
-        Gemini & Claude --> Merge["Merge"]:::ai
-        Merge --> Check{"Verify"}:::check
-    end
+    Fast & Deep --> Merge["Synthesize"]:::ai
+    Merge --> Verify{"Verify"}:::verify
 
-    Check ==> Review(["👀 Review"]):::conductor
+    Verify ==> Review(["👀 Review"]):::human
     Review ==>|Approved| Ship["🚀 Ship"]:::ship
 ```
 
@@ -54,7 +48,7 @@ graph TD
 
 ---
 
-### Proof: The Antigravity Sprint
+### 🚀 Proof: The Antigravity Sprint
 
 35 days. Three production platforms. $792k agency estimate. My compute bill: under $1,000.
 
@@ -68,7 +62,7 @@ graph TD
 
 ---
 
-### What I Am Building
+### 🏛️ What I Am Building
 
 **JACQ** — *Cognitive Operating System.*
 A unified workspace where AI helps research, write, code, and create. It remembers past work, learns preferences, and suggests next steps.
@@ -81,7 +75,7 @@ Financial-terminal style interface. Live data, AI insights, performance tracking
 
 ---
 
-### The Foundation: Bloomberg
+### ⚡ The Foundation: Bloomberg
 
 Before AI, I managed data for global financial institutions. I learned what I call **Data Physics**: the principle that data must be treated like a physical asset. If the structure is wrong, everything downstream breaks.
 
@@ -89,7 +83,7 @@ That discipline—schema design, validation, error handling—is now the foundat
 
 ---
 
-### Philosophy
+### 🧠 Philosophy
 
 I design the system. AI writes the code.
 
@@ -97,6 +91,6 @@ I call this **Software as a Result**: I define the outcome, and the system produ
 
 ---
 
-### Connect
+### 📬 Connect
 
 **LinkedIn:** [linkedin.com/in/joshualora](https://www.linkedin.com/in/joshualora)
