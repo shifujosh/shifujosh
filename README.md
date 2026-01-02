@@ -1,9 +1,10 @@
 # Joshua Lora | AI-Native Product Architect
 
 > *Architecting tools to augment human potential, not automate it away.*
+
 ---
 
-### 🔭 Why I Build
+## 🔭 Why I Build
 
 **The Era of the Force Multiplier**
 
@@ -14,9 +15,10 @@ My bottleneck used to be bandwidth—I had more ideas than hours. AI changed the
 
 **The Vision:**
 I am building **JACQ** to solve "Context Amnesia." Most AI tools are just chatbots that forget everything when you close the tab. I am building a persistent digital workforce that lives in my coding environment, turning my intent into production-ready software.
+
 ---
 
-### 🗺️ How It Works
+## 🗺️ How It Works
 
 I direct the work. AI does the heavy lifting. I treat models like specialized employees, not text generators.
 
@@ -26,7 +28,7 @@ I direct the work. AI does the heavy lifting. I treat models like specialized em
 
 ---
 
-### 🚀 Proof: The Antigravity Sprint
+## 🚀 Proof: The Antigravity Sprint
 
 35 days. Three production platforms. $792k agency estimate. My compute bill: under $1,000.
 
@@ -40,7 +42,7 @@ I direct the work. AI does the heavy lifting. I treat models like specialized em
 
 ---
 
-### 🏛️ What I Am Building
+## 🏛️ What I Am Building
 
 **JACQ** — *Cognitive Operating System.*
 A unified workspace where AI helps research, write, code, and create. It remembers past work, learns preferences, and suggests next steps.
@@ -53,7 +55,7 @@ Financial-terminal style interface. Live data, AI insights, performance tracking
 
 ---
 
-### ⚡ The Foundation: Bloomberg
+## ⚡ The Foundation: Bloomberg
 
 Before AI, I managed data for global financial institutions. I learned what I call **Data Physics**: the principle that data must be treated like a physical asset. If the structure is wrong, everything downstream breaks.
 
@@ -61,17 +63,18 @@ That discipline—schema design, validation, error handling—is now the foundat
 
 ---
 
-### 🧠 Philosophy
+## 🧠 Philosophy
 
 I design the system. AI writes the code.
 
 I call this **Software as a Result**: I define the outcome, and the system produces the implementation. My job is architecture and logic. The commodity code is generated.
 
+> *"The universe is made of stories, not of atoms."* — Muriel Rukeyser
+
 ---
 
-### 📬 Connect
+## 📬 Connect
 
 NYC born and raised. Cornell alum. Lasagna enthusiast.
 
 **LinkedIn:** [linkedin.com/in/joshualora](https://www.linkedin.com/in/joshualora)
-> *"The universe is made of stories, not of atoms."* — Muriel Rukeyser
