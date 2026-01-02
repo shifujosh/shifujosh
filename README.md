@@ -17,61 +17,53 @@ I utilize a "Model Meritocracy" approach, routing tasks to the specific model be
 graph TD
     %% --- Styling (Dark Mode Native) ---
     classDef human fill:#1e293b,stroke:#f59e0b,stroke-width:2px,color:#f59e0b;
-    classDef local fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#d8b4fe;
-    classDef senior fill:#1e293b,stroke:#64748b,stroke-width:2px,color:#cbd5e1;
+    classDef brain fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#d8b4fe;
     classDef swarm fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
-    classDef security fill:#2a1a1a,stroke:#ef4444,stroke-width:2px,color:#fca5a5;
-    classDef output fill:#1e293b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
+    classDef senior fill:#1e293b,stroke:#64748b,stroke-width:2px,color:#cbd5e1;
+    classDef check fill:#2a1a1a,stroke:#ef4444,stroke-width:2px,color:#fca5a5;
+    classDef success fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
+    classDef data fill:#172554,stroke:#60a5fa,stroke-width:2px,color:#93c5fd;
 
-    %% --- IDE Context ---
-    subgraph IDE_Context ["☁️ Antigravity IDE (Local Context)"]
+    %% --- Layer 1: Context Injection ---
+    subgraph Input_Layer ["🧠 Layer 1: Context Hydration"]
         direction TB
         Human([👤 Architect]):::human
+        LTM[(Vector Memory)]:::data -.->|Inject History| Human
+        Docs[(Tech Specs)]:::data -.->|Inject Constraints| Human
+    end
+
+    Human ==>|Augmented Intent| Router{{"Orchestrator"}}:::brain
+
+    %% --- Layer 2: Parallel Execution ---
+    subgraph Execution_Layer ["⚙️ Layer 2: Parallel Execution Factory"]
+        direction TB
+        Router -->|Velocity Track| Swarm_A[Gemini Swarm A: UI/Feat]:::swarm
+        Router -->|Precision Track| Swarm_B[Claude Swarm B: Core Logic]:::senior
         
-        subgraph Local_Brain ["🖥️ Local Orchestration"]
-            Router{{"Llama 3.2 / Gemma"}}:::local
-            Context[("Local Routing & Memory")]:::local
-        end
-
-        Human ==>|Intent| Router
+        Swarm_A -->|Feature Branch| Diff_A[Draft Artifacts]:::data
+        Swarm_B -->|Core Branch| Diff_B[Logic Artifacts]:::data
     end
 
-    %% --- Task Delegation ---
-    Router -->|Creative / Speed Tasks| Swarms
-    Router -->|Heavy Refactor / Data Audit| Senior_Eng
+    %% --- Layer 3: Agentic Synthesis ---
+    subgraph Synthesis_Layer ["⚗️ Layer 3: Agentic Synthesis"]
+        Diff_A & Diff_B --> Synthesis[Semantic Merge Agent]:::brain
+        Synthesis -->|Conflict Resolution| Unified_PR[Unified Pull Request]:::data
+    end
 
-    %% --- The Creative Layer ---
-    subgraph Swarms ["⚡ JACQ Swarms (High Velocity)"]
+    %% --- Layer 4: The Gauntlet ---
+    subgraph Verification_Layer ["🛡️ Layer 4: The Verification Gauntlet"]
         direction TB
-        JACQ_Ag[JACQ Swarm]:::swarm
-        Spec_Ag[Specter Swarm]:::swarm
-        Bet_Ag[BetSpecs Swarm]:::swarm
+        Unified_PR --> AST_Check{AST Compliance}:::check
+        AST_Check -->|Pass| Type_Check{Strict Typing}:::check
+        Type_Check -->|Pass| E2E_Check{Playwright Sim}:::check
+        
+        %% Feedbacks
+        AST_Check -.->|Syntax Error| Swarm_A
+        Type_Check -.->|Type Error| Swarm_B
     end
 
-    %% --- The Senior Engineer Layer ---
-    subgraph Senior_Eng ["🧐 The Senior Engineer (Data Physics)"]
-        direction TB
-        Deep_Audit[Deep Architecture Audit]:::senior
-        Refactor[Large Scale Refactoring]:::senior
-        Data_Pipe[Data-Intensive Logic]:::senior
-    end
-
-    %% --- Convergence ---
-    Swarms -.->|Drafts| Draft_Code[("Draft Artifacts")]
-    Senior_Eng ==>|Strict Standards| Draft_Code
-
-    %% --- The Security Gauntlet ---
-    subgraph Security_Layer ["🛡️ Security & Verification"]
-        SecOps[Vuln Scanning]:::security
-        RedTeam[Adversarial Sim]:::security
-    end
-
-    Draft_Code ==> SecOps
-    SecOps --> RedTeam
-
-    %% --- Final Output ---
-    RedTeam ==>|Passed All Gates| Production[🚀 Production Ready\n'SaaR']:::output
-    RedTeam -.->|Fail| Senior_Eng
+    %% --- Output ---
+    E2E_Check ==>|Verified| Production[🚀 Production Ready (SaaR)]:::success
 ````
 
 ---
