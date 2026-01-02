@@ -1,101 +1,152 @@
 /**
- * MARKET TRUST VALIDATOR (Reference Implementation)
+ * MARKET TRUST VALIDATOR (Reference Architecture)
  * 
  * A deterministic "Physics Engine" for validating AI betting predictions against live market data.
+ * Inspired by the "Data Physics" principles of the BetSpecs Core.
  * 
  * Problem: "The Hallucinated Edge"
- * AI Agents often find "Value" that doesn't exist because they ignore the "Vig" (Bookmaker Fee)
- * or rely on outdated training data.
+ * AI Agents frequently identify "Value" that is mathematically impossible because they ignore:
+ * 1. The Vig (Bookmaker's Fee/Hold)
+ * 2. Market Efficiency (The "Wisdom of the Crowds")
+ * 3. Latency (Betting on a line that moved 5 seconds ago)
  * 
  * Solution: "Trust Layer Middleware"
- * This validator acts as a firewall between the AI's signal and the execution layer.
+ * This validator acts as a firewall between the Agent's signal generation and the Execution Layer.
+ * It enforces strict mathematical constraints to prevent "Negative EV" execution.
  * 
- * Key Pillars:
- * 1. Market Physics: Rejects any signal that doesn't beat the "No-Vig" implied probability (Fair Value).
- * 2. Steam Detection: Rejects "Falling Knife" bets where the market is moving violently against the position.
- * 3. Identity Resolution: Uses fuzzy matching to ensure "Lakers" == "LAL" before trusting the data.
+ * Note: Requires `zod` dependency.
  */
 
-// ============ 1. MARKET PHYSICS (Vig & Probability) ============
+// In a real project: import { z } from 'zod';
+// For reference pattern purposes, we assume z is available or mocked:
+import { z } from 'zod'; 
 
-type OddsFormat = 'american' | 'decimal';
+// ============ 0. DOMAIN PRIMITIVES (The Constants) ============
+
+/**
+ * Validates American Odds format using strict range boundaries.
+ * "Dead Heat" rules and "Push" scenarios often break naive number validators.
+ */
+const AmericanOddsSchema = z.number().refine(
+    (val: number) => val === 0 || val >= 100 || val <= -100,
+    { message: 'Invalid American Odds: Must be >= +100 or <= -100 (or 0 for PK).' }
+);
+
+/**
+ * Represents the State representation of a market at a specific timestamp.
+ */
+export interface MarketSnapshot {
+    timestamp: number;
+    homeOdds: number;
+    awayOdds: number;
+    spread?: number;
+    bookmakerId: string;
+    isSharp: boolean; // Is this a "Market Maker" book (e.g., Pinnacle, Circa)?
+}
+
+// ============ 1. MARKET PHYSICS (Vig, Hold & Fair Value) ============
 
 export class MarketPhysics {
     /**
-     * Converts American Odds to Implied Probability
-     * e.g. -110 -> 0.5238
+     * Converts American Odds to Implied Probability.
+     * Handles positive (+150 -> 40%) and negative (-110 -> 52.38%) formats.
      */
     static toProbability(odds: number): number {
+        if (odds === 0) return 0.5; // Pick'em
         if (odds > 0) return 100 / (odds + 100);
         return Math.abs(odds) / (Math.abs(odds) + 100);
     }
 
     /**
-     * Removes the "Vig" (Bookmaker Fee) to find the True Probability (Fair Value).
-     * Uses the Multiplicative method to normalize probabilities to 100%.
+     * Calculates the "Theoretical Hold" (Vig) of a market.
+     * A hold > 5% indicates a recreational market; > 10% indicates high uncertainty.
+     * 
+     * @returns The bookmaker's edge (e.g., 0.045 = 4.5%)
      */
-    static removeVig(homeOdds: number, awayOdds: number): { homeResults: number, awayResults: number } {
+    static calculateHold(homeOdds: number, awayOdds: number): number {
+        const homeImplied = this.toProbability(homeOdds);
+        const awayImplied = this.toProbability(awayOdds);
+        return (homeImplied + awayImplied) - 1.0;
+    }
+
+    /**
+     * "De-Vigs" the line to find the No-Vig Fair Odds (NVFO).
+     * Uses the Multiplicative Method, which is superior to Additive for spread markets.
+     */
+    static calculateFairValue(homeOdds: number, awayOdds: number) {
         const homeImplied = this.toProbability(homeOdds);
         const awayImplied = this.toProbability(awayOdds);
         const totalImplied = homeImplied + awayImplied;
 
-        // Normalize to 100%
         return {
-            homeResults: homeImplied / totalImplied,
-            awayResults: awayImplied / totalImplied
+            homeFairProb: homeImplied / totalImplied,
+            awayFairProb: awayImplied / totalImplied,
+            theoreticalHold: totalImplied - 1
         };
     }
 }
 
-// ============ 2. VELOCITY TRACKER (Steam Detection) ============
-
-interface LineSnapshot {
-    timestamp: number;
-    spread: number;
-}
+// ============ 2. VELOCITY TRACKER (Steam & Stale Line Detection) ============
 
 export class SteamDetector {
-    // Configurable thresholds (abstracted from production values)
-    private static VELOCITY_THRESHOLD_HIGH = 0.5; // Significant line move per hour
+    // A "Steam Move" is a rapid line change triggered by sharp money.
+    // Agents should NEVER bet against Steam unless they have proprietary info.
+    private static VELOCITY_THRESHOLD_PTS_PER_HOUR = 0.5; 
+    private static STALENESS_THRESHOLD_MS = 60 * 1000; // 1 minute
 
-    static analyze(snapshots: LineSnapshot[]) {
-        if (snapshots.length < 2) return { isSteam: false, velocity: 0 };
+    static analyzeMovement(snapshots: MarketSnapshot[]) {
+        if (snapshots.length < 2) return { isSteam: false, velocity: 0, isStale: false };
 
         const start = snapshots[0];
         const end = snapshots[snapshots.length - 1];
-        
-        const hoursElapsed = (end.timestamp - start.timestamp) / (1000 * 60 * 60);
-        const move = end.spread - start.spread;
-        
+        const now = Date.now();
+
+        // 1. Check for Staleness (Data Physics)
+        // If the "Live" odds haven't updated in > 1 min during active trading, they are suspect.
+        const isStale = (now - end.timestamp) > this.STALENESS_THRESHOLD_MS;
+
+        // 2. Calculate Velocity (Points per Hour)
+        const timeDeltaHours = (end.timestamp - start.timestamp) / (1000 * 60 * 60);
+        const spreadMove = (end.spread || 0) - (start.spread || 0);
+
         // Avoid division by zero
-        const velocity = hoursElapsed > 0 ? move / hoursElapsed : 0;
-        const isSteam = Math.abs(velocity) >= this.VELOCITY_THRESHOLD_HIGH;
+        const velocity = timeDeltaHours > 0 ? spreadMove / timeDeltaHours : 0;
+        
+        // 3. Detect "Sharp Action"
+        // If specific "Oracle" books (marked isSharp) moved first, this is high-confidence steam.
+        const sharpMove = snapshots.some(s => s.isSharp && s.timestamp > start.timestamp);
 
         return {
-            isSteam,
-            velocity, // Points per hour (e.g., +1.5 means Home is getting 1.5 pts worse per hour)
-            direction: velocity > 0 ? 'FADE_HOME' : 'FADE_AWAY' 
+            isSteam: Math.abs(velocity) >= this.VELOCITY_THRESHOLD_PTS_PER_HOUR,
+            velocity, // +1.0 = Home team getting worse by 1 point/hour
+            isStale,
+            initiatedBySharps: sharpMove,
+            recommendation: velocity > 0 ? 'FADE_HOME' : 'FADE_AWAY'
         };
     }
 }
 
-// ============ 3. ENTITY RESOLVER (Fuzzy Matching) ============
+// ============ 3. ENTITY RESOLVER (Identity Physics) ============
 
 export class EntityResolver {
+    // In production, this uses a dedicated Vector Database or fuzzy search service.
+    // Identifying that "Man Utd" === "Manchester United FC" is critical for arbitrage.
     private static ALIAS_MAP: Record<string, string> = {
-        'lakers': 'LAL', 'los angeles lakers': 'LAL',
-        'knicks': 'NYK', 'new york knicks': 'NYK',
-        // ... mapped entities
+        'lakers': 'LAL', 'la lakers': 'LAL', 'los angeles lakers': 'LAL',
+        'knicks': 'NYK', 'ny knicks': 'NYK', 'new york knicks': 'NYK',
+        'bkn': 'BKN', 'brooklyn': 'BKN', 'nets': 'BKN'
     };
 
     /**
-     * Normalizes and resolves team names.
-     * Uses Levenshtein distance (simulated here) for robustness.
+     * Canonicalizes team identifiers to a standard Ticker (e.g., LAL, NYK).
+     * Prevents "Ghost Arbs" where mismatched names create false arbitrage opportunities.
      */
-    static resolve(input: string): string | null {
-        const normalized = input.toLowerCase().trim();
-        if (this.ALIAS_MAP[normalized]) return this.ALIAS_MAP[normalized];
-        return null;
+    static resolve(rawString: string): string | null {
+        const normalized = rawString.toLowerCase()
+            .replace(/[^a-z0-9 ]/g, '') // Remove punc chars like '.' in 'St. Louis'
+            .trim();
+            
+        return this.ALIAS_MAP[normalized] || null;
     }
 }
 
