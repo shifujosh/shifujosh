@@ -15,24 +15,25 @@ I utilize a "Model Meritocracy" approach, routing tasks to the specific model be
 
 ```mermaid
 graph TD
-    %% --- Styling ---
-    classDef human fill:#000,stroke:#fff,stroke-width:2px,color:#fff;
-    classDef local fill:#e2e2df,stroke:#333,stroke-width:2px,color:#000;
-    classDef senior fill:#d6cfc7,stroke:#6b5b4e,stroke-width:2px,color:#000;
-    classDef swarm fill:#d2e3fc,stroke:#174ea6,stroke-width:1px,color:#000;
-    classDef security fill:#fce8e6,stroke:#c5221f,stroke-width:2px,color:#000;
-    classDef output fill:#34a853,stroke:#0d652d,stroke-width:2px,color:#fff;
+    %% --- Styling (Dark Mode Native) ---
+    classDef human fill:#1e293b,stroke:#f59e0b,stroke-width:2px,color:#f59e0b;
+    classDef local fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#d8b4fe;
+    classDef senior fill:#1e293b,stroke:#64748b,stroke-width:2px,color:#cbd5e1;
+    classDef swarm fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#93c5fd;
+    classDef security fill:#2a1a1a,stroke:#ef4444,stroke-width:2px,color:#fca5a5;
+    classDef output fill:#1e293b,stroke:#10b981,stroke-width:2px,color:#6ee7b7;
 
     %% --- IDE Context ---
-    subgraph IDE_Context ["☁️ Google Antigravity IDE (Local Context)"]
+    subgraph IDE_Context ["☁️ Antigravity IDE (Local Context)"]
+        direction TB
         Human([👤 Architect]):::human
         
-        subgraph Local_Brain ["🖥️ Local Orchestration (Ollama)"]
+        subgraph Local_Brain ["🖥️ Local Orchestration"]
             Router{{"Llama 3.2 / Gemma"}}:::local
-            Note1[("Local Routing & Context")]:::local
+            Context[("Local Routing & Memory")]:::local
         end
 
-        Human ==> Router
+        Human ==>|Intent| Router
     end
 
     %% --- Task Delegation ---
@@ -40,7 +41,7 @@ graph TD
     Router -->|Heavy Refactor / Data Audit| Senior_Eng
 
     %% --- The Creative Layer ---
-    subgraph Swarms ["⚡ Gemini Agent Swarms (High Velocity)"]
+    subgraph Swarms ["⚡ JACQ Swarms (High Velocity)"]
         direction TB
         JACQ_Ag[JACQ Swarm]:::swarm
         Spec_Ag[Specter Swarm]:::swarm
@@ -48,20 +49,21 @@ graph TD
     end
 
     %% --- The Senior Engineer Layer ---
-    subgraph Senior_Eng ["🧐 The Senior Engineer (Claude Code)"]
+    subgraph Senior_Eng ["🧐 The Senior Engineer (Data Physics)"]
+        direction TB
         Deep_Audit[Deep Architecture Audit]:::senior
         Refactor[Large Scale Refactoring]:::senior
         Data_Pipe[Data-Intensive Logic]:::senior
     end
 
     %% --- Convergence ---
-    Swarms -.-> Draft_Code[("Draft Artifacts")]
-    Senior_Eng ==>|Enforce Strict Standards| Draft_Code
+    Swarms -.->|Drafts| Draft_Code[("Draft Artifacts")]
+    Senior_Eng ==>|Strict Standards| Draft_Code
 
     %% --- The Security Gauntlet ---
-    subgraph Security_Layer ["🛡️ Security & Red Teaming (Gemini CLI)"]
+    subgraph Security_Layer ["🛡️ Security & Verification"]
         SecOps[Vuln Scanning]:::security
-        RedTeam[Adversarial Attack Sim]:::security
+        RedTeam[Adversarial Sim]:::security
     end
 
     Draft_Code ==> SecOps
@@ -70,8 +72,7 @@ graph TD
     %% --- Final Output ---
     RedTeam ==>|Passed All Gates| Production[🚀 Production Ready\n'SaaR']:::output
     RedTeam -.->|Fail| Senior_Eng
-
-```
+````
 
 ---
 
