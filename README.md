@@ -26,7 +26,6 @@ graph TD
 
     %% --- Layer 1: Context Injection ---
     subgraph Input_Layer ["🧠 Layer 1: Context Hydration"]
-        direction TB
         Human([👤 Architect]):::human
         LTM[(Vector Memory)]:::data -.->|Inject History| Human
         Docs[(Tech Specs)]:::data -.->|Inject Constraints| Human
@@ -35,31 +34,29 @@ graph TD
     Human ==>|Augmented Intent| Router{{"Orchestrator"}}:::brain
 
     %% --- Layer 2: Parallel Execution ---
-    subgraph Execution_Layer ["⚙️ Layer 2: Parallel Execution Factory"]
-        direction TB
-        Router -->|Velocity Track| Swarm_A["Gemini Swarm A: UI/Feat"]:::swarm
-        Router -->|Precision Track| Swarm_B["Claude Swarm B: Core Logic"]:::senior
+    subgraph Execution_Layer ["⚙️ Layer 2: Parallel Execution"]
+        Router -->|Velocity| Swarm_A["Gemini Swarm: UI/Feat"]:::swarm
+        Router -->|Precision| Swarm_B["Claude Swarm: Core Logic"]:::senior
         
-        Swarm_A -->|Feature Branch| Diff_A["Draft Artifacts"]:::data
-        Swarm_B -->|Core Branch| Diff_B["Logic Artifacts"]:::data
+        Swarm_A -->|Branch| Diff_A["Draft Artifacts"]:::data
+        Swarm_B -->|Branch| Diff_B["Logic Artifacts"]:::data
     end
 
     %% --- Layer 3: Agentic Synthesis ---
-    subgraph Synthesis_Layer ["⚗️ Layer 3: Agentic Synthesis"]
+    subgraph Synthesis_Layer ["⚗️ Layer 3: Synthesis"]
         Diff_A & Diff_B --> Synthesis["Semantic Merge Agent"]:::brain
-        Synthesis -->|Conflict Resolution| Unified_PR["Unified Pull Request"]:::data
+        Synthesis -->|Resolve| Unified_PR["Unified Pull Request"]:::data
     end
 
     %% --- Layer 4: The Gauntlet ---
-    subgraph Verification_Layer ["🛡️ Layer 4: The Verification Gauntlet"]
-        direction TB
+    subgraph Verification_Layer ["🛡️ Layer 4: Verification"]
         Unified_PR --> AST_Check{"AST Compliance"}:::check
         AST_Check -->|Pass| Type_Check{"Strict Typing"}:::check
         Type_Check -->|Pass| E2E_Check{"Playwright Sim"}:::check
         
         %% Feedbacks
-        AST_Check -.->|Syntax Error| Swarm_A
-        Type_Check -.->|Type Error| Swarm_B
+        AST_Check -.->|Fix| Swarm_A
+        Type_Check -.->|Fix| Swarm_B
     end
 
     %% --- Output ---
