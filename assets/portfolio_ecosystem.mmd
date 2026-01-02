@@ -1,11 +1,14 @@
 graph TD
-    %% Styling - Minimalist Dark Mode
+    %% Styling - Minimalist Dark Mode with Frontier Accents
     classDef hub fill:#0f172a,stroke:#2dd4bf,stroke-width:3px,color:#fff;
     classDef app fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#e2e8f0;
     classDef infra fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#e2e8f0;
     classDef shared fill:#1e293b,stroke:#94a3b8,stroke-width:1px,stroke-dasharray: 5 5,color:#94a3b8;
     classDef actor fill:#000000,stroke:#fff,stroke-width:2px,color:#fff;
     classDef input fill:#0f172a,stroke:#64748b,stroke-width:1px,color:#94a3b8,stroke-dasharray: 2 2;
+    
+    %% Frontier Capabilities Styling (Gradient-like emphasis)
+    classDef frontier fill:#312e81,stroke:#f472b6,stroke-width:2px,color:#fce7f3;
 
     %% 1. Inputs - Top Level
     User((Human Operator)):::actor
@@ -21,11 +24,20 @@ graph TD
         Tools(Tool Execution<br/><i>CLI / Browser / API</i>):::infra
     end
 
-    %% 4. The App Federation (Outputs)
+    %% 4. Multimodal Output Engine (Frontier Capabilities)
+    subgraph Capabilities [Multimodal Creation Engine]
+        Text(Text<br/><i>Context & Code</i>):::frontier
+        Visuals(Visuals<br/><i>Art & Editing</i>):::frontier
+        Video(Video<br/><i>Motion & Animation</i>):::frontier
+        Info(Infographics<br/><i>Data Viz</i>):::frontier
+        Slides(Decks<br/><i>Strategy & Presos</i>):::frontier
+    end
+
+    %% 5. The App Federation (Deployment)
     Specter(Specter<br/><i>Autonomous Analyst</i>):::app
     BetSpecs(BetSpecs<br/><i>Real-Time Terminal</i>):::app
     
-    %% 5. DNA
+    %% 6. DNA
     Patterns[Shared Core Library<br/><i>Event Loops, Trust Validators</i>]:::shared
 
     %% Connection Logic - Vertical Flow
@@ -36,8 +48,11 @@ graph TD
     
     Local --- Cloud --- Tools
     
-    Infrastructure ==>|Powers| Specter
-    Infrastructure ==>|Powers| BetSpecs
+    %% Frontier Power
+    Cloud ==>|Powers| Capabilities
+    
+    Capabilities ==>|Generates Assets For| Specter
+    Capabilities ==>|Generates Assets For| BetSpecs
     
     Specter -.->|Inherits| Patterns
     BetSpecs -.->|Inherits| Patterns
