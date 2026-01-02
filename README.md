@@ -110,8 +110,12 @@ I design the system. AI writes the code.
 
 I call this **Software as a Result**: I define the outcome, and the system produces the implementation. My job is architecture and logic. The commodity code is generated.
 
+> *"The universe is made of stories, not of atoms."* — Muriel Rukeyser
+
 ---
 
 ### 📬 Connect
+
+NYC born and raised. Cornell alum. Lasagna enthusiast.
 
 **LinkedIn:** [linkedin.com/in/joshualora](https://www.linkedin.com/in/joshualora)
