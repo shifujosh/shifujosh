@@ -1,6 +1,7 @@
-### Hi, I'm Joshua 👋 **AI-Native Product Architect**
+# Hi, I'm Joshua 👋 **AI-Native Product Architect**
+<br/>
 
-## I bridge the gap between Enterprise Data Reliability and Agentic AI Systems.
+## I bridge the gap between Enterprise Data Reliability and Agentic AI Systems
 My experience ranges from managing global data pipelines at **Bloomberg** to orchestrating AI agent swarms that build full-stack software at **16x industry velocity**.
 
 I don't just write code; I architect the **"Cognitive Operating Systems"** that generate it.
@@ -95,13 +96,14 @@ In late 2025, I executed an engineering workload equivalent to a 15-person speci
 
 *Focus: Full-stack orchestration of AI-native systems to solve for context amnesia and reliability.*
 
-**1. JACQ (Cognitive Operating System)**
+#### 1. JACQ (Cognitive Operating System)
+
 
 * **The Architecture:** A local-first agent orchestration engine featuring a central "Brain" that manages specialized sub-agents.
 * **The Engineering:** Refactored **31,080 LOC** in a single sprint. Implemented full **Zod schema validation** and **Playwright E2E testing** to ensure deterministic outputs.
 * **The Win:** Transitioned to a local **DuckDB/Dexie** architecture, reducing cloud database latency and costs by 40%.
 
-**2. BetSpecs (Real-Time Analytics Engine)**
+#### 2. BetSpecs (Real-Time Analytics Engine)
 
 * **The Architecture:** An enterprise monorepo combining high-frequency data scraping with real-time odds modeling.
 * **The Engineering:** Shared library architecture ensuring **100% type safety** between data ingestion and UI display.
@@ -111,7 +113,7 @@ In late 2025, I executed an engineering workload equivalent to a 15-person speci
 
 ### ⚡ Enterprise Background (The Foundation)
 
-**Bloomberg | Enterprise Data Operations**
+#### Bloomberg | Enterprise Data Operations
 
 * **The Scale:** Managed data acquisition and delivery for global market makers and hedge funds.
 * **The Stack:** ETL Pipelines, Cloud Delivery (S3), Apache Kafka / Event Streaming, SQL Optimization.
