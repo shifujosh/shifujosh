@@ -73,16 +73,13 @@ In 35 days, I shipped three production-ready platforms. The same workload would 
 ### 🏛️ What I Am Building
 
 **JACQ** — *Cognitive Operating System.*
-A web-based platform where a central AI agent (The Orchestrator) manages specialized apps (Editor, MediaStudio, Vault). Features Graph-RAG memory with DuckDB, an Action Engine that proactively suggests next steps, and a security layer with rate limiting and audit logging.
-*(Built with: Next.js 16, Gemini 2.5, DuckDB, Tiptap, Playwright)*
+A unified workspace where AI helps me research, write, code, and create—all in one place. It remembers past work, learns my preferences, and proactively suggests next steps.
 
 **Specter Bot** — *Autonomous sports intelligence agent.*
-Ingests real-time odds, news, stats, and social sentiment from 7+ sources. Runs ensemble ML models (Bayesian win probability, Elo ratings, Rules Engine). A "Council" of 3 AI personas debates each pick. Fact-checks outputs, generates visual cards, and broadcasts to Twitter/Discord—fully autonomously.
-*(Built with: TypeScript, Gemini, Puppeteer, Firebase, Python MCP)*
+Ingests data from multiple sources, runs proprietary analysis, fact-checks itself, generates visual content, and broadcasts to social platforms—fully autonomously.
 
-**BetSpecs** — *Financial-terminal style analytics dashboard.*
-Real-time odds feed, AI-driven insights, bet tracking with P&L analytics. Hybrid LLM support (Ollama local / Gemini cloud). Includes the Specter Bot for automated content generation.
-*(Built with: React 18, Vite, Redux Toolkit, TanStack Query, Tailwind, Firebase)*
+**BetSpecs** — *Real-time analytics dashboard.*
+A financial-terminal style interface for sports analytics. Real-time data, AI-driven insights, and performance tracking.
 
 ---
 
