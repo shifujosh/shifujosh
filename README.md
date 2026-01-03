@@ -50,9 +50,9 @@ I am building **JACQ** to solve "Context Amnesia." Most AI tools are just chatbo
 
 I direct the work. AI does the heavy lifting. I treat models like specialized employees, not text generators.
 
-![Portfolio Ecosystem](./assets/portfolio_ecosystem.svg?v=14)
+![Portfolio Ecosystem](./assets/portfolio_ecosystem_simple.svg)
 
-> *The Federation: One Architect, One OS (JACQ), Many Agents.*
+> *Problems I Solve → Results I Drive*
 
 ---
 
