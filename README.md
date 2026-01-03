@@ -5,10 +5,13 @@
 > *Developing technology for human flourishing.*
 
 <p align="center">
-  <img src="https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Zod-Runtime_Validation-blueviolet?logo=zod" alt="Zod" />
-  <img src="https://img.shields.io/badge/Tests-74_Passing-brightgreen?logo=vitest" alt="Tests" />
-  <img src="https://img.shields.io/badge/ADRs-9_Documented-informational" alt="ADRs" />
+  <img src="https://img.shields.io/badge/TypeScript-Strict_Mode-3178C6?logo=typescript&logoColor=white" alt="TypeScript Strict" />
+  
+  <img src="https://img.shields.io/badge/Data_Physics-Zod_Verified-3E67B1?logo=zod&logoColor=white" alt="Zod Verified" />
+  
+  <img src="https://img.shields.io/badge/System-Agentic_Swarm-702576?logo=google-gemini&logoColor=white" alt="Agentic System" />
+  
+  <img src="https://img.shields.io/badge/Velocity-16x_Industry_Avg-success" alt="Velocity" />
 </p>
 
 ---
