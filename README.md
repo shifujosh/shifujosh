@@ -14,7 +14,7 @@
 ## What I've Shipped
 
 | Project | What It Does | Stack | Tests |
-|:--------|:-------------|:------|:-----:|
+| :--- | :--- | :--- | :---: |
 | [**JACQ**](https://github.com/shifujosh/JACQ-Architecture) | AI memory system with Graph-RAG | TypeScript, DuckDB, Next.js&nbsp;16 | 27 |
 | [**Specter**](https://github.com/shifujosh/Specter-Sports-Intel) | Agentic sports analytics & social engagement | TypeScript, Firebase, Zod | 25 |
 | [**Market&nbsp;Pipeline**](https://github.com/shifujosh/Market-Data-Pipeline-Ref-) | Financial-grade data validation | TypeScript, TimescaleDB | 22 |
@@ -34,7 +34,7 @@ Each repo includes runnable demos and tested implementations:
 
 ## Why I Build
 
-**The Era of the Force Multiplier**
+### The Era of the Force Multiplier
 
 The definition of a "product team" is collapsing. We are entering an era where a single engineer, armed with the right "Cognitive Operating System," can execute the workload of a 15-person agency.
 
@@ -56,7 +56,7 @@ I direct the work. AI does the heavy lifting. I treat models like specialized em
 
 ---
 
-## Validation: Antigravity Sprint
+## The Impact
 
 35 days. Three production platforms. $792k agency estimate. My compute bill: under $1,000.
 
@@ -77,6 +77,7 @@ I direct the work. AI does the heavy lifting. I treat models like specialized em
 A unified OS that remembers past work, learns preferences, and suggests next steps. Implements Entity-Fact memory model with staging policies for fact promotion and decay.
 
 **Key Innovations:**
+
 - Graph-RAG retrieval combining vector search with spreading activation
 - Entity-Fact memory model with confirmation scoring
 - Orchestrator pattern for multi-agent coordination
@@ -90,6 +91,7 @@ A unified OS that remembers past work, learns preferences, and suggests next ste
 Ingests data, runs ensemble analysis, fact-checks itself, generates content, and broadcasts—fully autonomously. Solves the "LLM Hallucination" problem with a verification-first architecture.
 
 **Key Innovations:**
+
 - 3-Model Ensemble Voting (Bayesian + Elo + Rules Engine)
 - Deterministic Verification Layer (fact-checking before output)
 - Velocity Tracker for detecting sharp money movement
@@ -103,6 +105,7 @@ Ingests data, runs ensemble analysis, fact-checks itself, generates content, and
 Reference architecture demonstrating financial-grade data validation learned from managing high-frequency trading pipelines. These same principles power the "Trust Layer" in my AI systems.
 
 **Key Innovations:**
+
 - Tiered Validation (Hard/Soft/Warning)
 - Dead Letter Queue for zero silent data loss
 - Price Inertia detection for anomaly flagging
