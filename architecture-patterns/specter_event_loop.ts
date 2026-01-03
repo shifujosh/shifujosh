@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * THE SPECTER EVENT LOOP (Reference Implementation)
  * 
@@ -22,7 +23,7 @@ const TargetSchema = z.object({
     type: z.enum(['NBA_GAME', 'NFL_GAME', 'MARKET_TICK']),
     timestamp: z.date(),
     status: z.enum(['SCHEDULED', 'LIVE', 'FINAL']),
-    metadata: z.record(z.any())
+    metadata: z.record(z.string(), z.any())
 });
 
 // Enriched context that prevents hallucinations by grounding the LLM

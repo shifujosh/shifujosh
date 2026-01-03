@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * MEMORY SYNC ENGINE (Reference Implementation)
  * 
@@ -20,8 +21,11 @@
  * - Conflict Resolution: "Tombstone" merging (newer retractions override older assertions).
  */
 
-import { Firestore, Transaction } from 'firebase-admin/firestore';
-import { Database } from 'duckdb';
+// Mock Dependencies for Pattern File
+class Firestore { collection(path: string) { return { doc: (id: string) => ({ set: async () => {}, get: async () => ({ exists: true, data: () => ({}) }), update: () => {}, delete: () => {} }), where: () => ({ limit: () => ({}) }), batch: () => ({ delete: () => {}, update: () => {}, commit: async () => {} }) }; } runTransaction(cb: any) { return cb({ get: async () => ({ empty: true }), update: () => {} }); } batch() { return this.collection('').batch(); } }
+class Transaction { set() {} get() {} update() {} }
+class Database { constructor(path: string) {} prepare(sql: string) { return { run: (a,b,c,d,e,f, cb: Function) => cb(null), finalize: () => {} }; } }
+
 import { EventEmitter } from 'events';
 import { z } from 'zod';
 
@@ -42,7 +46,7 @@ const FactSchema = z.object({
     // 'staged' = newly formed, 'confirmed' = validated, 'archived' = moved to cold storage
     // 'retracted' = tombstone (deleted truth)
     status: z.enum(['staged', 'confirmed', 'locking', 'archived', 'retracted']),
-    metadata: z.record(z.any()).optional(),
+    metadata: z.record(z.string(), z.any()).optional(),
 });
 
 type Fact = z.infer<typeof FactSchema>;

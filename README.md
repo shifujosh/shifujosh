@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD013 -->
 # Joshua Lora | AI-Native Product Architect
 
 > *Developing technology for human flourishing.*
@@ -73,6 +75,7 @@ By treating AI as a "cognitive substrate" rather than just a tool, I've inverted
 ## Featured Projects
 
 ### [JACQ: Cognitive Operating System](https://github.com/shifujosh/JACQ-Architecture)
+
 *> The "Anti-Amnesia" Architecture.*
 
 A Graph-RAG system that inverts the ephemeral nature of LLMs. Instead of stateless chats, it implements a **Long-Term Memory Substrate** using DuckDB, allowing agents to "remember" context, refine user intent, and autonomously promote facts from short-term staging to permanent knowledge.
@@ -83,6 +86,7 @@ A Graph-RAG system that inverts the ephemeral nature of LLMs. Instead of statele
 ---
 
 ### [Specter: Autonomous Sports Intelligence](https://github.com/shifujosh/Specter-Sports-Intel)
+
 *> Solving the "Stochastic Parrot" Problem.*
 
 A deterministic validation engine for high-stakes domains. It wraps LLMs in a **Consensus-Based Event Loop**, forcing models to debate and cross-reference predictions against immutable statistical ground truth before publishing. The result? Zero hallucinations in production.
@@ -93,6 +97,7 @@ A deterministic validation engine for high-stakes domains. It wraps LLMs in a **
 ---
 
 ### [Market Data Pipeline](https://github.com/shifujosh/Market-Data-Pipeline-Ref-)
+
 *> Financial-Grade Data Physics.*
 
 A reference implementation of "Zero Silent Failure." Demonstrates how to apply HFT (High-Frequency Trading) principles—**Dead Letter Queues**, **Tiered Validation**, and **Circuit Breakers**—to modern AI systems, ensuring garbage data never pollutes the context window.

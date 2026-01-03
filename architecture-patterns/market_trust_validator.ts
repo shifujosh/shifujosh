@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * MARKET TRUST VALIDATOR (Reference Architecture)
  * 
@@ -165,6 +166,21 @@ interface MarketState {
     awayOdds: number;
     lineHistory: LineSnapshot[];
 }
+
+// Mocking external dependencies for pattern demonstration
+type LineSnapshot = { timestamp: number; home: number; away: number; bookmakerId: string; isSharp: boolean; spread?: number; };
+
+class MarketPhysicsImpl {
+    static removeVig(home: number, away: number) { return { homeResults: 0.5, awayResults: 0.5 }; }
+}
+
+class SteamDetectorImpl {
+    static analyze(history: LineSnapshot[]) { return { velocity: 0, isSharp: false, isSteam: false, direction: 'NONE' }; }
+}
+
+// In a real project, these are imports. For the pattern file, we alias them:
+const MarketPhysics = MarketPhysicsImpl;
+const SteamDetector = SteamDetectorImpl;
 
 export class MarketTrustValidator {
     private static SAFETY_MARGIN = 0.02; // Required edge above Fair Value

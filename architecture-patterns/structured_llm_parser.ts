@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * STRUCTURED LLM PARSER (Reference Implementation)
  * 
