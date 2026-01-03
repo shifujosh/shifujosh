@@ -1,8 +1,8 @@
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD013 -->
-# Joshua Lora | AI-Native Product Architect
+# Joshua Lora | Forward Deployed Engineer & Product Architect
 
-> *Developing technology for human flourishing.*
+> *Deploying intelligence to the edge of the mission.*
 
 <p align="center">
   <img src="https://img.shields.io/badge/TypeScript-Strict_Mode-3178C6?logo=typescript&logoColor=white" alt="TypeScript Strict" />
