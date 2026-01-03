@@ -32,7 +32,7 @@ But raw speed creates risk. Most AI tools are stateless chatbots that forget con
 I architect systems where humans provide the **Intent** and AI agents handle the **Implementation** at scale.
 
 ```mermaid
-graph LR
+graph TD
     Human([👤 Joshua]) ==>|1. Intent & Schema| Orchestrator{{"⚡ Orchestrator"}}
     
     subgraph Agents ["The Agent Swarm"]
@@ -54,11 +54,11 @@ By treating AI as a "cognitive substrate" rather than just a tool, I've inverted
 
 | KPI | Standard Velocity | JACQ Velocity | Multiplier |
 | :--- | :--- | :--- | :--- |
-| **Throughput** | ~75 LOC / day | **>1,250 LOC / day** | ⚡️ **16x**<br>*(Agentic Workflow)* |
+| **Throughput** | ~75 LOC / day | **1,250+ Clean LOC / day**<br>*(Linted, Typed, Tested)* | ⚡️ **16x**<br>*(Agentic Workflow)* |
 | **Time-to-Market** | 6-9 Months | **35 Days** | 🚀 **8x**<br>*(Parallel  Execution)* |
 | **Reliability** | Manual QA | **Automated Data Physics** | 🛡️ **Verified**<br>*(Deterministic Validation)* |
 
-> *Delivered $792k of estimated engineering value for <$1,000 in compute.*
+> *Delivered ~$792k of agency-equivalent engineering value for <$1,000 in compute.*
 > 
 > 📄 **[Read the Full Antigravity Sprint Case Study](https://github.com/shifujosh/Antigravity-Sprint-Retrospective/blob/main/WHITEPAPER.md)**
 
@@ -119,7 +119,7 @@ I call this **Software as a Result**: I define the outcome, and the system produ
 
 ## Production Patterns (Open Source)
 
-I believe in **building in public**. I've shared these core engines to contribute to the collective knowledge base, hoping to collaborate, learn, and grow with others in the Applied Generative AI space.
+These are the production-hardened engines that power my agent swarms. Open sourced to advance the standard for Applied Generative AI.
 
 - **[The Specter Event Loop](./architecture-patterns/specter_event_loop.ts)**
     *The "Brain".* A recursive, consensus-based decision engine. **Votes** across multiple models (DeepSeek/Gemini/Ollama) to eliminate hallucination in high-stakes environments.
