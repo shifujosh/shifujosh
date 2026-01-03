@@ -47,7 +47,7 @@ By treating AI as a "cognitive substrate" rather than just a tool, I've inverted
 | KPI | Standard Velocity | JACQ Velocity | Multiplier |
 | :--- | :--- | :--- | :--- |
 | **Throughput** | ~75 LOC / day | **>1,250 LOC / day** | ⚡️ **16x**<br>*(Agentic Workflow)* |
-| **Time-to-Market** | 6-9 Months | **35 Days** | 🚀 **8x**<br>*(Parallel Multimodal Execution)* |
+| **Time-to-Market** | 6-9 Months | **35 Days** | 🚀 **8x**<br>*(Parallel  Execution)* |
 | **Reliability** | Manual QA | **Automated Data Physics** | 🛡️ **Verified**<br>*(Deterministic Validation)* |
 
 > *Delivered $792k of estimated engineering value for <$1,000 in compute.*
@@ -127,6 +127,6 @@ I believe in **building in public**. I've shared these core engines to contribut
 
 ## Connect
 
-Based in **NYC**. **Cornell** Alum. Building the future of work (and the perfect **Lasagna**).
+Based in **NYC**. **Cornell** Alum. Building the Cognitive Operating Systems of the future (and the perfect **Lasagna**).
 
 **LinkedIn:** [linkedin.com/in/joshualora](https://www.linkedin.com/in/joshualora)
