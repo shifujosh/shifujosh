@@ -1,43 +1,24 @@
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD013 -->
-# Joshua Lora | Forward Deployed Engineer & Product Architect
-
-> *Deploying intelligence to measurably improve lives and business outcomes.*
-
-<p align="center">
-  <img src="https://img.shields.io/badge/TypeScript-Strict_Mode-3178C6?logo=typescript&logoColor=white" alt="TypeScript Strict" />
-  
-  <img src="https://img.shields.io/badge/Data_Physics-Zod_Verified-3E67B1?logo=zod&logoColor=white" alt="Zod Verified" />
-  
-  <img src="https://img.shields.io/badge/System-Agentic_Swarm-702576?logo=google-gemini&logoColor=white" alt="Agentic System" />
-  
-  <img src="https://img.shields.io/badge/Velocity-16x_Industry_Avg-success" alt="Velocity" />
-</p>
-
----
-
-## Why I Build: The Miracle of Compression
-
-We are witnessing the collapse of the barrier between *Idea* and *Execution*.
-
-**The Shift:**
-Generative AI acts as a mechanism for **radical time compression**. It allows us to move from concept to production-ready artifact at speeds that were previously impossible.
-
-My role as a **Forward Deployed Engineer** is to harness this force multiplier—enabling me to execute the workload of a specialized agency single-handedly. But raw speed creates risk.
-
-**The Vision: Memory & Security.**
-Speed is useless without control. Most AI tools are stateless chatbots that forget context and introduce vulnerabilities. I build systems like **JACQ** to solve this: a persistent digital workforce that retains deep architectural memory while enforcing strict security boundaries. I turn intent into software that is not just fast, but verifiable and safe.
-
----
-
 ## How I Work: Orchestrated Intelligence
 
-This diagram represents my "Cognitive Operating System"—a human-in-the-loop architecture where I direct a federation of specialized AI agents. I provide the intent, critical feedback (RLHF), and final sign-off, while agents handle the memory retrieval, drafting, and validation.
+I architect systems where humans provide the **Intent** and AI agents handle the **Implementation** at scale.
 
-![Cognitive OS Architecture](./assets/shifujosh_hero.png)
-
-> *Human Intent → AI Scale → Verified Output*
-
+```mermaid
+graph LR
+    Human([👤 Joshua]) ==>|1. Intent & Schema| Orchestrator{{"⚡ Orchestrator"}}
+    
+    subgraph Agents ["The Agent Swarm"]
+        Orchestrator -->|Build| Gemini[Gemini Swarm]
+        Orchestrator -->|Audit| Claude[Claude Engineer]
+    end
+    
+    Gemini & Claude --> Draft[Draft Code]
+    Draft --> Validation{"🛡️ Strict Validation"}
+    
+    Validation -->|Pass| Production[🚀 Ship]
+    Validation -.->|Fail| Orchestrator
+```
 ---
 
 ## The Multiplier Effect
