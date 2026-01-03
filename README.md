@@ -134,7 +134,7 @@ I call this **Software as a Result**: I define the outcome, and the system produ
 
 ## Production Patterns (Open Source)
 
-I believe in **building in public**. I have open-sourced the core engines powering my agentic systems to serve as production-grade reference implementations for the community.
+I believe in **building in public**. I've shared these core engines to contribute to the collective knowledge base, hoping to collaborate, learn, and grow with others in the Applied Generative AI space.
 
 - **[The Specter Event Loop](./architecture-patterns/specter_event_loop.ts)**
     *The "Brain".* A recursive, consensus-based decision engine. **Votes** across multiple models (DeepSeek/Gemini/Ollama) to eliminate hallucination in high-stakes environments.
