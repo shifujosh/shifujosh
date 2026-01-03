@@ -16,9 +16,7 @@
 
 ---
 
-## Why I Build
-
-### The Miracle of Compression
+## Why I Build: The Miracle of Compression
 
 We are living through a miraculous expansion of capability. Tools that were impossible yesterday are now commonplace. My role as a **Forward Deployed Engineer** is to harness this boundless potential and focus it on concrete human needs.
 
