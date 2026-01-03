@@ -62,9 +62,9 @@ By treating AI as a "cognitive substrate" rather than just a tool, I've inverted
 
 | KPI | Standard Velocity | JACQ Velocity | Multiplier |
 | :--- | :--- | :--- | :--- |
-| **Throughput** | ~75 LOC / day | **>1,250 LOC / day** | ⚡️ **16x** |
-| **Time-to-Market** | 6-9 Months | **35 Days** | 🚀 **8x Faster** |
-| **Reliability** | Manual QA | **Automated Data Physics** | 🛡️ **Zero Trust** |
+| **Throughput** | ~75 LOC / day | **>1,250 LOC / day** | ⚡️ **16x**<br>*(AI-Generated Drafts)* |
+| **Time-to-Market** | 6-9 Months | **35 Days** | 🚀 **8x**<br>*(Parallel Execution)* |
+| **Reliability** | Manual QA | **Automated Data Physics** | 🛡️ **Verified**<br>*(Deterministic Validation)* |
 
 > *Delivered $792k of estimated engineering value for <$1,000 in compute.*
 
