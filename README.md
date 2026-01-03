@@ -135,6 +135,6 @@ I believe in **building in public**. I've shared these core engines to contribut
 
 ## Connect
 
-Based in **NYC**. **Cornell** Alum. Building the Cognitive Operating Systems of the future (and the perfect **Lasagna**).
+Based in **NYC**. **Cornell** Alum. Building the Cognitive_OS of the future (and the perfect **Lasagna**).
 
 **LinkedIn:** [linkedin.com/in/joshualora](https://www.linkedin.com/in/joshualora)
