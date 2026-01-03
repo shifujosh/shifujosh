@@ -127,6 +127,6 @@ I believe in **building in public**. I've shared these core engines to contribut
 
 ## Connect
 
-NYC born and raised. Cornell alum. Lasagna enthusiast.
+Based in **NYC**. **Cornell** Alum. Building the future of work (and the perfect **Lasagna**).
 
 **LinkedIn:** [linkedin.com/in/joshualora](https://www.linkedin.com/in/joshualora)
