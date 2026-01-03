@@ -21,10 +21,10 @@
 We are living through a miraculous expansion of capability. Tools that were impossible yesterday are now commonplace. My role as a **Forward Deployed Engineer** is to harness this boundless potential and focus it on concrete human needs.
 
 **The Shift:**
-It's not about "fighting" complexity; it's about **hyperbolic time compression**. We can now move from *Idea* to *Measurable Outcome* at speeds that feel like magic. I build systems like **JACQ** to capture this lightning and ground it in reality, delivering solutions that are sympathetic to the actual needs of the business.
+Generative AI is about **hyperbolic time compression**. We can now move from *Idea* to *Measurable Outcome* at speeds that feel like magic. I build systems like **JACQ** to capture this lightning and ground it in reality, delivering solutions that are sympathetic to the actual needs of the business.
 
-**The Vision:**
-I am building **JACQ** to solve "Context Amnesia." Most AI tools are just chatbots that forget everything when you close the tab. I am building a persistent digital workforce that lives in my coding environment, turning my intent into production-ready software.
+**The Vision: Building to solve "Context Amnesia."** 
+Most AI tools are just chatbots that forget everything when you close the tab. I am building a persistent digital workforce that lives in my coding environment, turning my intent into production-ready software.
 
 ---
 
