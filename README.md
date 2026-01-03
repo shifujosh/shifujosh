@@ -85,6 +85,18 @@ A deterministic validation engine for high-stakes domains. It wraps LLMs in a **
 
 - **Key Pattern:** Recursive Consensus Voting
 - **Tech:** Firebase, Zod, Bayesian Ensembles
+- **Try it:** `npx specter-cli demo` | [npm](https://www.npmjs.com/package/specter-cli)
+
+---
+
+### [BetSpecs: Live Sports Analytics Platform](https://sportbs.app)
+
+*> In Public Beta Since June 2025.*
+
+A consumer-facing product powered by the Specter engine. Real-time sports analytics dashboard with predictive modeling and betting intelligence. **Live and serving real users.**
+
+- **Status:** Public Beta
+- **Link:** [sportbs.app](https://sportbs.app)
 
 ---
 
