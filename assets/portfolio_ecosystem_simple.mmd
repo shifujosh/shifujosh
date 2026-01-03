@@ -1,4 +1,4 @@
-%%{init: {'theme': 'base', 'themeVariables': { 'darkMode': true, 'background': 'transparent', 'primaryColor': '#1e293b', 'edgeLabelBackground':'#0f172a', 'fontSize': '15px', 'fontFamily': 'Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif' }, 'flowchart': { 'rankSpacing': 60, 'nodeSpacing': 25, 'curve': 'basis' } }}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'darkMode': true, 'background': 'transparent', 'primaryColor': '#1e293b', 'edgeLabelBackground':'#0f172a', 'fontSize': '16px', 'fontFamily': 'Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif' }, 'flowchart': { 'rankSpacing': 100, 'nodeSpacing': 60, 'curve': 'monotoneY', 'padding': 20 } }}%%
 graph TB
     %% Styling
     classDef actor fill:#000000,stroke:#fff,stroke-width:2px,color:#fff,font-weight:bold;
@@ -9,35 +9,39 @@ graph TB
     %% Me at the top
     Me((Architect)):::actor
 
-    %% Central System
-    JACQ[<b>JACQ</b><br/><i>Cognitive Operating System</i>]:::hub
+    %% Central System (Renamed)
+    Hub[<b>Cognitive</b><br/><b>Operating System</b>]:::hub
 
-    %% Use Cases (Problems I Solve)
+    %% Use Cases (Problems) - Stronger Language
     subgraph UseCases [Problems I Solve]
         direction TB
         style UseCases fill:none,stroke:#64748b,stroke-width:1px,stroke-dasharray: 5 5,color:#94a3b8
-        UC1(Context Amnesia<br/><i>AI forgets everything</i>):::usecase
-        UC2(Hallucination Risk<br/><i>LLMs invent facts</i>):::usecase
-        UC3(Data Chaos<br/><i>Bad inputs break systems</i>):::usecase
+        UC1(<b>Context Amnesia</b><br/><i>Resets to zero</i>):::usecase
+        UC2(<b>Model Hallucination</b><br/><i>Probabilistic guessing</i>):::usecase
+        UC3(<b>Data Entropy</b><br/><i>Chaos in, chaos out</i>):::usecase
+        UC4(<b>Orchestration Drift</b><br/><i>Agents lose the plot</i>):::usecase
     end
 
-    %% Outcomes (Results I Drive)
+    %% Outcomes (Results) - Stronger Language
     subgraph Results [Results I Drive]
         direction TB
         style Results fill:#000000,fill-opacity:0.3,stroke:#6366f1,stroke-width:1px,stroke-dasharray: 5 5,color:#e0e7ff
-        R1(<b>Persistent Memory</b><br/>Entity-Fact Graph):::outcome
-        R2(<b>Verified Outputs</b><br/>Truth Before Publish):::outcome
-        R3(<b>Data Physics</b><br/>Schema as Contract):::outcome
+        R1(<b>Compound Intelligence</b><br/><i>Context that scales</i>):::outcome
+        R2(<b>Deterministic Verification</b><br/><i>Logic over probability</i>):::outcome
+        R3(<b>Data Physics</b><br/><i>Strict laws for data</i>):::outcome
+        R4(<b>Agentic Interfaces</b><br/><i>UX that steers intent</i>):::outcome
     end
 
     %% Flow
-    Me ==> JACQ
-    JACQ --> UC1
-    JACQ --> UC2
-    JACQ --> UC3
+    Me ==> Hub
+    Hub --> UC1
+    Hub --> UC2
+    Hub --> UC3
+    Hub --> UC4
     UC1 ==> R1
     UC2 ==> R2
     UC3 ==> R3
+    UC4 ==> R4
 
     %% Styling
     linkStyle default stroke-width:2px,fill:none,stroke:#64748b
