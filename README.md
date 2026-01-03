@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD013 -->
-# Joshua R. Lora | Forward Deployed Product Engineer
+# Joshua R. Lora | Forward Deployed Engineer
 
 > *Building at the speed of thought.*
 
