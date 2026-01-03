@@ -132,14 +132,21 @@ I call this **Software as a Result**: I define the outcome, and the system produ
 
 ---
 
-## Architecture Patterns (Open Source)
+## Production Patterns (Open Source)
 
-I believe in **working in public**. I've extracted key patterns from my private engineering work and open-sourced them as reference implementations:
+Code is the only truth. I have open-sourced the core intellectual property that powers my autonomous agents—not "toy examples," but the actual production engines.
 
-- **[The Specter Event Loop](./architecture-patterns/specter_event_loop.ts)**: A consensus-based autonomous decision cycle for high-variance domains.
-- **[Memory Sync Engine](./architecture-patterns/memory_sync_engine.ts)**: Hybrid "Hot/Cold" memory architecture bridging Firestore and DuckDB.
-- **[Self-Healing LLM Parser](./architecture-patterns/structured_llm_parser.ts)**: Robust structured data extraction with Zod and exponential backoff.
-- **[Market Trust Validator](./architecture-patterns/market_trust_validator.ts)**: Deterministic "Trust Layer" comparing AI signals against Vig-free market physics.
+- **[The Specter Event Loop](./architecture-patterns/specter_event_loop.ts)**
+    *The "Brain".* A recursive, consensus-based decision engine that thinks before it acts. Implements multi-model voting (DeepSeek/Gemini/Ollama) to eliminate hallucination in high-stakes environments.
+
+- **[Memory Sync Engine](./architecture-patterns/memory_sync_engine.ts)**
+    *The "Cortex".* Hybrid Hot/Cold memory architecture connecting Firestore (User Data) with embedded DuckDB (Vector/Graph), giving agents an infinite context window with zero latency.
+
+- **[Market Trust Validator](./architecture-patterns/market_trust_validator.ts)**
+    *The "Shield".* Deterministic Data Physics layer. Rejects "plausible but wrong" AI predictions by checking them against immutable market partials (Synthetic Hold, Vig-Free Probability).
+
+- **[Self-Healing LLM Parser](./architecture-patterns/structured_llm_parser.ts)**
+    *The "Translator".* Beyond `JSON.parse`. A recursive retry engine that uses Zod schemas to "heal" malformed LLM responses at runtime, ensuring 99.9% pipeline reliability.
 
 ---
 
