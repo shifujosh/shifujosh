@@ -168,6 +168,6 @@ Reference implementations of the patterns that power my agent systems. Simplifie
 
 ## Connect
 
-Based in **NYC**. **Cornell** Alum. Building the Cognitive_OS of the future (and the perfect **Lasagna**).
+Based in **NYC**. **Cornell** Alum.**Lasagna** Enthusiast.
 
 **LinkedIn:** [linkedin.com/in/joshualora](https://www.linkedin.com/in/joshualora)
