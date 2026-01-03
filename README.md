@@ -151,16 +151,10 @@ Reference implementations of the patterns that power my agent systems. Simplifie
 ## Activity
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=shifujosh&theme=darkhub&no-frame=true&column=4&margin-w=15&margin-h=15" alt="GitHub Trophies" />
+  <img src="./assets/contribution_graph.png" alt="915 contributions in the last year" width="100%" />
 </p>
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=shifujosh&theme=dark&hide_border=true" alt="GitHub Streak" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shifujosh&layout=compact&theme=dark&hide_border=true" alt="Top Languages" />
-</p>
+> **915 contributions** in the last year across **29+ repositories**.
 
 ---
 
