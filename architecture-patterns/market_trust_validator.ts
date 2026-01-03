@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * MARKET TRUST VALIDATOR (Reference Architecture)
  * 
@@ -18,8 +17,6 @@
  * Note: Requires `zod` dependency.
  */
 
-// In a real project: import { z } from 'zod';
-// For reference pattern purposes, we assume z is available or mocked:
 import { z } from 'zod'; 
 
 // ============ 0. DOMAIN PRIMITIVES (The Constants) ============
@@ -85,6 +82,11 @@ export class MarketPhysics {
             theoreticalHold: totalImplied - 1
         };
     }
+
+    static removeVig(homeOdds: number, awayOdds: number) {
+        const { homeFairProb, awayFairProb } = this.calculateFairValue(homeOdds, awayOdds);
+        return { homeResults: homeFairProb, awayResults: awayFairProb };
+    }
 }
 
 // ============ 2. VELOCITY TRACKER (Steam & Stale Line Detection) ============
@@ -95,34 +97,31 @@ export class SteamDetector {
     private static VELOCITY_THRESHOLD_PTS_PER_HOUR = 0.5; 
     private static STALENESS_THRESHOLD_MS = 60 * 1000; // 1 minute
 
-    static analyzeMovement(snapshots: MarketSnapshot[]) {
-        if (snapshots.length < 2) return { isSteam: false, velocity: 0, isStale: false };
+    static analyze(snapshots: MarketSnapshot[]) {
+        if (snapshots.length < 2) return { isSteam: false, velocity: 0, isStale: false, direction: 'NONE' as const };
 
         const start = snapshots[0];
         const end = snapshots[snapshots.length - 1];
         const now = Date.now();
 
         // 1. Check for Staleness (Data Physics)
-        // If the "Live" odds haven't updated in > 1 min during active trading, they are suspect.
         const isStale = (now - end.timestamp) > this.STALENESS_THRESHOLD_MS;
 
         // 2. Calculate Velocity (Points per Hour)
         const timeDeltaHours = (end.timestamp - start.timestamp) / (1000 * 60 * 60);
         const spreadMove = (end.spread || 0) - (start.spread || 0);
 
-        // Avoid division by zero
         const velocity = timeDeltaHours > 0 ? spreadMove / timeDeltaHours : 0;
         
         // 3. Detect "Sharp Action"
-        // If specific "Oracle" books (marked isSharp) moved first, this is high-confidence steam.
         const sharpMove = snapshots.some(s => s.isSharp && s.timestamp > start.timestamp);
 
         return {
             isSteam: Math.abs(velocity) >= this.VELOCITY_THRESHOLD_PTS_PER_HOUR,
-            velocity, // +1.0 = Home team getting worse by 1 point/hour
+            velocity,
             isStale,
             initiatedBySharps: sharpMove,
-            recommendation: velocity > 0 ? 'FADE_HOME' : 'FADE_AWAY'
+            direction: velocity > 0 ? 'FADE_HOME' as const : 'FADE_AWAY' as const
         };
     }
 }
@@ -130,8 +129,6 @@ export class SteamDetector {
 // ============ 3. ENTITY RESOLVER (Identity Physics) ============
 
 export class EntityResolver {
-    // In production, this uses a dedicated Vector Database or fuzzy search service.
-    // Identifying that "Man Utd" === "Manchester United FC" is critical for arbitrage.
     private static ALIAS_MAP: Record<string, string> = {
         'lakers': 'LAL', 'la lakers': 'LAL', 'los angeles lakers': 'LAL',
         'knicks': 'NYK', 'ny knicks': 'NYK', 'new york knicks': 'NYK',
@@ -144,7 +141,7 @@ export class EntityResolver {
      */
     static resolve(rawString: string): string | null {
         const normalized = rawString.toLowerCase()
-            .replace(/[^a-z0-9 ]/g, '') // Remove punc chars like '.' in 'St. Louis'
+            .replace(/[^a-z0-9 ]/g, '')
             .trim();
             
         return this.ALIAS_MAP[normalized] || null;
@@ -154,9 +151,9 @@ export class EntityResolver {
 // ============ 4. THE TRUST GATE (Main Validator) ============
 
 interface AISignal {
-    team: string; // e.g. "Lakers"
-    odds: number; // e.g. -110
-    confidence: number; // 0-1
+    team: string;
+    odds: number;
+    confidence: number;
 }
 
 interface MarketState {
@@ -164,26 +161,11 @@ interface MarketState {
     homeOdds: number;
     awayTeam: string;
     awayOdds: number;
-    lineHistory: LineSnapshot[];
+    lineHistory: MarketSnapshot[]; // Fixed: Now uses MarketSnapshot instead of LineSnapshot
 }
-
-// Mocking external dependencies for pattern demonstration
-type LineSnapshot = { timestamp: number; home: number; away: number; bookmakerId: string; isSharp: boolean; spread?: number; };
-
-class MarketPhysicsImpl {
-    static removeVig(home: number, away: number) { return { homeResults: 0.5, awayResults: 0.5 }; }
-}
-
-class SteamDetectorImpl {
-    static analyze(history: LineSnapshot[]) { return { velocity: 0, isSharp: false, isSteam: false, direction: 'NONE' }; }
-}
-
-// In a real project, these are imports. For the pattern file, we alias them:
-const MarketPhysics = MarketPhysicsImpl;
-const SteamDetector = SteamDetectorImpl;
 
 export class MarketTrustValidator {
-    private static SAFETY_MARGIN = 0.02; // Required edge above Fair Value
+    private static SAFETY_MARGIN = 0.02;
 
     /**
      * The Gatekeeper Function.
@@ -201,18 +183,15 @@ export class MarketTrustValidator {
         }
 
         // Step 2: Hallucination Check (Odds Tolerance)
-        // AI often "remembers" odds from training data vs live odds.
         const currentOdds = resolvedTeam === resolvedHome ? market.homeOdds : market.awayOdds;
         if (Math.abs(signal.odds - currentOdds) > 10) { 
             return { approved: false, reason: `HALLUCINATION: AI saw ${signal.odds}, Real is ${currentOdds}` };
         }
 
         // Step 3: The Physics Check (Positive Expected Value)
-        // Does the AI's confidence exceed the "No-Vig" implied probability?
         const { homeResults, awayResults } = MarketPhysics.removeVig(market.homeOdds, market.awayOdds);
         const fairWinProb = resolvedTeam === resolvedHome ? homeResults : awayResults;
 
-        // Check if Signal Confidence > Fair Probability + Safety Margin
         if (signal.confidence < (fairWinProb + this.SAFETY_MARGIN)) {
             return { 
                 approved: false, 
@@ -221,7 +200,6 @@ export class MarketTrustValidator {
         }
 
         // Step 4: Steam Check
-        // Don't bet against a "Steam Move" (Market consensus shifting rapidly against us).
         const steam = SteamDetector.analyze(market.lineHistory);
         if (steam.isSteam && steam.direction === (resolvedTeam === resolvedHome ? 'FADE_HOME' : 'FADE_AWAY')) {
              return { approved: false, reason: `STEAM_WARNING: Market is moving violently against this position.` };

@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * THE SPECTER EVENT LOOP (Reference Implementation)
  * 
@@ -12,7 +11,6 @@
  * 4. Idempotency: "Claim Check" pattern prevents double-execution.
  */
 
-import { EventEmitter } from 'events';
 import { z } from 'zod'; // Runtime Validation (Data Physics)
 
 // --- DATA PHYSICS LAYER ---------------------------------------------------
@@ -23,7 +21,7 @@ const TargetSchema = z.object({
     type: z.enum(['NBA_GAME', 'NFL_GAME', 'MARKET_TICK']),
     timestamp: z.date(),
     status: z.enum(['SCHEDULED', 'LIVE', 'FINAL']),
-    metadata: z.record(z.string(), z.any())
+    metadata: z.record(z.string(), z.unknown())
 });
 
 // Enriched context that prevents hallucinations by grounding the LLM
@@ -68,18 +66,37 @@ class ConsensusManager {
     }
 }
 
+// --- DEPENDENCY INTERFACES ------------------------------------------------
+
+interface MemoryStore {
+    exists(key: string): Promise<boolean>;
+    set(key: string, value: string, options?: { ttl: number }): Promise<void>;
+}
+
+interface LLMService {
+    generateStructured(params: { role: string; context: Context; objective: string }): Promise<AgentOpinion>;
+}
+
+interface SpecterConfig {
+    memory: MemoryStore;
+    llm: LLMService;
+    featureFlags?: { dryRun?: boolean };
+    onExecutionComplete?: (data: { target: Target; rationale: string }) => void;
+}
+
 // --- THE CORE LOOPS -------------------------------------------------------
 
-export class SpecterEventLoop extends EventEmitter {
+export class SpecterEventLoop {
     private isDryRun: boolean = false;
-    private memory: any;
-    private llm: any;
+    private memory: MemoryStore;
+    private llm: LLMService;
+    private onExecutionComplete?: (data: { target: Target; rationale: string }) => void;
 
-    constructor(config: any) {
-        super();
+    constructor(config: SpecterConfig) {
         this.memory = config.memory;
         this.llm = config.llm;
         this.isDryRun = config.featureFlags?.dryRun ?? false;
+        this.onExecutionComplete = config.onExecutionComplete;
     }
 
     /**
@@ -87,7 +104,7 @@ export class SpecterEventLoop extends EventEmitter {
      * "We don't just react. We verify, debate, and then execute."
      */
     async runMissionCycle() {
-        console.log('[SPECTER] 👁️ Scanning Horizon...');
+        console.log('[SPECTER] Scanning Horizon...');
 
         // 1. ACQUISITION (with Schema Validation)
         const rawCurrents = await this.acquireTargets();
@@ -96,7 +113,7 @@ export class SpecterEventLoop extends EventEmitter {
         for (const raw of rawCurrents) {
             const result = TargetSchema.safeParse(raw);
             if (!result.success) {
-                console.warn(`[SPECTER] ⚠️ Anomaly Detected: Dropping malformed target ${raw.id}`);
+                console.warn(`[SPECTER] Anomaly Detected: Dropping malformed target`);
                 continue;
             }
             validTargets.push(result.data);
@@ -122,7 +139,7 @@ export class SpecterEventLoop extends EventEmitter {
         const context = await this.buildContext(target);
         
         // B. THE ADVERSARIAL DEBATE (Consensus)
-        console.log(`[SPECTER] ⚖️ Convening Council for ${target.id}...`);
+        console.log(`[SPECTER] Convening Council for ${target.id}...`);
         
         const opinions = await Promise.all([
             this.consultPersona(target, context, 'ANALYST'),      // "Find the edge"
@@ -135,13 +152,11 @@ export class SpecterEventLoop extends EventEmitter {
         if (verdict.decision) {
             await this.executeOne(target, verdict.rationale);
         } else {
-            console.log(`[SPECTER] 🛑 HOLD: ${verdict.rationale}`);
+            console.log(`[SPECTER] HOLD: ${verdict.rationale}`);
         }
     }
 
     private async consultPersona(target: Target, context: Context, role: AgentOpinion['persona']): Promise<AgentOpinion> {
-        // In a real impl, this calls the LLM with a specialized system prompt
-        // Simulating async thought process...
         return this.llm.generateStructured({
             role,
             context,
@@ -161,25 +176,26 @@ export class SpecterEventLoop extends EventEmitter {
 
     private async executeOne(target: Target, rationale: string) {
         if (this.isDryRun) {
-            console.log(`[SPECTER] 🧪 [DRY RUN] Executing on ${target.id} | Reason: ${rationale}`);
+            console.log(`[SPECTER] [DRY RUN] Executing on ${target.id} | Reason: ${rationale}`);
             return;
         }
 
         // Idempotency Check: "Did I already do this?"
         const lockKey = `exec_lock::${target.id}`;
         if (await this.memory.exists(lockKey)) {
-            console.warn(`[SPECTER] 🔁 Idempotency Guard: Skipping duplicate execution for ${target.id}`);
+            console.warn(`[SPECTER] Idempotency Guard: Skipping duplicate execution for ${target.id}`);
             return;
         }
 
         await this.memory.set(lockKey, 'LOCKED', { ttl: 3600 });
-        console.log(`[SPECTER] 🚀 EXECUTION SENT: ${target.id}`);
-        this.emit('execution_complete', { target, rationale });
+        console.log(`[SPECTER] EXECUTION SENT: ${target.id}`);
+        
+        // Callback pattern instead of EventEmitter
+        this.onExecutionComplete?.({ target, rationale });
     }
 
     // Mock acquire for the pattern file
-    private async acquireTargets(): Promise<any[]> {
+    private async acquireTargets(): Promise<unknown[]> {
         return [{ id: '123e4567-e89b-12d3-a456-426614174000', type: 'NBA_GAME', timestamp: new Date(), status: 'SCHEDULED', metadata: {} }];
     }
 }
-

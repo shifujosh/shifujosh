@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 /**
  * STRUCTURED LLM PARSER (Reference Implementation)
  * 
@@ -102,7 +102,7 @@ export class StructuredLLMParser {
      * Exponential Backoff Retry Pattern
      */
     private async withRetry<T>(operation: () => Promise<T>): Promise<T> {
-        let lastError;
+        let lastError: unknown;
         for (let i = 0; i <= this.config.retries; i++) {
             try {
                 return await operation();

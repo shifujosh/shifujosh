@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * MEMORY SYNC ENGINE (Reference Implementation)
  * 
@@ -21,13 +20,78 @@
  * - Conflict Resolution: "Tombstone" merging (newer retractions override older assertions).
  */
 
-// Mock Dependencies for Pattern File
-class Firestore { collection(path: string) { return { doc: (id: string) => ({ set: async () => {}, get: async () => ({ exists: true, data: () => ({}) }), update: () => {}, delete: () => {} }), where: () => ({ limit: () => ({}) }), batch: () => ({ delete: () => {}, update: () => {}, commit: async () => {} }) }; } runTransaction(cb: any) { return cb({ get: async () => ({ empty: true }), update: () => {} }); } batch() { return this.collection('').batch(); } }
-class Transaction { set() {} get() {} update() {} }
-class Database { constructor(path: string) {} prepare(sql: string) { return { run: (a,b,c,d,e,f, cb: Function) => cb(null), finalize: () => {} }; } }
-
-import { EventEmitter } from 'events';
 import { z } from 'zod';
+
+// --- MOCK DEPENDENCIES (for standalone reference file) ---
+
+interface FirestoreDoc { 
+    set: (d: unknown) => Promise<void>; 
+    get: () => Promise<{ exists: boolean; data: () => Record<string, unknown> }>; 
+    update: (d: unknown) => void; 
+    delete: () => void; 
+    id: string; 
+    ref: unknown; 
+}
+
+interface FirestoreQuery { 
+    limit: (n: number) => { get: () => Promise<{ empty: boolean; docs: FirestoreDoc[] }> };
+}
+
+interface FirestoreCollection { 
+    doc: (id: string) => FirestoreDoc; 
+    where: (field: string, op: string, val: unknown) => FirestoreQuery; 
+    batch: () => FirestoreBatch; 
+}
+
+interface FirestoreBatch {
+    delete: (ref: unknown) => void;
+    update: (ref: unknown, data: unknown) => void;
+    commit: () => Promise<void>;
+}
+
+interface FirestoreTransaction { 
+    get: (query: unknown) => Promise<{ empty: boolean; docs: FirestoreDoc[] }>; 
+    update: (ref: unknown, data: unknown) => void; 
+}
+
+class MockFirestore { 
+    collection(path: string): FirestoreCollection { 
+        return { 
+            doc: (id: string) => ({ 
+                set: async () => {}, 
+                get: async () => ({ exists: true, data: () => ({}) }), 
+                update: () => {}, 
+                delete: () => {}, 
+                id, 
+                ref: {} 
+            }), 
+            where: () => ({ limit: () => ({ get: async () => ({ empty: true, docs: [] }) }) }), 
+            batch: () => ({ delete: () => {}, update: () => {}, commit: async () => {} }) 
+        }; 
+    } 
+    runTransaction<T>(cb: (t: FirestoreTransaction) => Promise<T>): Promise<T> { 
+        return cb({ 
+            get: async () => ({ empty: true, docs: [] }), 
+            update: () => {} 
+        }); 
+    } 
+    batch(): FirestoreBatch { 
+        return { delete: () => {}, update: () => {}, commit: async () => {} }; 
+    } 
+}
+
+class MockDatabase { 
+    constructor(path: string) {} 
+    prepare(sql: string) { 
+        return { 
+            run: (...args: unknown[]) => { 
+                const cb = args[args.length - 1] as (err: Error | null) => void;
+                cb(null); 
+            }, 
+            finalize: () => {} 
+        }; 
+    } 
+}
 
 // --- DATA PHYSICS ---
 
@@ -46,7 +110,7 @@ const FactSchema = z.object({
     // 'staged' = newly formed, 'confirmed' = validated, 'archived' = moved to cold storage
     // 'retracted' = tombstone (deleted truth)
     status: z.enum(['staged', 'confirmed', 'locking', 'archived', 'retracted']),
-    metadata: z.record(z.string(), z.any()).optional(),
+    metadata: z.record(z.string(), z.unknown()).optional(),
 });
 
 type Fact = z.infer<typeof FactSchema>;
@@ -60,18 +124,23 @@ interface SyncMetrics {
     lock_contention_count: number;
 }
 
-export class MemorySyncEngine extends EventEmitter {
-    private hotStore: Firestore; // Firebase (Active Context)
-    private coldStore: Database; // DuckDB (Analytical/Vector Memory)
+interface MemorySyncConfig {
+    onMetric?: (metrics: SyncMetrics) => void;
+}
+
+export class MemorySyncEngine {
+    private hotStore: MockFirestore; // Firebase (Active Context)
+    private coldStore: MockDatabase; // DuckDB (Analytical/Vector Memory)
+    private onMetric?: (metrics: SyncMetrics) => void;
     
     // Config: The threshold where "Active" becomes "History"
     private readonly FREEZE_THRESHOLD_MS = 24 * 60 * 60 * 1000; // 24 Hours
     private readonly BATCH_SIZE = 500;
 
-    constructor(hotStore: Firestore, coldStore: Database) {
-        super();
+    constructor(hotStore: MockFirestore, coldStore: MockDatabase, config?: MemorySyncConfig) {
         this.hotStore = hotStore;
         this.coldStore = coldStore;
+        this.onMetric = config?.onMetric;
     }
 
     /**
@@ -82,13 +151,11 @@ export class MemorySyncEngine extends EventEmitter {
      */
     async runDriftCycle() {
         const startTime = Date.now();
-        this.emitLog('INFO', 'Initiating Glacial Drift...');
+        this.log('INFO', 'Initiating Glacial Drift...');
 
         try {
             // 1. SCAN HOT STORE & CLAIM LOCKS
-            // We use a transaction to atomically move facts from 'confirmed' to 'locking'.
-            // This prevents other workers from picking up the same batch.
-            const lockedFacts = await this.hotStore.runTransaction(async (t: Transaction) => {
+            const lockedFacts = await this.hotStore.runTransaction(async (t: FirestoreTransaction) => {
                 const now = Date.now();
                 const cutoff = new Date(now - this.FREEZE_THRESHOLD_MS);
 
@@ -102,15 +169,17 @@ export class MemorySyncEngine extends EventEmitter {
                 if (snapshot.empty) return [];
 
                 const factsToLock: Fact[] = [];
-                snapshot.docs.forEach((doc: any) => { // Cast to any or QueryDocumentSnapshot if types were available
+                snapshot.docs.forEach((doc: FirestoreDoc) => {
                     const data = doc.data();
-                    // Runtime Validation
-                    const parsed = FactSchema.safeParse({ ...data, timestamp: data.timestamp.toDate() });
+                    const parsed = FactSchema.safeParse({ 
+                        ...data, 
+                        timestamp: new Date(data.timestamp as string) 
+                    });
                     if (parsed.success) {
                         t.update(doc.ref, { status: 'locking', lock_timestamp: new Date() });
                         factsToLock.push(parsed.data);
                     } else {
-                        this.emitLog('WARN', `Corrupt Fact Dropped: ${doc.id}`, parsed.error);
+                        this.log('WARN', `Corrupt Fact Dropped: ${doc.id}`);
                     }
                 });
 
@@ -118,15 +187,13 @@ export class MemorySyncEngine extends EventEmitter {
             });
 
             if (lockedFacts.length === 0) {
-                this.emitLog('INFO', 'No facts ready for freezing.');
+                this.log('INFO', 'No facts ready for freezing.');
                 return;
             }
 
-            this.emitLog('INFO', `Locked ${lockedFacts.length} facts. Begin freeze.`);
+            this.log('INFO', `Locked ${lockedFacts.length} facts. Begin freeze.`);
 
             // 2. MIGRATE TO COLD STORE (DuckDB)
-            // This operation is idempotent: if it fails, the transaction above already
-            // marked them 'locking'. A cleanup job would reset 'locking' to 'confirmed' after timeout.
             const results = await Promise.allSettled(
                 lockedFacts.map((fact: Fact) => this.freezeFact(fact))
             );
@@ -142,16 +209,14 @@ export class MemorySyncEngine extends EventEmitter {
             // 3. FINALIZE BATCH
             const writeBatch = this.hotStore.batch();
             
-            // Delete successfully frozen facts (Context Window Optimization)
             successIds.forEach(id => {
                 const ref = this.hotStore.collection('facts').doc(id);
                 writeBatch.delete(ref); 
             });
 
-            // Reset failures to 'confirmed' to retry later
             failureIds.forEach(id => {
                 const ref = this.hotStore.collection('facts').doc(id);
-                writeBatch.update(ref, { status: 'confirmed', retry_count: 1 }); // Increment logic omitted for brevity
+                writeBatch.update(ref, { status: 'confirmed', retry_count: 1 });
             });
 
             await writeBatch.commit();
@@ -161,30 +226,26 @@ export class MemorySyncEngine extends EventEmitter {
                 drift_latency_ms: Date.now() - startTime,
                 facts_frozen: successIds.length,
                 vector_write_errors: failureIds.length,
-                lock_contention_count: 0 // Simplification
+                lock_contention_count: 0
             });
 
-            this.emitLog('INFO', `Glacial Drift Complete. Frozen: ${successIds.length}.`);
+            this.log('INFO', `Glacial Drift Complete. Frozen: ${successIds.length}.`);
 
         } catch (error) {
-            this.emitLog('ERROR', 'Critical Drift Failure', error);
-            // In production, we would alert PagerDuty here.
+            this.log('ERROR', 'Critical Drift Failure');
         }
     }
 
     /**
      * Insert into DuckDB and Generate Vector Embedding
-     * Uses "Semantic Compression" to turn raw text facts into searchable vectors.
      */
     private async freezeFact(fact: Fact): Promise<void> {
-        // Circuit Breaker / Retry logic for Embedding API would go here.
         const textRepresentation = `${fact.subject} ${fact.predicate} ${fact.object}`;
         
         let embedding: number[];
         try {
             embedding = await this.generateEmbedding(textRepresentation);
-        } catch (e) {
-            // If embedding fails, we can't search it. Fail the row.
+        } catch {
             throw new Error(`Embedding Generation Failed for ${fact.id}`);
         }
 
@@ -192,7 +253,7 @@ export class MemorySyncEngine extends EventEmitter {
             const stmt = this.coldStore.prepare(
                 'INSERT INTO long_term_memory (id, subject, predicate, object, embedding, frozen_at) VALUES (?, ?, ?, ?, ?, ?)'
             );
-            stmt.run(fact.id, fact.subject, fact.predicate, fact.object, embedding, new Date(), (err: any) => {
+            stmt.run(fact.id, fact.subject, fact.predicate, fact.object, embedding, new Date(), (err: Error | null) => {
                 if (err) reject(err);
                 else resolve();
             });
@@ -202,10 +263,6 @@ export class MemorySyncEngine extends EventEmitter {
 
     /**
      * Cross-Memory Query (RAG Pattern) with Tombstone Resolution
-     * 
-     * Handles the "Zombie Fact" problem: 
-     * If a fact was deleted in Hot Store (Retraction) but exists in Cold Store,
-     * the Retraction must win.
      */
     async recall(query: string): Promise<Fact[]> {
         const [hotFacts, coldFacts] = await Promise.all([
@@ -222,42 +279,33 @@ export class MemorySyncEngine extends EventEmitter {
     private mergeMemory(hot: Fact[], cold: Fact[]): Fact[] {
         const result = new Map<string, Fact>();
 
-        // 1. Load Cold Facts (Base Truth)
         cold.forEach(f => result.set(f.id, f));
 
-        // 2. Overlay Hot Facts (Recent Truth)
         hot.forEach(f => {
             if (f.status === 'retracted') {
-                // Tombstone: specific deletion of a long-term fact
                 result.delete(f.id);
             } else {
-                // Upsert: New information overrides old
                 result.set(f.id, f);
             }
         });
 
-        // 3. Filter Low Confidence
         return Array.from(result.values())
-            .filter(f => f.confidence > 0.6) // Minimum truth threshold
+            .filter(f => f.confidence > 0.6)
             .sort((a, b) => b.confidence - a.confidence);
     }
 
     private async generateEmbedding(text: string): Promise<number[]> {
-        // Placeholder for Gemini/OpenAI embedding call
         return new Array(1536).fill(0); 
     }
 
     private emitMetric(metrics: SyncMetrics) {
-        this.emit('metric', metrics);
-        // Ex: Datadog.increment('memory.drift.facts', metrics.facts_frozen);
+        this.onMetric?.(metrics);
     }
 
-    private emitLog(level: string, msg: string, data?: any) {
-        console.log(`[${new Date().toISOString()}] [${level}] ${msg}`, data ? data : '');
+    private log(level: string, msg: string) {
+        console.log(`[${new Date().toISOString()}] [${level}] ${msg}`);
     }
 
-    // Stubs for example
     private async queryHot(q: string): Promise<Fact[]> { return []; }
     private async queryCold(q: string): Promise<Fact[]> { return []; }
 }
-

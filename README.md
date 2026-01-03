@@ -58,7 +58,7 @@ By treating AI as a "cognitive substrate" rather than just a tool, I've inverted
 | **Time-to-Market** | 6-9 Months | **35 Days** | 🚀 **8x**<br>*(Parallel  Execution)* |
 | **Reliability** | Manual QA | **Automated Data Physics** | 🛡️ **Verified**<br>*(Deterministic Validation)* |
 
-> *Delivered ~$792k of agency-equivalent engineering value for <$1,000 in compute.*
+> *Delivered ~$816k of agency-equivalent engineering value for <$1,000 in compute.*
 > 
 > 📄 **[Read the Full Antigravity Sprint Case Study](https://github.com/shifujosh/Antigravity-Sprint-Retrospective/blob/main/WHITEPAPER.md)**
 
