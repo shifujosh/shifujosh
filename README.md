@@ -2,6 +2,34 @@
 
 > *Developing technology for human flourishing.*
 
+<p align="center">
+  <img src="https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Zod-Runtime_Validation-blueviolet?logo=zod" alt="Zod" />
+  <img src="https://img.shields.io/badge/Tests-74_Passing-brightgreen?logo=vitest" alt="Tests" />
+  <img src="https://img.shields.io/badge/ADRs-9_Documented-informational" alt="ADRs" />
+</p>
+
+---
+
+## What I've Shipped
+
+| Project | What It Does | Stack | Tests |
+|:--------|:-------------|:------|:-----:|
+| [**JACQ**](https://github.com/shifujosh/JACQ-Architecture) | AI memory system with Graph-RAG | TypeScript, DuckDB, Next.js&nbsp;16 | 27 |
+| [**Specter**](https://github.com/shifujosh/Specter-Sports-Intel) | Verification-first sports analytics | TypeScript, Firebase, Zod | 25 |
+| [**Market&nbsp;Pipeline**](https://github.com/shifujosh/Market-Data-Pipeline-Ref-) | Financial-grade data validation | TypeScript, TimescaleDB | 22 |
+
+<details>
+<summary><strong>Proof of Execution: Code Samples</strong></summary>
+
+Each repo includes runnable demos and tested implementations:
+
+**JACQ** — `examples/graph_rag_demo.ts` demonstrates Entity-Fact memory with staging policies  
+**Specter** — `examples/analysis_demo.ts` shows multi-model ensemble voting  
+**Market Pipeline** — `ts/src/validators/ingestion-engine.ts` implements tiered validation (Hard/Soft/Warning)
+
+</details>
+
 ---
 
 ## Why I Build
