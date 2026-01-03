@@ -1,11 +1,4 @@
 <!-- markdownlint-disable MD013 -->
-
-
-## Activity
-![GitHub Contribution Graph](https://github-readme-activity-graph.vercel.app/graph?username=shifujosh&theme=github-dark)
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=shifujosh&show_icons=true&theme=radical)
-
-<!-- markdownlint-disable MD013 -->
 # Joshua Lora | Forward Deployed Engineer & Product Architect
 
 > *Building at the speed of thought.*
@@ -152,6 +145,14 @@ Reference implementations of the patterns that power my agent systems. Simplifie
     *The "Translator".* Beyond `JSON.parse`. An iterative retry engine. **Uses** Zod schemas to "heal" malformed LLM responses at runtime, ensuring near-100% pipeline reliability.*
 
 *\* Based on internal testing across 10,000+ API calls.*
+
+---
+
+## Activity
+
+![GitHub Contribution Graph](https://github-readme-activity-graph.vercel.app/graph?username=shifujosh&theme=github-dark)
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=shifujosh&show_icons=true&theme=radical)
 
 ---
 
