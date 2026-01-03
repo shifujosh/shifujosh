@@ -36,7 +36,7 @@ graph TD
     
     subgraph Agents ["The Agent Swarm"]
         Orchestrator -->|Build| Gemini[Gemini Swarm]
-        Orchestrator -->|Audit| Claude[Claude Engineer]
+        Orchestrator -->|Audit| Claude[Claude Engineers]
     end
     
     Gemini & Claude --> Draft[Draft Code]
