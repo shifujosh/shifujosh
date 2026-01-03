@@ -50,7 +50,7 @@ I am building **JACQ** to solve "Context Amnesia." Most AI tools are just chatbo
 
 I direct the work. AI does the heavy lifting. I treat models like specialized employees, not text generators.
 
-![Portfolio Ecosystem](./assets/portfolio_ecosystem_simple.png)
+![Cognitive OS Architecture](./assets/shifujosh_hero.png)
 
 > *Problems I Solve → Results I Drive*
 
