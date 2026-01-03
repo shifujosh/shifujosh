@@ -1,4 +1,10 @@
 <!-- markdownlint-disable MD013 -->
+
+
+## Activity
+![GitHub Contribution Graph](https://github-readme-activity-graph.vercel.app/graph?username=shifujosh&theme=github-dark)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=shifujosh&show_icons=true&theme=radical)
+
 <!-- markdownlint-disable MD013 -->
 # Joshua Lora | Forward Deployed Engineer & Product Architect
 
