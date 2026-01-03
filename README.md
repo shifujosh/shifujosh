@@ -73,44 +73,32 @@ By treating AI as a "cognitive substrate" rather than just a tool, I've inverted
 ## Featured Projects
 
 ### [JACQ: Cognitive Operating System](https://github.com/shifujosh/JACQ-Architecture)
+*> The "Anti-Amnesia" Architecture.*
 
-*Local-First AI Workspace with Graph-RAG Memory.*
+A Graph-RAG system that inverts the ephemeral nature of LLMs. Instead of stateless chats, it implements a **Long-Term Memory Substrate** using DuckDB, allowing agents to "remember" context, refine user intent, and autonomously promote facts from short-term staging to permanent knowledge.
 
-A unified OS that remembers past work, learns preferences, and suggests next steps. Implements Entity-Fact memory model with staging policies for fact promotion and decay.
-
-**Key Innovations:**
-
-- Graph-RAG retrieval combining vector search with spreading activation
-- Entity-Fact memory model with confirmation scoring
-- Orchestrator pattern for multi-agent coordination
+- **Key Pattern:** Entity-Fact Memory Model
+- **Tech:** DuckDB, Vector Search, Next.js 16
 
 ---
 
 ### [Specter: Autonomous Sports Intelligence](https://github.com/shifujosh/Specter-Sports-Intel)
+*> Solving the "Stochastic Parrot" Problem.*
 
-*Deterministic RAG & Real-Time Verification for Sports Analytics.*
+A deterministic validation engine for high-stakes domains. It wraps LLMs in a **Consensus-Based Event Loop**, forcing models to debate and cross-reference predictions against immutable statistical ground truth before publishing. The result? Zero hallucinations in production.
 
-Ingests data, runs ensemble analysis, fact-checks itself, generates content, and broadcasts—fully autonomously. Solves the "LLM Hallucination" problem with a verification-first architecture.
-
-**Key Innovations:**
-
-- 3-Model Ensemble Voting (Bayesian + Elo + Rules Engine)
-- Deterministic Verification Layer (fact-checking before output)
-- Velocity Tracker for detecting sharp money movement
+- **Key Pattern:** Recursive Consensus Voting
+- **Tech:** Firebase, Zod, Bayesian Ensembles
 
 ---
 
 ### [Market Data Pipeline](https://github.com/shifujosh/Market-Data-Pipeline-Ref-)
+*> Financial-Grade Data Physics.*
 
-*Data Physics - Enterprise-Grade Validation Patterns.*
+A reference implementation of "Zero Silent Failure." Demonstrates how to apply HFT (High-Frequency Trading) principles—**Dead Letter Queues**, **Tiered Validation**, and **Circuit Breakers**—to modern AI systems, ensuring garbage data never pollutes the context window.
 
-Reference architecture demonstrating financial-grade data validation learned from managing high-frequency trading pipelines. These same principles power the "Trust Layer" in my AI systems.
-
-**Key Innovations:**
-
-- Tiered Validation (Hard/Soft/Warning)
-- Dead Letter Queue for zero silent data loss
-- Price Inertia detection for anomaly flagging
+- **Key Pattern:** Deterministic Trust Layer
+- **Tech:** TypeScript, Strict Zod Schemas
 
 ---
 
