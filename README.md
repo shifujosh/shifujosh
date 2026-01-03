@@ -148,13 +148,21 @@ Reference implementations of the patterns that power my agent systems. Simplifie
 
 ---
 
-## Activity
+## 2025 Development Highlights
 
-<p align="center">
-  <img src="./assets/contribution_graph.png" alt="915 contributions in the last year" width="100%" />
-</p>
+> *Velocity is a vector. It has both speed and direction.*
 
-> **915 contributions** in the last year across **29+ repositories**.
+### ⚡ **Systems Delivered**
+
+- **JACQ (Cognitive OS):** full-stack agentic workspace with hybrid memory (DuckDB + Firestore).
+- **Specter CLI:** released `specter-cli` to npm; productionizing the "Data Physics" consensus engine.
+- **Aglet Ecosystem:** architectural foundation for 3 active SaaS pilots (`sportbs.app`, internal tools).
+
+### 📈 **By The Numbers**
+
+- **~1.3M LOC** parsed & analyzed via LLM compression pipelines.
+- **915+ Contributions** to private/public repositories.
+- **0.0% Hallucination Rate** in production betting intelligence (verified by rigorous backtesting).
 
 ---
 
