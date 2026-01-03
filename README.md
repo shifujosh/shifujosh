@@ -46,13 +46,15 @@ I am building **JACQ** to solve "Context Amnesia." Most AI tools are just chatbo
 
 ---
 
-## How It Works
+## How I Work
 
-I direct the work. AI does the heavy lifting. I treat models like specialized employees, not text generators.
+I don't just write code; I orchestrate intelligence.
+
+This diagram represents my "Cognitive Operating System"—a human-in-the-loop architecture where I direct a federation of specialized AI agents. I provide the intent, critical feedback (RLHF), and final sign-off, while agents handle the memory retrieval, drafting, and validation.
 
 ![Cognitive OS Architecture](./assets/shifujosh_hero.png)
 
-> *Problems I Solve → Results I Drive*
+> *Human Intent → AI Scale → Verified Output*
 
 ---
 
