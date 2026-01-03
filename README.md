@@ -134,7 +134,7 @@ I call this **Software as a Result**: I define the outcome, and the system produ
 
 ## Production Patterns (Open Source)
 
-Code is the only truth. I open-sourced the core intellectual property that powers my autonomous agents—actual production engines, not "toy examples."
+I believe in **building in public**. I have open-sourced the core engines powering my agentic systems to serve as production-grade reference implementations for the community.
 
 - **[The Specter Event Loop](./architecture-patterns/specter_event_loop.ts)**
     *The "Brain".* A recursive, consensus-based decision engine. **Votes** across multiple models (DeepSeek/Gemini/Ollama) to eliminate hallucination in high-stakes environments.
