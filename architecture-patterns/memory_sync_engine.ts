@@ -30,10 +30,12 @@ interface FirestoreDoc {
     update: (d: unknown) => void; 
     delete: () => void; 
     id: string; 
-    ref: unknown; 
+    ref: unknown;
+    data: () => Record<string, unknown>;
 }
 
 interface FirestoreQuery { 
+    where: (field: string, op: string, val: unknown) => FirestoreQuery;
     limit: (n: number) => { get: () => Promise<{ empty: boolean; docs: FirestoreDoc[] }> };
 }
 
@@ -55,17 +57,25 @@ interface FirestoreTransaction {
 }
 
 class MockFirestore { 
-    collection(path: string): FirestoreCollection { 
+    collection(_path: string): FirestoreCollection { 
+        const mockDoc: FirestoreDoc = {
+            set: async () => {}, 
+            get: async () => ({ exists: true, data: () => ({}) }), 
+            update: () => {}, 
+            delete: () => {}, 
+            id: 'mock-id', 
+            ref: {},
+            data: () => ({})
+        };
+        
+        const mockQuery: FirestoreQuery = {
+            where: () => mockQuery,
+            limit: () => ({ get: async () => ({ empty: true, docs: [] }) })
+        };
+
         return { 
-            doc: (id: string) => ({ 
-                set: async () => {}, 
-                get: async () => ({ exists: true, data: () => ({}) }), 
-                update: () => {}, 
-                delete: () => {}, 
-                id, 
-                ref: {} 
-            }), 
-            where: () => ({ limit: () => ({ get: async () => ({ empty: true, docs: [] }) }) }), 
+            doc: (id: string) => ({ ...mockDoc, id }), 
+            where: () => mockQuery, 
             batch: () => ({ delete: () => {}, update: () => {}, commit: async () => {} }) 
         }; 
     } 
@@ -81,8 +91,8 @@ class MockFirestore {
 }
 
 class MockDatabase { 
-    constructor(path: string) {} 
-    prepare(sql: string) { 
+    constructor(_path: string) {} 
+    prepare(_sql: string) { 
         return { 
             run: (...args: unknown[]) => { 
                 const cb = args[args.length - 1] as (err: Error | null) => void;
@@ -294,7 +304,8 @@ export class MemorySyncEngine {
             .sort((a, b) => b.confidence - a.confidence);
     }
 
-    private async generateEmbedding(text: string): Promise<number[]> {
+    private async generateEmbedding(_text: string): Promise<number[]> {
+        // Placeholder for Gemini/OpenAI embedding call
         return new Array(1536).fill(0); 
     }
 
@@ -306,6 +317,7 @@ export class MemorySyncEngine {
         console.log(`[${new Date().toISOString()}] [${level}] ${msg}`);
     }
 
-    private async queryHot(q: string): Promise<Fact[]> { return []; }
-    private async queryCold(q: string): Promise<Fact[]> { return []; }
+    // Stub implementations for demonstration
+    private async queryHot(_q: string): Promise<Fact[]> { return []; }
+    private async queryCold(_q: string): Promise<Fact[]> { return []; }
 }

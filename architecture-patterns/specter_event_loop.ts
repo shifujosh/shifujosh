@@ -156,7 +156,7 @@ export class SpecterEventLoop {
         }
     }
 
-    private async consultPersona(target: Target, context: Context, role: AgentOpinion['persona']): Promise<AgentOpinion> {
+    private async consultPersona(_target: Target, context: Context, role: AgentOpinion['persona']): Promise<AgentOpinion> {
         return this.llm.generateStructured({
             role,
             context,
@@ -164,7 +164,7 @@ export class SpecterEventLoop {
         });
     }
 
-    private async buildContext(target: Target): Promise<Context> {
+    private async buildContext(_target: Target): Promise<Context> {
         // Fetches hard data from vectorized memory and external APIs
         return {
             marketEfficiency: 0.4, // Mock

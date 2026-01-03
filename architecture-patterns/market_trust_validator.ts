@@ -17,7 +17,7 @@
  * Note: Requires `zod` dependency.
  */
 
-import { z } from 'zod'; 
+import { z } from 'zod';
 
 // ============ 0. DOMAIN PRIMITIVES (The Constants) ============
 
@@ -25,7 +25,7 @@ import { z } from 'zod';
  * Validates American Odds format using strict range boundaries.
  * "Dead Heat" rules and "Push" scenarios often break naive number validators.
  */
-const AmericanOddsSchema = z.number().refine(
+export const AmericanOddsSchema = z.number().refine(
     (val: number) => val === 0 || val >= 100 || val <= -100,
     { message: 'Invalid American Odds: Must be >= +100 or <= -100 (or 0 for PK).' }
 );

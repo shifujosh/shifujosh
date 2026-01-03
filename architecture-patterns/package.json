@@ -1,0 +1,30 @@
+{
+  "name": "@shifujosh/architecture-patterns",
+  "version": "1.0.0",
+  "description": "Production-hardened patterns for Applied Generative AI systems",
+  "author": "Joshua Lora <github.com/shifujosh>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "zod",
+    "validation",
+    "data-physics",
+    "llm",
+    "typescript"
+  ]
+}
