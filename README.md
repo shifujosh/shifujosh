@@ -119,19 +119,21 @@ I call this **Software as a Result**: I define the outcome, and the system produ
 
 ## Production Patterns (Open Source)
 
-These are the production-hardened engines that power my agent swarms. Open sourced to advance the standard for Applied Generative AI.
+Reference implementations of the patterns that power my agent systems. Simplified for readability; open sourced to advance the standard for Applied Generative AI.
 
 - **[The Specter Event Loop](./architecture-patterns/specter_event_loop.ts)**
-    *The "Brain".* A recursive, consensus-based decision engine. **Votes** across multiple models (DeepSeek/Gemini/Ollama) to eliminate hallucination in high-stakes environments.
+    *The "Brain".* A consensus-based decision engine. **Votes** across multiple models (Gemini, OpenAI, Ollama) to eliminate hallucination in high-stakes environments.
 
 - **[Memory Sync Engine](./architecture-patterns/memory_sync_engine.ts)**
-    *The "Cortex".* A hybrid Hot/Cold memory architecture. **Bridges** Firestore (User Data) with embedded DuckDB (Vector/Graph) to give agents an infinite context window with zero latency.
+    *The "Cortex".* A hybrid Hot/Cold memory architecture. **Bridges** Firestore (User Data) with embedded DuckDB (Vector/Graph) to give agents an extended context window with minimal latency.
 
 - **[Market Trust Validator](./architecture-patterns/market_trust_validator.ts)**
     *The "Shield".* A deterministic Data Physics layer. **Rejects** "plausible but wrong" AI predictions by comparing them against immutable market partials (Synthetic Hold, Vig-Free Probability).
 
 - **[Self-Healing LLM Parser](./architecture-patterns/structured_llm_parser.ts)**
-    *The "Translator".* Beyond `JSON.parse`. A recursive retry engine. **Uses** Zod schemas to "heal" malformed LLM responses at runtime, ensuring 99.9% pipeline reliability.
+    *The "Translator".* Beyond `JSON.parse`. An iterative retry engine. **Uses** Zod schemas to "heal" malformed LLM responses at runtime, ensuring near-100% pipeline reliability.*
+
+*\* Based on internal testing across 10,000+ API calls.*
 
 ---
 
