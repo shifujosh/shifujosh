@@ -4,7 +4,7 @@
 
 ---
 
-## 🔭 Why I Build
+## Why I Build
 
 **The Era of the Force Multiplier**
 
@@ -38,27 +38,50 @@ I direct the work. AI does the heavy lifting. I treat models like specialized em
 | **Cost** | $792,000 | <$1,000 | **99% savings** |
 | **Quality** | 5-10 bugs/1k | <1 bug/1k | **10x** |
 
-> **[Full Case Study](https://github.com/shifujosh/Antigravity-Sprint-Retrospective)**
+---
+
+## Featured Projects
+
+### [JACQ: Cognitive Operating System](https://github.com/shifujosh/JACQ-Architecture)
+
+*Local-First AI Workspace with Graph-RAG Memory.*
+
+A unified OS that remembers past work, learns preferences, and suggests next steps. Implements Entity-Fact memory model with staging policies for fact promotion and decay.
+
+**Key Innovations:**
+- Graph-RAG retrieval combining vector search with spreading activation
+- Entity-Fact memory model with confirmation scoring
+- Orchestrator pattern for multi-agent coordination
 
 ---
 
-## 🚀 Featured Projects
+### [Specter: Autonomous Sports Intelligence](https://github.com/shifujosh/Specter-Sports-Intel)
 
-**[Specter: The Autonomous Analyst](./projects/specter.md)**  
-*Autonomous Intelligence Agent.*  
-Ingests data, runs analysis, fact-checks itself, generates content, and broadcasts—fully autonomously. **[Read Case Study →](./projects/specter.md)**
+*Deterministic RAG & Real-Time Verification for Sports Analytics.*
 
-**[JACQ: Cognitive Operating System](./projects/jacq.md)**  
-*Local-First AI Workspace.*  
-A unified OS that remembers past work, learns preferences, and suggests next steps. **[Read Case Study →](./projects/jacq.md)**
+Ingests data, runs ensemble analysis, fact-checks itself, generates content, and broadcasts—fully autonomously. Solves the "LLM Hallucination" problem with a verification-first architecture.
 
-**[BetSpecs: Real-Time Analytics](./projects/betspecs.md)**  
-*Financial-Grade Sports Terminal.*  
-Live data, AI insights, and performance tracking in a single pane of glass. **[Read Case Study →](./projects/betspecs.md)**
+**Key Innovations:**
+- 3-Model Ensemble Voting (Bayesian + Elo + Rules Engine)
+- Deterministic Verification Layer (fact-checking before output)
+- Velocity Tracker for detecting sharp money movement
 
 ---
 
-## Mission-Critical Data Operations: Bloomberg
+### [Market Data Pipeline](https://github.com/shifujosh/Market-Data-Pipeline-Ref-)
+
+*Data Physics - Enterprise-Grade Validation Patterns.*
+
+Reference architecture demonstrating financial-grade data validation learned from managing high-frequency trading pipelines. These same principles power the "Trust Layer" in my AI systems.
+
+**Key Innovations:**
+- Tiered Validation (Hard/Soft/Warning)
+- Dead Letter Queue for zero silent data loss
+- Price Inertia detection for anomaly flagging
+
+---
+
+## The Data Physics Foundation
 
 Before AI, I managed data for global financial institutions. I learned what I call **Data Physics**: the principle that data must be treated like a physical asset. If the structure is wrong, everything downstream breaks.
 
@@ -76,9 +99,9 @@ I call this **Software as a Result**: I define the outcome, and the system produ
 
 ---
 
-## 🧠 Architecture Patterns (Open Source)
+## Architecture Patterns (Open Source)
 
-I believe in **working in public**. I've extracted key patterns from my private engineering work (Specter, JACQ) and open-sourced them as reference implementations:
+I believe in **working in public**. I've extracted key patterns from my private engineering work and open-sourced them as reference implementations:
 
 - **[The Specter Event Loop](./architecture-patterns/specter_event_loop.ts)**: A consensus-based autonomous decision cycle for high-variance domains.
 - **[Memory Sync Engine](./architecture-patterns/memory_sync_engine.ts)**: Hybrid "Hot/Cold" memory architecture bridging Firestore and DuckDB.
@@ -87,7 +110,7 @@ I believe in **working in public**. I've extracted key patterns from my private 
 
 ---
 
-## 📬 Connect
+## Connect
 
 NYC born and raised. Cornell alum. Lasagna enthusiast.
 
