@@ -2,7 +2,7 @@
 <!-- markdownlint-disable MD013 -->
 # Joshua Lora | Forward Deployed Engineer & Product Architect
 
-> *Compressing the gap between Human Intent and Production Reality.*
+> *Building at the speed of thought.*
 
 <p align="center">
   <img src="https://img.shields.io/badge/TypeScript-Strict_Mode-3178C6?logo=typescript&logoColor=white" alt="TypeScript Strict" />
