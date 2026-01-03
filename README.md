@@ -21,7 +21,7 @@ Generative AI acts as a mechanism for **radical time compression**. It allows us
 My role as a **Forward Deployed Engineer** is to harness this force multiplier—enabling me to execute the workload of a specialized agency single-handedly.
 
 **The Vision: Adaptive Memory & Security.**
-But raw speed creates risk. Most AI tools are stateless chatbots that forget context and introduce vulnerabilities. I build systems like **JACQ** to solve this: a persistent digital workforce that retains deep architectural memory while enforcing strict security boundaries. I turn intent into software that is not just fast, but verifiable and safe.
+Raw speed creates risk. Most AI tools are stateless chatbots that forget context and introduce vulnerabilities. I build systems like **JACQ** to solve this: a persistent digital workforce that retains deep architectural memory while enforcing strict security boundaries. I turn intent into software that is not just fast, but verifiable and safe.
 
 ---
 
