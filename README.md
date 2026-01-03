@@ -59,6 +59,8 @@ By treating AI as a "cognitive substrate" rather than just a tool, I've inverted
 | **Reliability** | Manual QA | **Automated Data Physics** | 🛡️ **Verified**<br>*(Deterministic Validation)* |
 
 > *Delivered $792k of estimated engineering value for <$1,000 in compute.*
+> 
+> 📄 **[Read the Full Antigravity Sprint Case Study](https://github.com/shifujosh/Antigravity-Sprint-Retrospective/blob/main/WHITEPAPER.md)**
 
 ---
 
