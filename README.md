@@ -44,6 +44,7 @@ graph LR
     
     Auditor -->|Approved| Production[🚀 Ship]
     Auditor -.->|Rejected| Orchestrator
+```
 ---
 
 ## The Multiplier Effect
