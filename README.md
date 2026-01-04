@@ -18,23 +18,32 @@ But velocity demands structure. In a landscape of stateless, amnesic models, I b
 
 ## How I Work: Orchestrated Intelligence
 
-I architect systems where humans provide the **Intent** and AI agents handle the **Implementation** at scale.
+Instead of using AI as a chatbot; I manage it as a **digital workforce**.
+
+To achieve agency-level output as a single engineer, I have architected a system where I act as the **Product Lead**, and a swarm of specialized AI agents acts as my development team.
+
+**The Workflow:**
+1.  **I Define the Intent:** I provide the architectural blueprints and business logic. I set the "Why" and the "What."
+2.  **The Swarm Builds (Scale):** specialized agents write the code in parallel. One agent focuses on database structure, another on the user interface, and another on documentation.
+3.  **The Critic Validates (Safety):** Before any code is accepted, a separate "Auditor Agent" acts as Quality Assurance. It reviews the work for bugs and security risks. If the code isn't perfect, the Auditor rejects it and forces a rewrite.
+
+This loop allows me to maintain **human strategic control** while leveraging **machine speed** for execution.
 
 ```mermaid
-graph TD
-    Human([👤 Joshua]) ==>|1. Intent & Schema| Orchestrator{{"⚡ Orchestrator"}}
+graph LR
+    Human([👤 Joshua]) ==>|1. Strategy & Blueprints| Orchestrator{{"⚡ Orchestrator"}}
     
-    subgraph Agents ["The Agent Swarm"]
-        Orchestrator -->|Build| Gemini[Gemini Swarm]
-        Orchestrator -->|Audit| Claude[Claude Engineers]
+    subgraph Swarm ["The Digital Workforce"]
+        Orchestrator -->|Build| Architect[Agent A: The Architect]
+        Orchestrator -->|Code| Builder[Agent B: The Builder]
+        
+        Architect & Builder --> Draft[Draft Solution]
+        
+        Draft --> Auditor[Agent C: The Auditor]
     end
     
-    Gemini & Claude --> Draft[Draft Code]
-    Draft --> Validation{"🛡️ Strict Validation"}
-    
-    Validation -->|Pass| Production[🚀 Ship]
-    Validation -.->|Fail| Orchestrator
-```
+    Auditor -->|Approved| Production[🚀 Ship]
+    Auditor -.->|Rejected| Orchestrator
 ---
 
 ## The Multiplier Effect
