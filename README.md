@@ -13,6 +13,7 @@ We are witnessing the collapse of latency between *Idea* and *Reality*.
 As a **Forward Deployed Engineer**, I operate as a force multiplier on this new frontier. My mandate is to capture this lightning and ground it in utility—transforming raw, chaotic possibility into concrete solutions that serve human needs.
 
 But velocity demands structure. In a landscape of stateless, amnesic models, I build systems like **JACQ** to provide the missing substrate: a persistent digital workforce that retains deep architectural memory while enforcing strict security boundaries. I turn intent into software that is verifiable, safe, and built to last.
+
 ---
 
 ## How I Work: Orchestrated Intelligence
