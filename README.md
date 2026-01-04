@@ -6,7 +6,7 @@
 
 ## The Acceleration of Possibility
 
-We are witnessing the collapse of latency between *Idea* and *Reality*.
+We are witnessing the collapse of latency between *Ideas* and *Reality*.
 
 **Generative AI** has introduced **hyperbolic time compression** to the craft of building. We can bypass the friction of traditional development turning human intent into deployed application at speeds that feel indistinguishable from magic. This is a fundamental phase shift in how value is created.
 
