@@ -53,11 +53,12 @@ By treating AI as a "cognitive substrate" rather than just a tool, I've inverted
 
 | KPI | Standard Velocity | JACQ Velocity | Multiplier |
 | :--- | :--- | :--- | :--- |
-| **Throughput** | ~75 LOC / day | **1,250+ Clean LOC / day**<br>*(Linted, Typed, Tested)* | ⚡️ **16x**<br>*(Agentic Workflow)* |
+| **Throughput** | ~75 LOC / day | **1,250+ LOC / day**<br>*(~300 CWLOC after complexity weighting)* | ⚡️ **4-16x**<br>*(Agentic Workflow)* |
 | **Time-to-Market** | 6-9 Months | **35 Days** | 🚀 **8x**<br>*(Parallel  Execution)* |
 | **Reliability** | Manual QA | **Automated Data Physics** | 🛡️ **Verified**<br>*(Deterministic Validation)* |
 
-> *Delivered ~$816k of agency-equivalent engineering value for <$1,000 in compute.*
+> *Delivered ~$780k of agency-equivalent engineering value for ~$70k in architect time.*
+> *([~11x cost efficiency](https://github.com/shifujosh/Antigravity-Sprint-Retrospective/blob/main/WHITEPAPER.md) when founder labor is honestly priced.)*
 > 
 > 📄 **[Read the Full Antigravity Sprint Case Study](https://github.com/shifujosh/Antigravity-Sprint-Retrospective/blob/main/WHITEPAPER.md)**
 
@@ -90,7 +91,7 @@ A deterministic validation engine for high-stakes domains. It wraps LLMs in a **
 
 ### [BetSpecs: Live Sports Analytics Platform](https://sportbs.app)
 
-*> In Public Beta Since June 2025.*
+*> Public Beta. Live since June 2025.*
 
 A consumer-facing product powered by the Specter engine. Real-time sports analytics dashboard with predictive modeling and betting intelligence. **Live and serving real users.**
 
@@ -168,6 +169,6 @@ Reference implementations of the patterns that power my agent systems. Simplifie
 
 ## Connect
 
-Based in **NYC**. **Cornell** Alum.**Lasagna** Enthusiast.
+Based in **NYC**. **Cornell** Alum. **Lasagna** Enthusiast.
 
 **LinkedIn:** [linkedin.com/in/joshualora](https://www.linkedin.com/in/joshualora)
