@@ -29,7 +29,7 @@ To achieve agency-level output as a single engineer, I have architected a system
 
 This loop allows me to maintain **human strategic control** while leveraging **machine speed** for execution.
 
-![Orchestrated Intelligence Workflow](assets/images/orchestrated-intelligence.svg)
+![Orchestrated Intelligence Workflow](https://raw.githubusercontent.com/shifujosh/shifujosh/main/assets/images/orchestrated-intelligence.svg)
 ---
 
 ## The Multiplier Effect
