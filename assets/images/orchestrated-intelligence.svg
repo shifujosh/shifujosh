@@ -26,7 +26,7 @@
 
   <!-- Connection: Human -> Orchestrator -->
   <line x1="90" y1="180" x2="210" y2="180" stroke="#64748b" stroke-width="2" stroke-dasharray="5,5" />
-  <text x="150" y="170" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">Intent & Strategy</text>
+  <text x="150" y="170" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">Intent &amp; Strategy</text>
 
   <!-- Orchestrator -->
   <g transform="translate(250, 180)">
