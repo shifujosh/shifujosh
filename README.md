@@ -29,22 +29,7 @@ To achieve agency-level output as a single engineer, I have architected a system
 
 This loop allows me to maintain **human strategic control** while leveraging **machine speed** for execution.
 
-```mermaid
-graph LR
-    Human([👤 Joshua]) ==>|1. Strategy & Blueprints| Orchestrator{{"⚡ Orchestrator"}}
-    
-    subgraph Swarm ["The Digital Workforce"]
-        Orchestrator -->|Build| Architect[Agent A: The Architect]
-        Orchestrator -->|Code| Builder[Agent B: The Builder]
-        
-        Architect & Builder --> Draft[Draft Solution]
-        
-        Draft --> Auditor[Agent C: The Auditor]
-    end
-    
-    Auditor -->|Approved| Production[🚀 Ship]
-    Auditor -.->|Rejected| Orchestrator
-```
+![Orchestrated Intelligence Workflow](assets/images/orchestrated-intelligence.svg)
 ---
 
 ## The Multiplier Effect

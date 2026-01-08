@@ -1,0 +1,85 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dynamic Background -->
+  <defs>
+    <linearGradient id="bg-cortex" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-cortex)" rx="10" />
+
+  <!-- Nodes -->
+  <!-- Human (Joshua) -->
+  <g transform="translate(50, 180)">
+    <circle cx="0" cy="0" r="40" fill="#3b82f6" stroke="#60a5fa" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="5" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-weight="bold" font-size="24">👤</text>
+    <text x="0" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Joshua</text>
+  </g>
+
+  <!-- Connection: Human -> Orchestrator -->
+  <line x1="90" y1="180" x2="210" y2="180" stroke="#64748b" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="150" y="170" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">Intent & Strategy</text>
+
+  <!-- Orchestrator -->
+  <g transform="translate(250, 180)">
+    <polygon points="0,-40 50,0 0,40 -50,0" fill="#8b5cf6" stroke="#a78bfa" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="5" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-weight="bold" font-size="20">⚡</text>
+    <text x="0" y="60" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12">Orchestrator</text>
+  </g>
+
+  <!-- Swarm Box -->
+  <rect x="340" y="80" width="300" height="200" rx="10" fill="none" stroke="#334155" stroke-dasharray="4,4" />
+  <text x="490" y="100" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-weight="bold" font-size="12">DIGITAL WORKFORCE SWARM</text>
+
+  <!-- Agents -->
+  <g transform="translate(420, 150)">
+    <rect x="-30" y="-20" width="60" height="40" rx="5" fill="#0f172a" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="0" y="5" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12">Architect</text>
+  </g>
+
+  <g transform="translate(420, 230)">
+    <rect x="-30" y="-20" width="60" height="40" rx="5" fill="#0f172a" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="0" y="5" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12">Builder</text>
+  </g>
+
+  <!-- Connection: Orchestrator -> Agents -->
+  <path d="M 300 180 Q 360 180 390 150" fill="none" stroke="#6366f1" stroke-width="2" />
+  <path d="M 300 180 Q 360 180 390 230" fill="none" stroke="#6366f1" stroke-width="2" />
+
+  <!-- Draft Node -->
+  <g transform="translate(540, 190)">
+     <rect x="-30" y="-25" width="60" height="50" rx="5" fill="#334155" stroke="#475569" stroke-width="1"/>
+     <text x="0" y="0" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Draft</text>
+     <text x="0" y="15" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Solution</text>
+  </g>
+
+   <!-- Agents -> Draft -->
+   <line x1="450" y1="150" x2="510" y2="180" stroke="#64748b" stroke-width="1" />
+   <line x1="450" y1="230" x2="510" y2="200" stroke="#64748b" stroke-width="1" />
+
+   <!-- Auditor -->
+   <g transform="translate(700, 180)">
+    <circle cx="0" cy="0" r="35" fill="#dc2626" stroke="#f87171" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="5" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="24">🛡️</text>
+    <text x="0" y="50" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="12">Auditor</text>
+   </g>
+
+   <!-- Draft -> Auditor -->
+   <line x1="570" y1="190" x2="665" y2="180" stroke="#f87171" stroke-width="2" />
+
+   <!-- Loopback: Auditor -> Orchestrator (Reject) -->
+   <path d="M 700 145 Q 700 40 250 140" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,5" />
+   <text x="475" y="60" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="10" font-weight="bold">REJECT / REFINE</text>
+
+   <!-- Auditor -> Ship (Success) -->
+   <line x1="735" y1="180" x2="780" y2="180" stroke="#10b981" stroke-width="4" />
+
+</svg>
