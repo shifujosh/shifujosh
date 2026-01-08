@@ -51,14 +51,14 @@ graph LR
 
 By treating AI as a "cognitive substrate" rather than just a tool, I've inverted traditional software economics.
 
-| KPI | Standard Velocity | JACQ Velocity | Multiplier |
+| Metric | Standard Product Squad | Antigravity Architect | Impact |
 | :--- | :--- | :--- | :--- |
-| **Throughput** | ~75 LOC / day | **1,250+ LOC / day**<br>*(~300 CWLOC after complexity weighting)* | ⚡️ **16x**<br>*(Agentic Workflow)* |
-| **Time-to-Market** | 6 Months | **35 Days** | 🚀 **6x**<br>*(Parallel  Execution)* |
-| **Reliability** | Manual QA | **Automated Data Physics** | 🛡️ **Verified**<br>*(Deterministic Validation)* |
+| **Unit** | 5 Humans (siloed) | 1 Human + Swarm | **5:1 Consolidation** |
+| **Cycle Time** | 2-Week Sprints | 24-Hour Loops | **14x Faster Feedback** |
+| **Validation** | Human PR Review | Automated Data Physics | **Zero Silent Failure** |
+| **Roadmap** | 6 Months | 35 Days | **5 Months Gained** |
 
-> *Delivered ~$780k of agency-equivalent engineering value for ~$70k in architect time.*
-> *([~11x cost efficiency](https://github.com/shifujosh/Antigravity-Sprint-Retrospective/blob/main/WHITEPAPER.md) when founder labor is honestly priced.)*
+> *The value isn't just saving $700k—it's gaining 5 months of runway.*
 > 
 > 📄 **[Read the Full Antigravity Sprint Case Study](https://github.com/shifujosh/Antigravity-Sprint-Retrospective/blob/main/WHITEPAPER.md)**
 
