@@ -29,7 +29,6 @@ To achieve agency-level output as a single engineer, I have architected a system
 
 This loop allows me to maintain **human strategic control** while leveraging **machine speed** for execution.
 
-![Profile Architecture](assets/images/profile-architecture.png)
 ---
 
 ## The Multiplier Effect
