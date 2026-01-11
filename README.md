@@ -16,6 +16,8 @@ That map helps the Architect understand what is required and routes execution de
 
 ## Orchestrated Intelligence
 
+![Orchestrated Intelligence Loop](assets/orchestrated_intelligence_loop_v2.png)
+
 At the core of my practice is a system of customizable AI agents designed to investigate requirements and carry out implementation decisions, all orchestrated by strictly typed higher-order reasoning models.
 
 Once initialized, the agents continuously crawl surface areas—database schemas, UI components, and API contracts—to collect and interpret raw signals at scale.
