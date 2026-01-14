@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD013 -->
-# Joshua R. Lora | Forward Deployed Engineer
+# Joshua R. Lora | Founder @ Protoperfect Labs | Federated AI Infrastructure for the Agentic Era
 
 > *Building at the speed of thought.*
 ---
