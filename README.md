@@ -1,5 +1,6 @@
 <!-- markdownlint-disable MD013 -->
-# Joshua R. Lora | Founder @ Protoperfect Labs | Federated AI Infrastructure for the Agentic Era
+# Joshua R. Lora | AI Infrastructure & Commercialization
+Founder @ Protoperfect Labs | Federated AI Infrastructure for the Agentic Era
 
 > *Building at the speed of thought.*
 ---
