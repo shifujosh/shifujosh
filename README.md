@@ -12,13 +12,11 @@
 
 ---
 
-## 👋 The Mission: Protoperfect Labs
+## Personal Intelligence Infrastructure
 
 ### I founded **[Protoperfect Labs](https://protoperfect.io)** to solve this at the infrastructure level. We build the **Commercial Operating System** for the Agentic Era—a venture studio and infrastructure foundry focused on **Federated AI Intelligence**.
 
 ### Our core architecture, **Orchestrated Intelligence**, uses an always-on agentic swarm to synchronize project state with architectural intent in real-time. This enables a single operator to sustain the output of a specialized agency by delegating the "Unit of Labor" to a synchronized swarm of autonomous agents.
-
-**Venture Status:** Fully deployed. Revenue generating. Active venture capital interest.
 
 ---
 
@@ -56,7 +54,7 @@ Read the full case study at **[protoperfect.io](https://protoperfect.io)**.
 
 **Personal Command Center.**
 
-#### The "observation deck" for autonomous agents. Manage long-term **Synaptic Memory** using DuckDB, allowing professionals to stop renting their intelligence and build **100-year equity**.
+#### The "observation deck" for autonomous agents. Manage long-term **Synaptic Memory**, allowing professionals to stop renting their intelligence and build **100-year equity**.
 
 - **Status:** Core Infrastructure
 
