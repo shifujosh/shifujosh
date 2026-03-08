@@ -24,11 +24,11 @@
 
 ![Orchestrated Intelligence Loop](assets/orchestrated_intelligence_loop_v2.png)
 
-### At the core of the Labs is a system of customizable AI agents designed to investigate requirements and carry out implementation decisions, all orchestrated by strictly typed higher-order reasoning models
+### At the Lab's core is a system of customizable AI agents designed to investigate requirements and carry out implementation decisions, all orchestrated by strictly typed higher-order reasoning models
 
 ### Once initialized, the agents continuously crawl surface areas—database schemas, UI components, and API contracts—to collect and interpret raw signals at scale
 
-#### **Detecting and Classifying Context Drift**
+### **Detecting and Classifying Context Drift**
 
 #### The system connects the dots across disparate environments, ensuring that every deployment is grounded in the latest architectural intent. When a mismatch is detected, the system triggers a resolution flow, allowing for high-velocity iteration with zero loss of integrity.
 
