@@ -22,17 +22,19 @@
 
 ---
 
-## ⚡ Case Study: The Antigravity Sprint 2026
+## ⚡ The Economic Case for AI-Native Engineering
 
 ### After months of building, deploying, and generating revenue with our system, we wanted to push it to the limit. We designed a "limit test" to see the extent to which an individual builder and creator could be amplified when equipped with our **Personal Intelligence Infrastructure**.
 
 ### During this 35-day sprint, a single architect—utilizing a Protoperfect swarm—replicated the output of a 15-person specialized agency.
 
-**Validated Metrics:**
+### **Validated Metrics:**
 
-- **Velocity:** **5:1 Human Capital Efficiency** (1 Engineer sustaining the output of a 5-person Product Squad).
-- **Capital Efficiency:** **11x Reduction in Replacement Cost** ($70k vs $780k market estimate).
-- **Quality:** **Zero Silent Failure** (Synchronized state validation via Data Physics).
+### • **Velocity:** **5:1 Human Capital Efficiency** (1 Engineer sustaining the output of a 5-person Product Squad).
+
+### • **Capital Efficiency:** **11x Reduction in Replacement Cost** ($70k vs $780k market estimate).
+
+### • **Quality:** **Zero Silent Failure** (Synchronized state validation via Data Physics).
 
 Read the full case study at **[protoperfect.io](https://protoperfect.io)**.
 
