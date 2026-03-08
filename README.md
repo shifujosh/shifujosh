@@ -24,7 +24,9 @@ This is a **Production-Grade Commercial Operating System**. By automating the "U
 
 ## Case Study: The Antigravity Sprint 2026
 
-The commercial viability of our architecture was codified during the **Antigravity Sprint**, where a single architect—utilizing a Protoperfect swarm—replicated the output of a 15-person specialized agency in 35 days.
+After months of building, deploying, and generating revenue with our system, we wanted to push it to the limit. We designed a "limit test" to see the extent to which an individual builder and creator could be amplified when equipped with our **Personal Intelligence Infrastructure**.
+
+During this 35-day sprint, a single architect—utilizing a Protoperfect swarm—replicated the output of a 15-person specialized agency.
 
 **Validated Metrics:**
 - **Velocity:** **5:1 Human Capital Efficiency** (1 Engineer sustaining the output of a 5-person Product Squad).
@@ -41,18 +43,27 @@ Read the full case study at **[protoperfect.io](https://protoperfect.io)**.
 Our "One Brain, Many Limbs" architecture allows us to deploy specialized products that share a common cognitive backbone, compounding institutional memory with every operation.
 
 ### [Specter: The Digital Soul](https://specter.protoperfect.io/)
+
 **Autonomous Sports Intelligence.**
-A high-margin content engine processing live data streams to serve predictive modeling and editorial content. 
+
+A high-margin content engine processing live data streams to serve predictive modeling and editorial content.
+
 - **Status:** **Revenue-Active** | Private Beta
 
 ### [Aglet: The Cognitive OS](https://github.com/shifujosh/Aglet-Foundry)
+
 **Personal Command Center.**
+
 The "observation deck" for autonomous agents. It manage long-term **Synaptic Memory** using DuckDB, allowing professionals to stop renting their genius and build **100-year equity**.
+
 - **Status:** Core Infrastructure
 
 ### [BetSpecs: Financial Data Physics](https://sportbs.app)
+
 **Real-time Quant Engine.**
+
 A consumer-facing platform for high-stakes sports data. Enforces "Data Physics" to ensure deterministic outcomes from stochastic inputs.
+
 - **Status:** Public Beta
 
 ---
