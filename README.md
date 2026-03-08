@@ -6,25 +6,39 @@
 
 ## 🌌 The Acceleration of Possibility
 
-### As digital ecosystems become more sophisticated and targeted, engineering teams are under pressure to manage exponentially more context at a higher frequency.
+### As digital ecosystems become more sophisticated and targeted, engineering teams are under pressure to manage exponentially more context at a higher frequency
 
-### Most operational models still rely on manual synchronization to align code with intent—a process that is slow, inconsistent, and expensive. This friction is what limits the potential of the individual builder.
+### Most operational models still rely on manual synchronization to align code with intent—a process that is slow, inconsistent, and expensive. This friction is what limits the potential of the individual builder
 
 ---
 
 ## Personal Intelligence Infrastructure
 
-### I founded **[Protoperfect Labs](https://protoperfect.io)** to solve this at the infrastructure level. We build the **Commercial Operating System** for the Agentic Era—a venture studio and infrastructure foundry focused on **Federated AI Intelligence**.
+### I founded **[Protoperfect Labs](https://protoperfect.io)** to solve this at the infrastructure level. We build the **Commercial Operating System** for the Agentic Era—a venture studio and infrastructure foundry focused on **Federated AI Intelligence**
 
-### Our core architecture, **Orchestrated Intelligence**, uses an always-on agentic swarm to synchronize project state with architectural intent in real-time. This enables a single operator to sustain the output of a specialized agency by delegating the "Unit of Labor" to a synchronized swarm of autonomous agents.
+### Our core architecture, **Orchestrated Intelligence**, uses an always-on agentic swarm to synchronize project state with architectural intent in real-time. This enables a single operator to sustain the output of a specialized agency by delegating the "Unit of Labor" to a synchronized swarm of autonomous agents
+
+---
+
+## ⚙️ Orchestrated Intelligence
+
+![Orchestrated Intelligence Loop](assets/orchestrated_intelligence_loop_v2.png)
+
+### At the core of the Labs is a system of customizable AI agents designed to investigate requirements and carry out implementation decisions, all orchestrated by strictly typed higher-order reasoning models
+
+### Once initialized, the agents continuously crawl surface areas—database schemas, UI components, and API contracts—to collect and interpret raw signals at scale
+
+#### **Detecting and Classifying Context Drift**
+
+#### The system connects the dots across disparate environments, ensuring that every deployment is grounded in the latest architectural intent. When a mismatch is detected, the system triggers a resolution flow, allowing for high-velocity iteration with zero loss of integrity.
 
 ---
 
 ## ⚡ The Economic Case for AI-Native Engineering
 
-### After months of building, deploying, and generating revenue with our system, we wanted to push it to the limit. We designed a "limit test" to see the extent to which an individual builder and creator could be amplified when equipped with our **Personal Intelligence Infrastructure**.
+### After months of building, deploying, and generating revenue with our system, we wanted to push it to the limit. We designed a "limit test" to see the extent to which an individual builder and creator could be amplified when equipped with our **Personal Intelligence Infrastructure**
 
-### During this 35-day sprint, a single architect—utilizing a Protoperfect swarm—replicated the output of a 15-person specialized agency.
+### During this 35-day sprint, a single architect—utilizing a Protoperfect swarm—replicated the output of a 15-person specialized agency
 
 ### **Validated Metrics:**
 
