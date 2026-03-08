@@ -4,21 +4,19 @@
 > *Building at the speed of thought.*
 ---
 
-## 👋 The Mission: Protoperfect Labs
-
-I am the founder of **[Protoperfect Labs](https://protoperfect.io)**, a venture studio and infrastructure foundry focused on **Federated AI Intelligence**. 
-
-We don't just build apps; we build the **Commercial Operating System** for the Agentic Era. Our core architecture, **Orchestrated Intelligence**, enables a single operator to sustain the output of a specialized agency by delegating the "Unit of Labor" to a synchronized swarm of autonomous agents.
-
-**Venture Status:** Fully deployed. Revenue generating. Active venture capital interest.
-
----
-
 ## 🌌 The Acceleration of Possibility
 
 As digital ecosystems become more sophisticated and targeted, engineering teams are under pressure to manage exponentially more context at a higher frequency.
 
-Most operational models still rely on manual synchronization to align code with intent—a process that is slow, inconsistent, and expensive. I founded **[Protoperfect Labs](https://protoperfect.io)** to solve this at the infrastructure level. Our core architecture, **Orchestrated Intelligence**, uses an always-on agentic swarm to synchronize project state with architectural intent in real-time.
+Most operational models still rely on manual synchronization to align code with intent—a process that is slow, inconsistent, and expensive. This friction is what limits the potential of the individual builder.
+
+## 👋 The Mission: Protoperfect Labs
+
+I founded **[Protoperfect Labs](https://protoperfect.io)** to solve this at the infrastructure level. We build the **Commercial Operating System** for the Agentic Era—a venture studio and infrastructure foundry focused on **Federated AI Intelligence**.
+
+Our core architecture, **Orchestrated Intelligence**, uses an always-on agentic swarm to synchronize project state with architectural intent in real-time. This enables a single operator to sustain the output of a specialized agency by delegating the "Unit of Labor" to a synchronized swarm of autonomous agents.
+
+**Venture Status:** Fully deployed. Revenue generating. Active venture capital interest.
 
 ---
 
@@ -29,7 +27,6 @@ After months of building, deploying, and generating revenue with our system, we 
 During this 35-day sprint, a single architect—utilizing a Protoperfect swarm—replicated the output of a 15-person specialized agency.
 
 **Validated Metrics:**
-
 - **Velocity:** **5:1 Human Capital Efficiency** (1 Engineer sustaining the output of a 5-person Product Squad).
 - **Capital Efficiency:** **11x Reduction in Replacement Cost** ($70k vs $780k market estimate).
 - **Quality:** **Zero Silent Failure** (Synchronized state validation via Data Physics).
@@ -70,9 +67,7 @@ A consumer-facing platform for high-stakes sports data. Enforces "Data Physics" 
 
 ## 🤝 Connect
 
-
 Based in **NYC**. **Cornell** Alum. **Lasagna** Enthusiast.
 
 **LinkedIn:** [linkedin.com/in/joshualora](https://www.linkedin.com/in/joshualora)
 **Vault:** [protoperfect.io](https://protoperfect.io)
-
