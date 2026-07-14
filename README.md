@@ -21,8 +21,6 @@ The goal is practical: help teams preserve institutional knowledge, make better 
 
 I build systems that help customers operate with more confidence in high-stakes environments, from strengthening financial data flows for high-frequency and algorithmic trading at Bloomberg to deploying semi-autonomous agents that map fraud networks and protect digital trust at Outtake AI.
 
-I studied Applied Economics and Management at Cornell University's Dyson School of Business.
-
 ## Connect
 
 [LinkedIn](https://www.linkedin.com/in/joshualora) | [Protoperfect Labs](https://protoperfect.io)
